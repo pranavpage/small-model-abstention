@@ -1,0 +1,95 @@
+{
+  "hallucination_rate": {
+    "value": 0.8666666666666667,
+    "ci95": [
+      0.8066666666666666,
+      0.92
+    ]
+  },
+  "over_refusal_rate": {
+    "value": 0.03333333333333333,
+    "ci95": [
+      0.006666666666666667,
+      0.06666666666666667
+    ]
+  },
+  "answer_accuracy": {
+    "value": 0.6733333333333333,
+    "ci95": [
+      0.6,
+      0.7466666666666667
+    ]
+  },
+  "answer_accuracy_strict": {
+    "value": 0.32,
+    "ci95": [
+      0.24666666666666667,
+      0.3933333333333333
+    ]
+  },
+  "precision_when_answering": {
+    "value": 0.36727272727272725,
+    "ci95": [
+      0.32616487455197135,
+      0.40823970037453183
+    ]
+  },
+  "correct_abstain_rate": {
+    "value": 0.1333333333333333,
+    "ci95": [
+      0.07999999999999996,
+      0.19333333333333336
+    ]
+  },
+  "balanced_score": {
+    "value": 0.4033333333333333,
+    "ci95": [
+      0.3566666666666667,
+      0.45
+    ]
+  },
+  "balanced_score_strict": {
+    "value": 0.22666666666666666,
+    "ci95": [
+      0.18000000000000002,
+      0.2733333333333333
+    ]
+  },
+  "answer_scores": {
+    "strict_mean": 0.38356615618674866,
+    "lenient_mean": 0.7055230972090255,
+    "lenient_minus_strict": 0.32195694102227684,
+    "n_scored": 145
+  },
+  "reward_default": {
+    "h": 1.0,
+    "r": 0.5,
+    "mean": -0.05899716968230436,
+    "mean_base": -0.03399716968230437,
+    "mean_format_penalty": -0.025
+  },
+  "counts": {
+    "answerable": 150,
+    "unanswerable": 150,
+    "answerable_correct": 101,
+    "answerable_correct_strict": 48,
+    "answerable_wrong": 44,
+    "over_refusal": 5,
+    "hallucination": 130,
+    "correct_abstain": 20,
+    "soft_refusals_counted_as_answers": 5,
+    "outputs_over_30_words": 13,
+    "format_violations": 15
+  },
+  "config": {
+    "model": "Qwen/Qwen3-0.6B",
+    "split": "dev",
+    "n": 300,
+    "device": "mps",
+    "dtype": "bfloat16",
+    "decoding": "greedy",
+    "max_new_tokens": 64,
+    "system_prompt": "You answer questions using only the paragraph you are given. If the paragraph contains the answer, reply with a short answer copied from the paragraph and nothing else. If the paragraph does not contain the answer, reply exactly: I don't know"
+  },
+  "grader_version": "1.0"
+}

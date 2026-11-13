@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.context/
+# Built on the pod under paths.root; never committed
+/data/
+/results/
+/checkpoints/
+rehearsal/data/

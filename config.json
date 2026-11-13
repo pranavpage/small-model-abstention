@@ -1,0 +1,86 @@
+{
+  "experiment": "abstention-qwen3-1.7b",
+
+  "paths": {
+    "root": "/workspace/abstention",
+    "data_dir": "data",
+    "results_dir": "results",
+    "checkpoints_dir": "checkpoints",
+    "hf_home": "/workspace/hf"
+  },
+
+  "models": {
+    "main": "Qwen/Qwen3-1.7B",
+    "debug": "Qwen/Qwen3-0.6B",
+    "ceiling": "Qwen/Qwen3-8B"
+  },
+
+  "prompt": {
+    "system": "You answer questions using only the paragraph you are given. If the paragraph contains the answer, reply with the answer copied from the paragraph in 10 words or fewer. Do not write a full sentence and do not add anything else. If the paragraph does not contain the answer, reply exactly: I don't know",
+    "user_template": "Paragraph:\n{context}\n\nQuestion: {question}",
+    "enable_thinking": false
+  },
+
+  "data": {
+    "dataset": "rajpurkar/squad_v2",
+    "seed": 1234,
+    "train_splits": { "sft": 3000, "dpo": 2000, "grpo": 1500, "dev": 300 },
+    "test_size": 500
+  },
+
+  "eval": {
+    "temperature": 0.0,
+    "max_new_tokens": 64,
+    "bootstrap_samples": 10000,
+    "handcheck_samples": 50,
+    "seed": 1234
+  },
+
+  "vllm": {
+    "dtype": "bfloat16",
+    "max_model_len": 4096,
+    "gpu_memory_utilization": 0.85,
+    "max_lora_rank": 16
+  },
+
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": "all-linear"
+  },
+
+  "sft": {
+    "epochs": 2,
+    "learning_rate": 0.0002,
+    "per_device_batch_size": 16,
+    "grad_accum_steps": 1,
+    "loss_on_answer_only": true
+  },
+
+  "dpo": {
+    "samples_per_question": 4,
+    "sample_temperature": 1.0,
+    "beta": 0.1,
+    "epochs": 1,
+    "learning_rate": 0.000005,
+    "per_device_batch_size": 8,
+    "grad_accum_steps": 2
+  },
+
+  "grpo": {
+    "num_generations": 8,
+    "temperature": 1.0,
+    "max_steps": 500,
+    "kl_beta": 0.04,
+    "learning_rate": 0.000001,
+    "per_device_batch_size": 8,
+    "eval_every_steps": 50,
+    "runs": {
+      "G-low":     { "h": 0.3, "r": 0.5 },
+      "G-default": { "h": 1.0, "r": 0.5 },
+      "G-high":    { "h": 3.0, "r": 0.5 },
+      "G-hack":    { "h": 3.0, "r": 0.0 }
+    }
+  }
+}
