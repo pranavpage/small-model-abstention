@@ -23,6 +23,7 @@ Everything runs on a RunPod GPU pod. The laptop only edits code and `config.json
 | `twins.py`, `dpo_twin.py` | Twin DPO: SQuAD question twins (real question vs its edited, unanswerable twin) and DPO on them, input-side or output-side pairs |
 | `grpo.py` | Stage 4: GRPO question pool (disagreeing samples only), training with per-eval logging, dev gate |
 | `helpers/` | Laptop-side scripts that drive the pod over RunPod's proxy SSH (`pod.sh`, `pod_job.sh`, `pod_log.sh`, `pod_wait.sh`, `pull_results.sh`) and the on-pod run scripts they ship (`run_baselines.sh`, `run_ceiling.sh`, `run_sft.sh`) |
+| `FUTURE.md` | Parked experiments, designed but not run: GRPO with batch/no reward scaling and an exact-match reward; twin DPO on hand-checked hard twins |
 | `results/` | Copies of every pod run (`metrics.json`, `handcheck.jsonl`, `outputs.jsonl`), pulled with `helpers/pull_results.sh` |
 | `rehearsal/` | Qwen3-0.6B rehearsal results (local MPS, transformers backend) and split hashes |
 
