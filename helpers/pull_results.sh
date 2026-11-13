@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copy results from the pod (/workspace/abstention/results/<run>/{metrics.json,handcheck.jsonl,outputs.jsonl,train_*})
+# Copy results from the pod (/workspace/abstention/results/<run>/{metrics.json,handcheck.jsonl,outputs.jsonl,train_*,samples.jsonl,pair_counts.json})
 # into results/<run>/ in the repo, which is tracked. Smoke runs (smoke-*) are skipped.
 #   helpers/pull_results.sh            # every run
 #   helpers/pull_results.sh ceiling    # selected runs
