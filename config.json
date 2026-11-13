@@ -84,18 +84,34 @@
   },
 
   "grpo": {
+    "samples_run": "grpo-samples",
+    "pool": {
+      "filter_run": "G-default",
+      "drop_answerable_without_correct": true,
+      "topup_samples_run": "dpo-samples",
+      "topup_classes": ["unanswerable"],
+      "seed": 1234
+    },
     "num_generations": 8,
     "temperature": 1.0,
-    "max_steps": 500,
-    "kl_beta": 0.04,
-    "learning_rate": 0.000001,
+    "max_completion_length": 64,
+    "questions_per_step": 4,
     "per_device_batch_size": 8,
+    "passes": 2,
+    "kl_beta": 0.04,
+    "loss_type": "dapo",
+    "learning_rate": 0.000001,
+    "lr_scheduler": "constant",
     "eval_every_steps": 50,
+    "seed": 1234,
+    "gate": { "reference_dev_run": "sft-dev-e2", "max_p": 0.1, "min_gain": 0.02 },
+    "flags": { "kl_mean_above": 0.5, "length_rising_evals": 3 },
     "runs": {
       "G-low":     { "h": 0.3, "r": 0.5 },
       "G-default": { "h": 1.0, "r": 0.5 },
       "G-high":    { "h": 3.0, "r": 0.5 },
-      "G-hack":    { "h": 3.0, "r": 0.0 }
+      "G-hack":    { "h": 3.0, "r": 0.0 },
+      "G-equal":   { "h": 1.0, "r": 1.0, "learning_rate": 0.00001 }
     }
   }
 }

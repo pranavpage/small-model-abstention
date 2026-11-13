@@ -18,6 +18,9 @@ Everything runs on a RunPod GPU pod. The laptop only edits code and `config.json
 | `test_grader.py`, `test_pipeline.py` | CPU tests, run locally and on the pod |
 | `scripts/pod_setup.sh` | Pod setup: clone, venv, GPU check, tests |
 | `sft.py` | Stage 2: LoRA SFT with TRL `SFTTrainer`, per-epoch adapters, best-epoch selection on dev |
+| `sample_dpo.py` | Samples SFT-best on a split and grades every sample (DPO pairs; GRPO question filter) |
+| `dpo.py` | Stage 3: DPO variants from the SFT samples |
+| `grpo.py` | Stage 4: GRPO question pool (disagreeing samples only), training with per-eval logging, dev gate |
 | `helpers/` | Laptop-side scripts that drive the pod over RunPod's proxy SSH (`pod.sh`, `pod_job.sh`, `pod_log.sh`, `pod_wait.sh`, `pull_results.sh`) and the on-pod run scripts they ship (`run_baselines.sh`, `run_ceiling.sh`, `run_sft.sh`) |
 | `results/` | Copies of every pod run (`metrics.json`, `handcheck.jsonl`, `outputs.jsonl`), pulled with `helpers/pull_results.sh` |
 | `rehearsal/` | Qwen3-0.6B rehearsal results (local MPS, transformers backend) and split hashes |
@@ -109,7 +112,23 @@ For each rate, `compare.py` prints the difference (B − A) with a **paired boot
 Before DPO, `sample_dpo.py` samples the best SFT adapter on the DPO split (1 greedy + `dpo.samples_per_question` at `dpo.sample_temperature`), grades every output and counts the preference pairs (`results/dpo-samples/`): `helpers/pod_job.sh dpo-samples "$(cat helpers/run_dpo_samples.sh)"`.
 
 
-`dpo.py`, `grpo.py`, `report.py`: not written yet. DPO and GRPO start from `checkpoints/sft/best`.
+DPO and GRPO start from `checkpoints/sft/best`. `report.py`: not written yet.
+
+### GRPO
+
+A GRPO group whose 8 rewards are all equal has zero advantage, and the SFT model gets most questions right every time. So `grpo.py` trains only on questions where the SFT model's own samples disagree:
+
+1. `helpers/run_grpo_samples.sh` samples SFT-best on the GRPO split (greedy + 8 at T=1.0, plus an independent "recheck" draw of 8 that is used only to measure the filter) → `results/grpo-samples/`. Then it builds the pool → `results/grpo-pool/` (`pool.jsonl`, `pool_stats.json`).
+2. Pool = GRPO-split questions whose 8 rewards (G-default reward) are not all equal. That includes partial answers (0.67 vs 1.0). Answerable questions also need at least one correct sample: with only "I don't know" (−0.5) vs a wrong answer (0), the only lesson is to guess. The varying unanswerable questions from the DPO split (`dpo-samples`, 4 samples each; SFT-best never trained on them) are added. Then unanswerable questions are repeated only as needed to reach 50/50. Pool: 342 answerable + 269 unanswerable (repeat factor 1.27) = 684 rows. Every `(h, r)` run uses the same pool.
+3. Each step is 4 questions × 8 rollouts. `max_steps = ceil(passes × pool / 4)`. KL is measured against a frozen copy of the SFT adapter.
+4. Logging: every rollout batch logs TRL's metrics plus the share of zero-variance groups per class (`train_log.jsonl`). At step 0 and every `eval_every_steps` (`evals.jsonl`), it also logs the dev balanced score (HF greedy, as a live monitor), P("I don't know") on answerable vs unanswerable dev questions, mean answer length, and the per-class zero-variance share since the last eval. It also logs the AUC of P("I don't know") for unanswerable vs answerable dev questions; the per-question values are saved in `p_idk.jsonl`. The adapter is saved at each eval. A higher AUC means better judgment. A moved abstain rate with the same AUC is only a threshold shift.
+5. `helpers/run_grpo.sh` evaluates every checkpoint on dev with vLLM (one engine), selects the best, and runs test only if it passes the dev gate against `sft-dev-e2`: paired p < 0.1, or ≥ +2 points with more questions gained than lost.
+
+```bash
+helpers/pod_job.sh grpo-samples "$(cat helpers/run_grpo_samples.sh)"
+helpers/pod.sh 'cd /workspace/code && uv run --no-sync python grpo.py --run G-default --dry-run'   # checks, no training
+helpers/pod_job.sh grpo-G-default "RUN=G-default $(cat helpers/run_grpo.sh)"
+```
 
 ## Driving the pod from the laptop
 

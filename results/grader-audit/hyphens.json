@@ -1,0 +1,580 @@
+{
+  "grader_version": "1.0",
+  "totals": {
+    "dev": {
+      "answerable_outputs": 3750,
+      "score_changed": 72,
+      "cell_flips": 15,
+      "misgraded_by_v1": 15
+    },
+    "test": {
+      "answerable_outputs": 1500,
+      "score_changed": 23,
+      "cell_flips": 4,
+      "misgraded_by_v1": 2
+    }
+  },
+  "runs": {
+    "baseline": {
+      "split": "test",
+      "answerable_outputs": 250,
+      "score_changed": 7,
+      "cell_flips": 2,
+      "flips": [
+        {
+          "id": "572996c73f37b319004784b5",
+          "gold": [
+            "512-bit",
+            "512"
+          ],
+          "output": "1024-bit",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 0.5
+        },
+        {
+          "id": "572849b4ff5b5019007da0f2",
+          "gold": [
+            "mid-2000s",
+            "the mid-2000s"
+          ],
+          "output": "2000s",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 0.6666666666666666
+        }
+      ],
+      "misgraded_by_v1": 0
+    },
+    "baseline-0.6b": {
+      "split": "test",
+      "answerable_outputs": 250,
+      "score_changed": 4,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "baseline-0.6b-dev": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 5,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e0815f231d4119001ac21d",
+          "gold": [
+            "ADSL"
+          ],
+          "output": "ADSL-broadband service is provided on the island.",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "baseline-dev": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 5,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e1b646e3433e14004230cd",
+          "gold": [
+            "Hargeisa"
+          ],
+          "output": "Hargeisa-based",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "ceiling": {
+      "split": "test",
+      "answerable_outputs": 250,
+      "score_changed": 6,
+      "cell_flips": 2,
+      "flips": [
+        {
+          "id": "5711628a2419e314009555df",
+          "gold": [
+            "four"
+          ],
+          "output": "four-valve",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        },
+        {
+          "id": "57113be3a58dae1900cd6d2a",
+          "gold": [
+            "ten",
+            "ten-horsepower"
+          ],
+          "output": "10 horsepower",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 0.5
+        }
+      ],
+      "misgraded_by_v1": 2
+    },
+    "ceiling-dev": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 5,
+      "cell_flips": 2,
+      "flips": [
+        {
+          "id": "56e0815f231d4119001ac21d",
+          "gold": [
+            "ADSL"
+          ],
+          "output": "ADSL-broadband service is provided on the island.",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        },
+        {
+          "id": "56e1b646e3433e14004230cd",
+          "gold": [
+            "Hargeisa"
+          ],
+          "output": "Hargeisa-based telecommunications firm",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 2
+    },
+    "dpo": {
+      "split": "test",
+      "answerable_outputs": 250,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "dpo-dev-lr5e-05-e1": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "dpo-dev-lr5e-05-e2": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "dpo-dev-lr5e-06-e1": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "dpo-dev-lr5e-06-e2": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "dpo-v2": {
+      "split": "test",
+      "answerable_outputs": 250,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "dpo-v2-dev-lr2e-05-e1": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 4,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e0815f231d4119001ac21d",
+          "gold": [
+            "ADSL"
+          ],
+          "output": "ADSL-broadband",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "dpo-v2-dev-lr2e-05-e2": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 4,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e0815f231d4119001ac21d",
+          "gold": [
+            "ADSL"
+          ],
+          "output": "ADSL-broadband",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "dpo-v2-dev-lr5e-06-e1": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e0815f231d4119001ac21d",
+          "gold": [
+            "ADSL"
+          ],
+          "output": "ADSL-broadband",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "dpo-v2-dev-lr5e-06-e2": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e0815f231d4119001ac21d",
+          "gold": [
+            "ADSL"
+          ],
+          "output": "ADSL-broadband",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "grpo-G-default-dev-s100": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e0815f231d4119001ac21d",
+          "gold": [
+            "ADSL"
+          ],
+          "output": "ADSL-broadband",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "grpo-G-default-dev-s150": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "grpo-G-default-dev-s200": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "grpo-G-default-dev-s250": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "grpo-G-default-dev-s300": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "grpo-G-default-dev-s342": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "grpo-G-default-dev-s50": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e0815f231d4119001ac21d",
+          "gold": [
+            "ADSL"
+          ],
+          "output": "ADSL-broadband",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "grpo-G-equal-dev-s100": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "grpo-G-equal-dev-s150": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e1b646e3433e14004230cd",
+          "gold": [
+            "Hargeisa"
+          ],
+          "output": "Hargeisa-based",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "grpo-G-equal-dev-s200": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e1b646e3433e14004230cd",
+          "gold": [
+            "Hargeisa"
+          ],
+          "output": "Hargeisa-based",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "grpo-G-equal-dev-s250": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e1b646e3433e14004230cd",
+          "gold": [
+            "Hargeisa"
+          ],
+          "output": "Hargeisa-based",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "grpo-G-equal-dev-s50": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "sft": {
+      "split": "test",
+      "answerable_outputs": 250,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "sft-dev-e1": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e0815f231d4119001ac21d",
+          "gold": [
+            "ADSL"
+          ],
+          "output": "ADSL-broadband",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "sft-dev-e2": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e0815f231d4119001ac21d",
+          "gold": [
+            "ADSL"
+          ],
+          "output": "ADSL-broadband",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    }
+  },
+  "cases": [
+    {
+      "gold": "512-bit",
+      "output": "1024-bit",
+      "runs": [
+        "baseline"
+      ],
+      "v1_wrong": false,
+      "reason": "different number; dashes-as-spaces wrongly credits the shared word 'bit'"
+    },
+    {
+      "gold": "mid-2000s",
+      "output": "2000s",
+      "runs": [
+        "baseline"
+      ],
+      "v1_wrong": false,
+      "reason": "drops 'mid' (the decade, not its middle); v1.0 'wrong' is defensible"
+    },
+    {
+      "gold": "ADSL",
+      "output": "ADSL-broadband service is provided on the island.",
+      "runs": [
+        "baseline-0.6b-dev",
+        "ceiling-dev"
+      ],
+      "v1_wrong": true,
+      "reason": "right content in a sentence (the format rule, not the 2x2, covers sentences)"
+    },
+    {
+      "gold": "Hargeisa",
+      "output": "Hargeisa-based",
+      "runs": [
+        "baseline-dev",
+        "grpo-G-equal-dev-s150",
+        "grpo-G-equal-dev-s200",
+        "grpo-G-equal-dev-s250"
+      ],
+      "v1_wrong": true,
+      "reason": "gold span plus a hyphenated suffix"
+    },
+    {
+      "gold": "four",
+      "output": "four-valve",
+      "runs": [
+        "ceiling"
+      ],
+      "v1_wrong": true,
+      "reason": "gold number inside a hyphenated compound"
+    },
+    {
+      "gold": "ten",
+      "output": "10 horsepower",
+      "runs": [
+        "ceiling"
+      ],
+      "v1_wrong": true,
+      "reason": "right answer (10 = ten); v1.0 misses it because 'ten-horsepower' becomes one token, and dashes-as-spaces credits it only through the word 'horsepower'"
+    },
+    {
+      "gold": "Hargeisa",
+      "output": "Hargeisa-based telecommunications firm",
+      "runs": [
+        "ceiling-dev"
+      ],
+      "v1_wrong": true,
+      "reason": "gold span plus a hyphenated suffix"
+    },
+    {
+      "gold": "ADSL",
+      "output": "ADSL-broadband",
+      "runs": [
+        "dpo-v2-dev-lr2e-05-e1",
+        "dpo-v2-dev-lr2e-05-e2",
+        "dpo-v2-dev-lr5e-06-e1",
+        "dpo-v2-dev-lr5e-06-e2",
+        "grpo-G-default-dev-s100",
+        "grpo-G-default-dev-s50",
+        "sft-dev-e1",
+        "sft-dev-e2"
+      ],
+      "v1_wrong": true,
+      "reason": "gold span plus a hyphenated qualifier"
+    }
+  ]
+}

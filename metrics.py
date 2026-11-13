@@ -114,6 +114,40 @@ PAIRED_BINARY = [
 ]
 
 
+def auc(neg, pos) -> float:
+    """P(score of a random positive > score of a random negative), ties count half (Mann-Whitney U / n_pos n_neg).
+    For P("I don't know"): pos = unanswerable questions, neg = answerable ones. Unlike the abstain rate, it does not
+    move when every question's P(IDK) shifts the same way, so it separates better judgment from a threshold shift."""
+    neg, pos = np.asarray(neg, float), np.asarray(pos, float)
+    allv = np.concatenate([neg, pos])
+    order = allv.argsort(kind="mergesort")
+    ranks = np.empty(len(allv))
+    sv = allv[order]
+    i = 0
+    while i < len(sv):  # average ranks over ties
+        j = i
+        while j + 1 < len(sv) and sv[j + 1] == sv[i]:
+            j += 1
+        ranks[order[i:j + 1]] = (i + j) / 2 + 1
+        i = j + 1
+    r_pos = ranks[len(neg):].sum()
+    return float((r_pos - len(pos) * (len(pos) + 1) / 2) / (len(pos) * len(neg)))
+
+
+def paired_auc_compare(neg_a, pos_a, neg_b, pos_b, n_boot=10_000, seed=1234) -> dict:
+    """AUC of A and B on the same questions, with a paired, stratified bootstrap interval on B - A."""
+    neg_a, pos_a, neg_b, pos_b = map(lambda x: np.asarray(x, float), (neg_a, pos_a, neg_b, pos_b))
+    a, b = auc(neg_a, pos_a), auc(neg_b, pos_b)
+    rng = np.random.default_rng(seed)
+    diffs = []
+    for _ in range(n_boot):
+        i = rng.integers(0, len(neg_a), len(neg_a))
+        j = rng.integers(0, len(pos_a), len(pos_a))
+        diffs.append(auc(neg_b[i], pos_b[j]) - auc(neg_a[i], pos_a[j]))
+    lo, hi = np.percentile(diffs, [2.5, 97.5])
+    return {"a": a, "b": b, "diff": b - a, "ci95": [float(lo), float(hi)]}
+
+
 def mcnemar_exact(b: int, c: int) -> float:
     """Two-sided exact McNemar p-value: b and c are the discordant counts (only A had it / only B had it)."""
     n = b + c

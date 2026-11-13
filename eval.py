@@ -11,6 +11,7 @@ Usage (on the pod):
   python eval.py --model ceiling --split test --run ceiling
   python eval.py --model main --adapter checkpoints/sft/best --split test --run sft
   python eval.py --run baseline --regrade          # re-score saved outputs, no GPU needed
+  python eval.py --model main --split dev --adapter ck/a ck/b --run run-a run-b   # several adapters, one vLLM start
 """
 
 import argparse
@@ -25,7 +26,8 @@ from metrics import compute_metrics, format_table
 from prompts import render
 
 
-def generate_vllm(cfg, model_id, adapter, rows):
+def generate_vllm(cfg, model_id, adapters, rows):
+    """Greedy outputs for every adapter in `adapters` (None = the base model), from one vLLM engine."""
     from vllm import LLM, SamplingParams
     from vllm.lora.request import LoRARequest
 
@@ -35,17 +37,20 @@ def generate_vllm(cfg, model_id, adapter, rows):
         dtype=v["dtype"],
         max_model_len=v["max_model_len"],
         gpu_memory_utilization=v["gpu_memory_utilization"],
-        enable_lora=adapter is not None,
+        enable_lora=any(a is not None for a in adapters),
         max_lora_rank=v["max_lora_rank"],
         seed=cfg["eval"]["seed"],
     )
     prompts = [render(cfg, llm.get_tokenizer(), r) for r in rows]
     params = SamplingParams(temperature=cfg["eval"]["temperature"], max_tokens=cfg["eval"]["max_new_tokens"])
-    lora = LoRARequest("adapter", 1, str(adapter)) if adapter else None
-    t0 = time.time()
-    outs = llm.generate(prompts, params, lora_request=lora)
-    print(f"generated {len(outs)} outputs in {time.time() - t0:.0f}s")
-    return [o.outputs[0].text.strip() for o in outs]
+    texts = []
+    for i, adapter in enumerate(adapters):
+        lora = LoRARequest(f"adapter{i}", i + 1, str(adapter)) if adapter else None
+        t0 = time.time()
+        outs = llm.generate(prompts, params, lora_request=lora)
+        print(f"generated {len(outs)} outputs in {time.time() - t0:.0f}s ({adapter})")
+        texts.append([o.outputs[0].text.strip() for o in outs])
+    return texts
 
 
 def write_results(cfg, out_dir, items, run_config):
@@ -75,24 +80,30 @@ def write_results(cfg, out_dir, items, run_config):
 
 def main():
     p = add_config_arg(argparse.ArgumentParser())
-    p.add_argument("--run", required=True, help="results subfolder name")
+    p.add_argument("--run", required=True, nargs="+", help="results subfolder name (one per --adapter)")
     p.add_argument("--model", help="'main' | 'debug' | 'ceiling' (from config.models) or an HF id / local path")
-    p.add_argument("--adapter", help="LoRA adapter directory (relative paths resolve under paths.root)")
+    p.add_argument("--adapter", nargs="+", help="LoRA adapter directory (relative paths resolve under paths.root); "
+                                                "several adapters need as many --run names")
     p.add_argument("--split", default="dev")
     p.add_argument("--limit", type=int, help="debug only: first N rows; not allowed on test")
     p.add_argument("--force", action="store_true", help="allow re-running an existing test-set run")
     p.add_argument("--regrade", action="store_true", help="re-score saved outputs with the current grader")
     args = p.parse_args()
     cfg = load_config(args.config)
-    out_dir = cfg.results_dir / args.run
+    adapters = args.adapter or [None]
+    if len(args.run) != len(adapters) and not args.regrade:
+        p.error(f"{len(args.run)} --run names for {len(adapters)} adapters")
+    out_dirs = [cfg.results_dir / r for r in args.run]
 
     if args.regrade:
-        prev = [json.loads(l) for l in open(out_dir / "outputs.jsonl")]
-        run_config = json.load(open(out_dir / "metrics.json"))["config"]
-        items = [({"id": r["id"], "question": r["question"], "answerable": r["answerable"],
-                   "answers": r["gold"]}, r["output"]) for r in prev]
-        print(f"regrading {len(items)} saved outputs in {out_dir} (generation config unchanged)")
-        return write_results(cfg, out_dir, items, run_config)
+        for out_dir in out_dirs:
+            prev = [json.loads(l) for l in open(out_dir / "outputs.jsonl")]
+            run_config = json.load(open(out_dir / "metrics.json"))["config"]
+            items = [({"id": r["id"], "question": r["question"], "answerable": r["answerable"],
+                       "answers": r["gold"]}, r["output"]) for r in prev]
+            print(f"regrading {len(items)} saved outputs in {out_dir} (generation config unchanged)")
+            write_results(cfg, out_dir, items, run_config)
+        return
 
     if not args.model:
         p.error("--model is required unless --regrade")
@@ -101,28 +112,29 @@ def main():
     if args.split == "test":
         if args.limit:
             raise SystemExit("--limit is for debugging and is not allowed on the test split")
-        if (out_dir / "metrics.json").exists() and not args.force:
-            raise SystemExit(f"{out_dir} already has test results; the test set runs once per stage (--force to override)")
+        for out_dir in out_dirs:
+            if (out_dir / "metrics.json").exists() and not args.force:
+                raise SystemExit(f"{out_dir} already has test results; the test set runs once per stage "
+                                 "(--force to override)")
 
     rows = [json.loads(l) for l in open(cfg.data_dir / f"{args.split}.jsonl")]
     if args.limit:
         rows = rows[:args.limit]
     model_id = cfg.model_id(args.model)
-    adapter = None
-    if args.adapter:
-        adapter = Path(args.adapter)
-        adapter = adapter if adapter.is_absolute() else cfg.root / adapter
-    out_dir.mkdir(parents=True, exist_ok=True)
-    print(f"model={model_id} adapter={adapter} split={args.split} n={len(rows)} run={args.run}")
+    adapters = [None if a is None else (Path(a) if Path(a).is_absolute() else cfg.root / a) for a in adapters]
+    print(f"model={model_id} split={args.split} n={len(rows)} runs={args.run} adapters={adapters}")
 
-    texts = generate_vllm(cfg, model_id, adapter, rows)
-    run_config = {
-        "model": model_id, "adapter": str(adapter) if adapter else None, "split": args.split, "n": len(rows),
-        "backend": "vllm", "dtype": cfg["vllm"]["dtype"], "temperature": cfg["eval"]["temperature"],
-        "max_new_tokens": cfg["eval"]["max_new_tokens"], "prompt": cfg["prompt"],
-        "eval_fingerprint": cfg.eval_fingerprint(), "experiment": cfg["experiment"],
-    }
-    write_results(cfg, out_dir, list(zip(rows, texts)), run_config)
+    all_texts = generate_vllm(cfg, model_id, adapters, rows)
+    for out_dir, adapter, texts in zip(out_dirs, adapters, all_texts):
+        out_dir.mkdir(parents=True, exist_ok=True)
+        run_config = {
+            "model": model_id, "adapter": str(adapter) if adapter else None, "split": args.split, "n": len(rows),
+            "backend": "vllm", "dtype": cfg["vllm"]["dtype"], "temperature": cfg["eval"]["temperature"],
+            "max_new_tokens": cfg["eval"]["max_new_tokens"], "prompt": cfg["prompt"],
+            "eval_fingerprint": cfg.eval_fingerprint(), "experiment": cfg["experiment"],
+        }
+        print(f"\n== {out_dir.name}")
+        write_results(cfg, out_dir, list(zip(rows, texts)), run_config)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,102 @@
+{
+  "hallucination_rate": {
+    "value": 0.11333333333333333,
+    "ci95": [
+      0.06666666666666667,
+      0.16666666666666666
+    ]
+  },
+  "over_refusal_rate": {
+    "value": 0.13333333333333333,
+    "ci95": [
+      0.08,
+      0.19333333333333333
+    ]
+  },
+  "answer_accuracy": {
+    "value": 0.7933333333333333,
+    "ci95": [
+      0.7266666666666667,
+      0.86
+    ]
+  },
+  "answer_accuracy_strict": {
+    "value": 0.78,
+    "ci95": [
+      0.7133333333333334,
+      0.8466666666666667
+    ]
+  },
+  "precision_when_answering": {
+    "value": 0.8095238095238095,
+    "ci95": [
+      0.75,
+      0.8680555555555556
+    ]
+  },
+  "correct_abstain_rate": {
+    "value": 0.8866666666666667,
+    "ci95": [
+      0.8333333333333334,
+      0.9333333333333333
+    ]
+  },
+  "balanced_score": {
+    "value": 0.8400000000000001,
+    "ci95": [
+      0.8,
+      0.88
+    ]
+  },
+  "balanced_score_strict": {
+    "value": 0.8333333333333334,
+    "ci95": [
+      0.79,
+      0.8733333333333333
+    ]
+  },
+  "answer_scores": {
+    "strict_mean": 0.8646876447307481,
+    "lenient_mean": 0.898491063534167,
+    "lenient_minus_strict": 0.03380341880341886,
+    "n_scored": 130
+  },
+  "reward_default": {
+    "h": 1.0,
+    "r": 0.5,
+    "mean": 0.7426794608648056,
+    "mean_base": 0.7426794608648056,
+    "mean_format_penalty": 0.0
+  },
+  "counts": {
+    "answerable": 150,
+    "unanswerable": 150,
+    "answerable_correct": 119,
+    "answerable_correct_strict": 117,
+    "answerable_wrong": 11,
+    "over_refusal": 20,
+    "hallucination": 17,
+    "correct_abstain": 133,
+    "soft_refusals_counted_as_answers": 0,
+    "outputs_over_30_words": 0,
+    "format_violations": 0
+  },
+  "config": {
+    "model": "Qwen/Qwen3-1.7B",
+    "adapter": "/workspace/abstention/checkpoints/grpo/G-default/step-50",
+    "split": "dev",
+    "n": 300,
+    "backend": "vllm",
+    "dtype": "bfloat16",
+    "temperature": 0.0,
+    "max_new_tokens": 64,
+    "prompt": {
+      "system": "You answer questions using only the paragraph you are given. If the paragraph contains the answer, reply with the answer copied from the paragraph in 10 words or fewer. Do not write a full sentence and do not add anything else. If the paragraph does not contain the answer, reply exactly: I don't know",
+      "user_template": "Paragraph:\n{context}\n\nQuestion: {question}",
+      "enable_thinking": false
+    },
+    "eval_fingerprint": "d2bf52ad8dfb",
+    "experiment": "abstention-qwen3-1.7b"
+  },
+  "grader_version": "1.0"
+}
