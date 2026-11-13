@@ -206,6 +206,26 @@ def dev_run_name(name, step):
     return f"grpo-{name}-dev-s{step}"
 
 
+def finalize_stopped(cfg, name):
+    """train_summary.json for a run stopped before max_steps: its checkpoints are the step-<n> folders saved so far."""
+    out = cfg.checkpoints_dir / "grpo" / name
+    res = cfg.results_dir / f"grpo-{name}-train"
+    steps = sorted(int(d.name.split("-")[1]) for d in out.glob("step-*"))
+    if not steps:
+        raise SystemExit(f"no checkpoints under {out}")
+    shutil.rmtree(out / "trainer", ignore_errors=True)
+    _, pool_stats, _, _ = make_pool(cfg, cfg.results_dir)
+    h, r = run_settings(cfg, name)
+    g = cfg["grpo"]
+    summary = {"run": name, "learning_rate": run_learning_rate(cfg, name), "h": h, "r": r,
+               "model": cfg.model_id("main"), "start_adapter": str(cfg.checkpoints_dir / "sft" / "best"),
+               "trainer": "trl.GRPOTrainer", "grpo": {k: v for k, v in g.items() if k != "runs"},
+               "stopped_early": True, "stopped_after_step": steps[-1], "checkpoints": steps, "pool": pool_stats,
+               "eval_fingerprint": cfg.eval_fingerprint(), "grader_version": GRADER_VERSION}
+    json.dump(summary, open(res / "train_summary.json", "w"), indent=2)
+    print(f"{name}: stopped run finalized with checkpoints {steps}")
+
+
 def select(cfg, name) -> bool:
     from metrics import paired_auc_compare, paired_compare
     g = cfg["grpo"]
@@ -549,6 +569,7 @@ def main():
     p.add_argument("--dry-run", action="store_true", help="build trainer, run checks and the step-0 monitor")
     p.add_argument("--candidates", action="store_true", help="print the step of every saved checkpoint")
     p.add_argument("--select", action="store_true", help="pick the best checkpoint on dev and apply the gate")
+    p.add_argument("--finalize-stopped", action="store_true", help="write train_summary.json for a stopped run")
     args = p.parse_args()
     cfg = load_config(args.config)
     if args.pool:
@@ -567,6 +588,8 @@ def main():
     if args.candidates:
         s = json.load(open(cfg.results_dir / f"grpo-{args.run}-train" / "train_summary.json"))
         print("\n".join(str(x) for x in s["checkpoints"]))
+    elif args.finalize_stopped:
+        finalize_stopped(cfg, args.run)
     elif args.select:
         raise SystemExit(0 if select(cfg, args.run) else NOT_BETTER_THAN_SFT)
     else:
