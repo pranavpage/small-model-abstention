@@ -1,0 +1,102 @@
+{
+  "hallucination_rate": {
+    "value": 0.124,
+    "ci95": [
+      0.084,
+      0.168
+    ]
+  },
+  "over_refusal_rate": {
+    "value": 0.144,
+    "ci95": [
+      0.1,
+      0.188
+    ]
+  },
+  "answer_accuracy": {
+    "value": 0.796,
+    "ci95": [
+      0.744,
+      0.844
+    ]
+  },
+  "answer_accuracy_strict": {
+    "value": 0.776,
+    "ci95": [
+      0.724,
+      0.828
+    ]
+  },
+  "precision_when_answering": {
+    "value": 0.8122448979591836,
+    "ci95": [
+      0.7673399721334316,
+      0.8565573770491803
+    ]
+  },
+  "correct_abstain_rate": {
+    "value": 0.876,
+    "ci95": [
+      0.832,
+      0.916
+    ]
+  },
+  "balanced_score": {
+    "value": 0.8360000000000001,
+    "ci95": [
+      0.804,
+      0.868
+    ]
+  },
+  "balanced_score_strict": {
+    "value": 0.8260000000000001,
+    "ci95": [
+      0.792,
+      0.8580000000000001
+    ]
+  },
+  "answer_scores": {
+    "strict_mean": 0.9031680140934508,
+    "lenient_mean": 0.9308588072048049,
+    "lenient_minus_strict": 0.02769079311135403,
+    "n_scored": 214
+  },
+  "reward_default": {
+    "h": 1.0,
+    "r": 0.5,
+    "mean": 0.7384075694836564,
+    "mean_base": 0.7384075694836564,
+    "mean_format_penalty": 0.0
+  },
+  "counts": {
+    "answerable": 250,
+    "unanswerable": 250,
+    "answerable_correct": 199,
+    "answerable_correct_strict": 194,
+    "answerable_wrong": 15,
+    "over_refusal": 36,
+    "hallucination": 31,
+    "correct_abstain": 219,
+    "soft_refusals_counted_as_answers": 0,
+    "outputs_over_30_words": 0,
+    "format_violations": 0
+  },
+  "config": {
+    "model": "Qwen/Qwen3-1.7B",
+    "adapter": "/workspace/abstention/checkpoints/dpo-twin-out/best",
+    "split": "test",
+    "n": 500,
+    "backend": "vllm",
+    "dtype": "bfloat16",
+    "temperature": 0.0,
+    "max_new_tokens": 64,
+    "prompt": {
+      "system": "You answer questions using only the paragraph you are given. If the paragraph contains the answer, reply with the answer copied from the paragraph in 10 words or fewer. Do not write a full sentence and do not add anything else. If the paragraph does not contain the answer, reply exactly: I don't know",
+      "user_template": "Paragraph:\n{context}\n\nQuestion: {question}",
+      "enable_thinking": false
+    },
+    "eval_fingerprint": "d2bf52ad8dfb",
+    "experiment": "abstention-qwen3-1.7b"
+  },
+  "grader_version": "1.0"
+}

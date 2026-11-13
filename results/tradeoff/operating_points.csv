@@ -5,4 +5,6 @@ DPO v1,dpo-dev-lr5e-06-e1,0.0867,0.1933,0.0067,-0.0200,0.0800,on SFT's curve
 DPO v2,dpo-v2-dev-lr2e-05-e1,0.1200,0.1067,-0.0067,-0.0400,0.0267,on SFT's curve
 G-default best,grpo-G-default-dev-s200,0.0800,0.1733,-0.0400,-0.0733,0.0400,on SFT's curve
 G-equal best,grpo-G-equal-dev-s200,0.1133,0.1267,0.0067,-0.0667,0.0533,on SFT's curve
+Twin input,dpo-twin-dev-lr5e-06-e2,0.1133,0.1200,0.0000,-0.0733,0.0400,on SFT's curve
+Twin output,dpo-twin-out-dev-lr5e-06-e2,0.1133,0.1000,-0.0200,-0.1000,0.0200,on SFT's curve
 8B ceiling,ceiling-dev,0.3667,0.0200,-0.0067,-0.0467,0.0267,on SFT's curve

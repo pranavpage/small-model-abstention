@@ -1,0 +1,132 @@
+{
+  "variant": "dpo-twin",
+  "side": "input",
+  "model": "Qwen/Qwen3-1.7B",
+  "start_adapter": "/workspace/abstention/checkpoints/sft/best",
+  "trainer": "dpo_twin.TwinDPOTrainer (transformers.Trainer)",
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": "all-linear"
+  },
+  "dpo_twin": {
+    "twins": {
+      "min_similarity": 0.8,
+      "min_margin": 0.1,
+      "anchor_split": "dpo",
+      "exclude_splits": [
+        "sft",
+        "grpo",
+        "dev",
+        "test"
+      ],
+      "heldout": 200,
+      "seed": 1234
+    },
+    "max_answer_words": 10,
+    "beta": 0.1,
+    "epochs": 2,
+    "lr_scheduler": "linear",
+    "warmup_ratio": 0.1,
+    "per_device_batch_size": 2,
+    "grad_accum_steps": 4,
+    "max_length": 1024,
+    "probe_every": 10,
+    "seed": 1234,
+    "gate": {
+      "reference_dev_run": "sft-dev-e2",
+      "max_p": 0.1,
+      "min_gain": 0.02
+    }
+  },
+  "variant_config": {
+    "side": "input",
+    "learning_rates": [
+      5e-06,
+      2e-05
+    ],
+    "name": "dpo-twin"
+  },
+  "twins": 387,
+  "pairs": 774,
+  "heldout_twins": {
+    "sft": {
+      "auc": 0.9428,
+      "unanswerable_higher": 0.975,
+      "both_right_at_0.5": 0.78,
+      "mean_p_answerable": 0.145,
+      "mean_p_unanswerable": 0.8598
+    },
+    "best": {
+      "auc": 0.9475,
+      "unanswerable_higher": 0.97,
+      "both_right_at_0.5": 0.76,
+      "mean_p_answerable": 0.1224,
+      "mean_p_unanswerable": 0.8696
+    }
+  },
+  "training_twins_at_sft": {
+    "n": 387,
+    "prefers_answer_on_real": 0.7313,
+    "prefers_idk_on_edited": 0.9535,
+    "both": 0.6848
+  },
+  "runs": {
+    "lr5e-06": {
+      "learning_rate": 5e-06,
+      "train_seconds": 582,
+      "steps": 98,
+      "training_twins_at_end": {
+        "n": 387,
+        "prefers_answer_on_real": 0.814,
+        "prefers_idk_on_edited": 0.9509,
+        "both": 0.7649
+      }
+    },
+    "lr2e-05": {
+      "learning_rate": 2e-05,
+      "train_seconds": 583,
+      "steps": 98,
+      "training_twins_at_end": {
+        "n": 387,
+        "prefers_answer_on_real": 0.9483,
+        "prefers_idk_on_edited": 0.9302,
+        "both": 0.8786
+      }
+    }
+  },
+  "eval_fingerprint": "d2bf52ad8dfb",
+  "gpu": "NVIDIA RTX A5000",
+  "dev_balanced": {
+    "lr5e-06/epoch-1": 0.85,
+    "lr5e-06/epoch-2": 0.8500000000000001,
+    "lr2e-05/epoch-1": 0.8166666666666667,
+    "lr2e-05/epoch-2": 0.8200000000000001
+  },
+  "best": "lr5e-06/epoch-2",
+  "best_dev_run": "dpo-twin-dev-lr5e-06-e2",
+  "gate": {
+    "reference_dev_run": "sft-dev-e2",
+    "max_p": 0.1,
+    "min_gain": 0.02,
+    "diff": 0.01333333333333342,
+    "ci95": [
+      -0.0033333333333334103,
+      0.033333333333333215
+    ],
+    "mcnemar_p": 0.2890625,
+    "gained": 6,
+    "lost": 2,
+    "passes": false
+  },
+  "p_idk_auc_dev": {
+    "sft": 0.9373777777777778,
+    "best": 0.9397777777777778,
+    "diff": 0.0024000000000000687,
+    "ci95": [
+      -0.004977777777777748,
+      0.00986666666666669
+    ]
+  }
+}
