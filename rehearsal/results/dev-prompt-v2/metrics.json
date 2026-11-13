@@ -1,0 +1,95 @@
+{
+  "hallucination_rate": {
+    "value": 0.54,
+    "ci95": [
+      0.46,
+      0.62
+    ]
+  },
+  "over_refusal_rate": {
+    "value": 0.14,
+    "ci95": [
+      0.08666666666666667,
+      0.2
+    ]
+  },
+  "answer_accuracy": {
+    "value": 0.6333333333333333,
+    "ci95": [
+      0.56,
+      0.7068333333333309
+    ]
+  },
+  "answer_accuracy_strict": {
+    "value": 0.44666666666666666,
+    "ci95": [
+      0.36666666666666664,
+      0.5266666666666666
+    ]
+  },
+  "precision_when_answering": {
+    "value": 0.4523809523809524,
+    "ci95": [
+      0.4,
+      0.5090951178451177
+    ]
+  },
+  "correct_abstain_rate": {
+    "value": 0.45999999999999996,
+    "ci95": [
+      0.38,
+      0.54
+    ]
+  },
+  "balanced_score": {
+    "value": 0.5466666666666666,
+    "ci95": [
+      0.49000000000000005,
+      0.6033333333333333
+    ]
+  },
+  "balanced_score_strict": {
+    "value": 0.4533333333333333,
+    "ci95": [
+      0.39666666666666667,
+      0.51
+    ]
+  },
+  "answer_scores": {
+    "strict_mean": 0.5430855148247217,
+    "lenient_mean": 0.7397989321929739,
+    "lenient_minus_strict": 0.1967134173682522,
+    "n_scored": 129
+  },
+  "reward_default": {
+    "h": 1.0,
+    "r": 0.5,
+    "mean": 0.24144687417631208,
+    "mean_base": 0.24311354084297876,
+    "mean_format_penalty": -0.0016666666666666668
+  },
+  "counts": {
+    "answerable": 150,
+    "unanswerable": 150,
+    "answerable_correct": 95,
+    "answerable_correct_strict": 67,
+    "answerable_wrong": 34,
+    "over_refusal": 21,
+    "hallucination": 81,
+    "correct_abstain": 69,
+    "soft_refusals_counted_as_answers": 0,
+    "outputs_over_30_words": 1,
+    "format_violations": 1
+  },
+  "config": {
+    "model": "Qwen/Qwen3-0.6B",
+    "split": "dev",
+    "n": 300,
+    "device": "mps",
+    "dtype": "bfloat16",
+    "decoding": "greedy",
+    "max_new_tokens": 64,
+    "system_prompt": "You answer questions using only the paragraph you are given. If the paragraph contains the answer, reply with the answer copied from the paragraph in 10 words or fewer. Do not write a full sentence and do not add anything else. If the paragraph does not contain the answer, reply exactly: I don't know"
+  },
+  "grader_version": "1.0"
+}

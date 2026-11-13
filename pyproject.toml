@@ -1,0 +1,25 @@
+[project]
+name = "small-model-abstention"
+version = "0.2.0"
+description = "Teaching a small model when to say I don't know"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "numpy",
+]
+
+[project.optional-dependencies]
+# Installed on the RunPod pod only: `uv sync --extra gpu`
+gpu = [
+    "vllm>=0.33; sys_platform == 'linux'",
+    "torch",
+    "transformers>=4.51",
+    "datasets>=3.0",
+    "accelerate>=1.0",
+    "peft>=0.15",
+    "trl>=1.17",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]

@@ -1,0 +1,26 @@
+{
+  "dataset": "rajpurkar/squad_v2",
+  "seed": 1234,
+  "splits": {
+    "dev": {
+      "n": 300,
+      "sha256": "b3e4f7baeb6d9e54d19e5421abb62931fae373ebcb8485c40eb63cad15884c57"
+    },
+    "dpo": {
+      "n": 2000,
+      "sha256": "fa949c8673497da819c64bbace410da330f232ed0caf62f58d9e787e21753a40"
+    },
+    "grpo": {
+      "n": 1500,
+      "sha256": "a1e65a786e1b89174c3ef109b546b85d4ee6414f8699f8e3cb44b45364fcb442"
+    },
+    "sft": {
+      "n": 3000,
+      "sha256": "bfd1f7978e97d50abbcfbaab3758a88dd482dff67ca3f652a598fa3518124f39"
+    },
+    "test": {
+      "n": 500,
+      "sha256": "b0fc0aef07a260cca585f620689980d76cf3885854c827fb213ae3d4e0f8bfb9"
+    }
+  }
+}
