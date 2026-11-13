@@ -16,13 +16,15 @@ Everything runs on a RunPod GPU pod. The laptop only edits code and `config.json
 | `freeze_grader.py`, `fixtures/` | Golden fixture that freezes the grader |
 | `test_grader.py`, `test_pipeline.py` | CPU tests, run locally and on the pod |
 | `scripts/pod_setup.sh` | Pod setup: clone, venv, GPU check, tests |
+| `helpers/` | Laptop-side scripts that drive the pod over RunPod's proxy SSH (`pod.sh`, `pod_job.sh`, `pod_log.sh`, `pod_wait.sh`, `pull_results.sh`) and the on-pod run scripts they ship (`run_baselines.sh`, `run_ceiling.sh`) |
+| `results/` | Copies of every pod run (`metrics.json`, `handcheck.jsonl`, `outputs.jsonl`), pulled with `helpers/pull_results.sh` |
 | `rehearsal/` | Qwen3-0.6B rehearsal results (local MPS, transformers backend) and split hashes |
 
 On the pod, `/workspace` is the 50 GB network volume:
 
 ```
 /workspace/code         repo checkout
-/workspace/venv         Python env (uv)
+/workspace/venv         Python env (uv); uv's download cache stays on the container disk (/root/.cache/uv)
 /workspace/hf           Hugging Face model cache
 /workspace/abstention/  paths.root: data/, results/<run>/, checkpoints/
 ```
@@ -79,8 +81,19 @@ Done when: the 2×2 for both models exists and 50 rows of `handcheck.jsonl` were
 uv run python eval.py --model main --adapter checkpoints/sft/best --split test --run sft
 ```
 
+## Driving the pod from the laptop
+
+RunPod's proxy SSH (`<pod>@ssh.runpod.io`) only offers an interactive terminal; `helpers/pod.sh` works around that.
+
+```bash
+export POD_HOST=<pod-id>-<suffix>@ssh.runpod.io          # from the pod's Connect tab
+helpers/pod.sh 'nvidia-smi'                              # short command
+helpers/pod_job.sh ceiling "$(cat helpers/run_ceiling.sh)"   # long job, detached, log in /workspace/abstention/logs/
+helpers/pod_wait.sh ceiling                              # block until it stops, print the log tail
+```
+
 ## Copying results back
 
-Results live on the network volume. To pull them to the laptop, from the pod: `runpodctl send /workspace/abstention/results` and on the laptop `runpodctl receive <code>`. Or commit the small `metrics.json`/`handcheck.jsonl` files.
+`helpers/pull_results.sh [run ...]` copies `metrics.json`, `handcheck.jsonl` and `outputs.jsonl` for each run into `results/<run>/` in the repo. Commit them.
 
 Stop the pod between steps; the volume keeps everything.
