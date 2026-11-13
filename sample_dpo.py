@@ -1,7 +1,11 @@
-"""Sample the SFT model on the DPO split and count the preference pairs it would give (runs on the RunPod GPU).
+"""Sample the SFT model on a split, grade every output, and count the DPO preference pairs (runs on the RunPod GPU).
 
 For every question: one greedy output (the eval decoding, so its mistakes are comparable to test) and
-dpo.samples_per_question samples at dpo.sample_temperature. Every output is graded with the frozen grader.
+--n samples at --temperature (defaults: dpo.samples_per_question at dpo.sample_temperature). Every output is
+graded with the frozen grader. GRPO uses the same script on the grpo split (8 samples at grpo.temperature) to
+find the questions whose rollouts disagree; --recheck-n draws a second, independent set of samples per question
+("recheck") that is never used for filtering, only to measure how many kept questions are still zero-variance on
+a fresh draw.
 
 A pair needs a rejected output the model actually produced:
   unanswerable  chosen "I don't know"                    rejected  a sampled answer (hallucination)
@@ -15,6 +19,7 @@ Writes <results_dir>/<run>/samples.jsonl (one row per question) and pair_counts.
 Usage (on the pod):
   python sample_dpo.py --adapter checkpoints/sft/best --run dpo-samples
   python sample_dpo.py --run dpo-samples --recount     # recount from saved samples, no GPU
+  python sample_dpo.py --split grpo --n 8 --recheck-n 8 --temperature 1.0 --run grpo-samples
 """
 
 import argparse
@@ -28,11 +33,11 @@ from grader import ABSTAIN, GRADER_VERSION, grade
 from prompts import render
 
 
-def generate(cfg, model_id, adapter, rows):
+def generate(cfg, model_id, adapter, rows, n, temperature, recheck_n=0):
     from vllm import LLM, SamplingParams
     from vllm.lora.request import LoRARequest
 
-    v, d, e = cfg["vllm"], cfg["dpo"], cfg["eval"]
+    v, e = cfg["vllm"], cfg["eval"]
     llm = LLM(model=model_id, dtype=v["dtype"], max_model_len=v["max_model_len"],
               gpu_memory_utilization=v["gpu_memory_utilization"], enable_lora=adapter is not None,
               max_lora_rank=v["max_lora_rank"], seed=e["seed"])
@@ -41,12 +46,12 @@ def generate(cfg, model_id, adapter, rows):
     t0 = time.time()
     greedy = llm.generate(prompts, SamplingParams(temperature=e["temperature"], max_tokens=e["max_new_tokens"]),
                           lora_request=lora)
-    sampled = llm.generate(prompts, SamplingParams(n=d["samples_per_question"], temperature=d["sample_temperature"],
+    sampled = llm.generate(prompts, SamplingParams(n=n + recheck_n, temperature=temperature,
                                                    max_tokens=e["max_new_tokens"], seed=e["seed"]),
                            lora_request=lora)
-    print(f"generated {len(rows)} greedy + {len(rows) * d['samples_per_question']} samples in {time.time() - t0:.0f}s")
-    return ([o.outputs[0].text.strip() for o in greedy],
-            [[c.text.strip() for c in o.outputs] for o in sampled])
+    print(f"generated {len(rows)} greedy + {len(rows) * (n + recheck_n)} samples in {time.time() - t0:.0f}s")
+    texts = [[c.text.strip() for c in o.outputs] for o in sampled]
+    return [o.outputs[0].text.strip() for o in greedy], [t[:n] for t in texts], [t[n:] for t in texts]
 
 
 def graded(text, row):
@@ -100,9 +105,14 @@ def main():
     p.add_argument("--model", default="main")
     p.add_argument("--adapter", default="checkpoints/sft/best")
     p.add_argument("--split", default="dpo")
+    p.add_argument("--n", type=int, help="samples per question (default dpo.samples_per_question)")
+    p.add_argument("--temperature", type=float, help="sampling temperature (default dpo.sample_temperature)")
+    p.add_argument("--recheck-n", type=int, default=0, help="extra independent samples per question, stored apart")
     p.add_argument("--recount", action="store_true", help="recount pairs from saved samples.jsonl")
     args = p.parse_args()
     cfg = load_config(args.config)
+    n = args.n or cfg["dpo"]["samples_per_question"]
+    temperature = cfg["dpo"]["sample_temperature"] if args.temperature is None else args.temperature
     out_dir = cfg.results_dir / args.run
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -116,11 +126,13 @@ def main():
         adapter = adapter if adapter.is_absolute() else cfg.root / adapter
         model_id = cfg.model_id(args.model)
         print(f"model={model_id} adapter={adapter} split={args.split} n={len(data)} run={args.run}")
-        greedy, samples = generate(cfg, model_id, adapter, data)
+        greedy, samples, recheck = generate(cfg, model_id, adapter, data, n, temperature, args.recheck_n)
         rows = []
-        for d, g, ss in zip(data, greedy, samples):
+        for d, g, ss, rc in zip(data, greedy, samples, recheck):
             r = {"id": d["id"], "question": d["question"], "answerable": d["answerable"], "gold": d["answers"],
                  "greedy": graded(g, d), "samples": [graded(s, d) for s in ss]}
+            if rc:
+                r["recheck"] = [graded(s, d) for s in rc]
             r["pairs"] = pairs_for(r)
             rows.append(r)
         with open(out_dir / "samples.jsonl", "w") as f:
@@ -129,8 +141,9 @@ def main():
 
     counts = count(rows)
     counts["config"] = {"model": cfg.model_id(args.model), "adapter": args.adapter, "split": args.split,
-                        "samples_per_question": cfg["dpo"]["samples_per_question"],
-                        "sample_temperature": cfg["dpo"]["sample_temperature"],
+                        "samples_per_question": len(rows[0]["samples"]),
+                        "recheck_samples_per_question": len(rows[0].get("recheck", [])),
+                        "sample_temperature": temperature,
                         "max_new_tokens": cfg["eval"]["max_new_tokens"], "grader_version": GRADER_VERSION}
     json.dump(counts, open(out_dir / "pair_counts.json", "w"), indent=2)
     print(json.dumps(counts, indent=2))
