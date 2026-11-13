@@ -2,10 +2,10 @@
   "grader_version": "1.0",
   "totals": {
     "dev": {
-      "answerable_outputs": 2850,
-      "score_changed": 54,
-      "cell_flips": 10,
-      "misgraded_by_v1": 10
+      "answerable_outputs": 3750,
+      "score_changed": 72,
+      "cell_flips": 15,
+      "misgraded_by_v1": 15
     },
     "test": {
       "answerable_outputs": 1500,
@@ -124,6 +124,37 @@
           "dash_as_space_cell": "correct",
           "v1_lenient": 0.0,
           "dash_as_space_lenient": 0.5
+        }
+      ],
+      "misgraded_by_v1": 2
+    },
+    "ceiling-dev": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 5,
+      "cell_flips": 2,
+      "flips": [
+        {
+          "id": "56e0815f231d4119001ac21d",
+          "gold": [
+            "ADSL"
+          ],
+          "output": "ADSL-broadband service is provided on the island.",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        },
+        {
+          "id": "56e1b646e3433e14004230cd",
+          "gold": [
+            "Hargeisa"
+          ],
+          "output": "Hargeisa-based telecommunications firm",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
         }
       ],
       "misgraded_by_v1": 2
@@ -336,6 +367,82 @@
       ],
       "misgraded_by_v1": 1
     },
+    "grpo-G-equal-dev-s100": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "grpo-G-equal-dev-s150": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e1b646e3433e14004230cd",
+          "gold": [
+            "Hargeisa"
+          ],
+          "output": "Hargeisa-based",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "grpo-G-equal-dev-s200": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e1b646e3433e14004230cd",
+          "gold": [
+            "Hargeisa"
+          ],
+          "output": "Hargeisa-based",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "grpo-G-equal-dev-s250": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e1b646e3433e14004230cd",
+          "gold": [
+            "Hargeisa"
+          ],
+          "output": "Hargeisa-based",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "grpo-G-equal-dev-s50": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
     "sft": {
       "split": "test",
       "answerable_outputs": 250,
@@ -408,7 +515,8 @@
       "gold": "ADSL",
       "output": "ADSL-broadband service is provided on the island.",
       "runs": [
-        "baseline-0.6b-dev"
+        "baseline-0.6b-dev",
+        "ceiling-dev"
       ],
       "v1_wrong": true,
       "reason": "right content in a sentence (the format rule, not the 2x2, covers sentences)"
@@ -417,7 +525,10 @@
       "gold": "Hargeisa",
       "output": "Hargeisa-based",
       "runs": [
-        "baseline-dev"
+        "baseline-dev",
+        "grpo-G-equal-dev-s150",
+        "grpo-G-equal-dev-s200",
+        "grpo-G-equal-dev-s250"
       ],
       "v1_wrong": true,
       "reason": "gold span plus a hyphenated suffix"
@@ -439,6 +550,15 @@
       ],
       "v1_wrong": true,
       "reason": "right answer (10 = ten); v1.0 misses it because 'ten-horsepower' becomes one token, and dashes-as-spaces credits it only through the word 'horsepower'"
+    },
+    {
+      "gold": "Hargeisa",
+      "output": "Hargeisa-based telecommunications firm",
+      "runs": [
+        "ceiling-dev"
+      ],
+      "v1_wrong": true,
+      "reason": "gold span plus a hyphenated suffix"
     },
     {
       "gold": "ADSL",

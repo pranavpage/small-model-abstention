@@ -1,0 +1,56 @@
+{
+  "answerable": {
+    "questions": 750,
+    "questions_with_pair": 204,
+    "questions_with_on_policy_pair": 105,
+    "questions_by_rejected_kind": {
+      "wrong": 97,
+      "over_refusal": 129
+    },
+    "unique_pairs": 501,
+    "bad_samples": 1135,
+    "greedy_cells": {
+      "correct": 612,
+      "wrong": 39,
+      "over_refusal": 99
+    },
+    "sample_cells": {
+      "correct": 4865,
+      "wrong": 380,
+      "over_refusal": 755
+    }
+  },
+  "unanswerable": {
+    "questions": 750,
+    "questions_with_pair": 83,
+    "questions_with_on_policy_pair": 46,
+    "questions_by_rejected_kind": {
+      "hallucination": 83
+    },
+    "unique_pairs": 147,
+    "bad_samples": 431,
+    "greedy_cells": {
+      "correct_abstain": 699,
+      "hallucination": 51
+    },
+    "sample_cells": {
+      "correct_abstain": 5569,
+      "hallucination": 431
+    }
+  },
+  "total": {
+    "questions_with_pair": 287,
+    "questions_with_on_policy_pair": 151,
+    "unique_pairs": 648
+  },
+  "config": {
+    "model": "Qwen/Qwen3-1.7B",
+    "adapter": "checkpoints/grpo/G-equal/best",
+    "split": "grpo",
+    "samples_per_question": 8,
+    "recheck_samples_per_question": 0,
+    "sample_temperature": 1.0,
+    "max_new_tokens": 64,
+    "grader_version": "1.0"
+  }
+}

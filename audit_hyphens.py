@@ -34,6 +34,7 @@ VERDICTS = {
     ("ADSL", "ADSL-broadband service is provided on the island."): (True, "right content in a sentence (the format "
                                                                           "rule, not the 2x2, covers sentences)"),
     ("Hargeisa", "Hargeisa-based"): (True, "gold span plus a hyphenated suffix"),
+    ("Hargeisa", "Hargeisa-based telecommunications firm"): (True, "gold span plus a hyphenated suffix"),
 }
 
 
@@ -97,6 +98,34 @@ def main():
         lines.append(f"| {g} | {o} | {x['v1_cell']} ({x['v1_lenient']:.2f}) | {x['dash_as_space_cell']} "
                      f"({x['dash_as_space_lenient']:.2f}) | {'yes' if VERDICTS[(g, o)][0] else 'no'}: "
                      f"{VERDICTS[(g, o)][1]} | {', '.join(rs)} |")
+    # Ranking check on the final model set: balanced score with v1.0 cells vs with every v1.0 misgrade corrected.
+    from final_analysis import models
+    lines += ["", "## Does correcting the misgrades change any ranking?", "",
+              "| Model | Split | Misgraded | Balanced (v1.0) | Balanced (misgrades corrected) |", "|---|---|---|---|---|"]
+    ranks = {}
+    for split, col in (("dev", 1), ("test", 2)):
+        scores = {}
+        for m in models():
+            run = m[col]
+            if not run:
+                continue
+            fixed = {x["id"] for x in runs[run]["flips"] if VERDICTS[(x["gold"][0], x["output"])][0]}
+            rs = [json.loads(l) for l in open(HERE / "results" / run / "outputs.jsonl")]
+            right = lambda r, fix: (r["cell"] in ("correct", "correct_abstain")) != (fix and r["id"] in fixed)
+            a = [r for r in rs if r["answerable"]]
+            u = [r for r in rs if not r["answerable"]]
+            bal = lambda fix: (sum(right(r, fix) for r in a) / len(a) + sum(right(r, fix) for r in u) / len(u)) / 2
+            scores[m[0]] = (bal(False), bal(True))
+            lines.append(f"| {m[0]} | {split} | {len(fixed)} | {100 * bal(False):.2f} | {100 * bal(True):.2f} |")
+        names = list(scores)
+        flips = [(x, y) for x in names for y in names
+                 if scores[x][0] > scores[y][0] + 1e-9 and scores[y][1] > scores[x][1] + 1e-9]
+        ties_broken = [(x, y) for x in names for y in names if abs(scores[x][0] - scores[y][0]) < 1e-9
+                       and scores[x][1] > scores[y][1] + 1e-9]
+        ranks[split] = (flips, ties_broken)
+    for split, (flips, ties) in ranks.items():
+        lines.append(f"\n{split}: {'no strict reversal' if not flips else 'REVERSED: ' + '; '.join(f'{x} vs {y}' for x, y in flips)}"
+                     + ("" if not ties else "; ties broken: " + "; ".join(f"{x} now above {y}" for x, y in ties)))
     lines += ["", "Runs with a flip: " + ", ".join(f"{k} ({v['cell_flips']})" for k, v in runs.items() if v["cell_flips"]),
               "", "Same-question flips cancel in paired comparisons between models that both made them."]
     (out / "hyphens.md").write_text("\n".join(lines) + "\n")

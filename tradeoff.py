@@ -31,6 +31,7 @@ MODELS = [  # (label, dev run)
     ("DPO v2", "dpo-v2-dev-lr2e-05-e1"),
     ("G-default best", "grpo-G-default-dev-s200"),
     ("G-equal best", None),  # filled from results/grpo-G-equal-train/train_summary.json when it exists
+    ("8B ceiling", "ceiling-dev"),
 ]
 
 
@@ -78,6 +79,9 @@ def main():
                 print(f"skipping {label}: not selected yet")
                 continue
             run = f"grpo-G-equal-dev-s{json.load(open(s))['best_step']}"
+        if not (res / run / "outputs.jsonl").exists():
+            print(f"skipping {label}: {run} not found")
+            continue
         rows = {r["id"]: r for r in map(json.loads, open(res / run / "outputs.jsonl"))}
         assert rows.keys() == ref.keys(), f"{run} covers different questions"
         models.append({"label": label, "run": run,
@@ -115,8 +119,15 @@ def main():
     lines += ["", "| Cut-off | Hallucination | Over-refusal |", "|---|---|---|"]
     lines += [f"| {c['cutoff']:.2f} | {100*c['hallucination']:.1f}% | {100*c['over_refusal']:.1f}% |" for c in out["curve"]]
     (dst / "tradeoff.md").write_text("\n".join(lines) + "\n")
+    with open(dst / "curve.csv", "w") as f:
+        f.write("cutoff,hallucination_rate,over_refusal_rate\n")
+        f.writelines(f"{c['cutoff']:.2f},{c['hallucination']:.4f},{c['over_refusal']:.4f}\n" for c in out["curve"])
+    with open(dst / "operating_points.csv", "w") as f:
+        f.write("model,dev_run,hallucination_rate,over_refusal_rate,gap_to_sft_curve,gap_ci95_low,gap_ci95_high,verdict\n")
+        f.writelines(f"{m['label']},{m['run']},{m['hallucination']:.4f},{m['over_refusal']:.4f},{m['gap']:.4f},"
+                     f"{m['gap_ci95'][0]:.4f},{m['gap_ci95'][1]:.4f},{m['verdict']}\n" for m in out["models"])
     plot(out, dst / "tradeoff.png")
-    print(f"wrote {dst}/tradeoff.png, tradeoff.json, tradeoff.md")
+    print(f"wrote {dst}/tradeoff.png, tradeoff.json, tradeoff.md, curve.csv, operating_points.csv")
 
 
 def plot(out, path):
@@ -142,18 +153,20 @@ def plot(out, path):
                 arrowprops={"arrowstyle": "-", "color": series, "lw": 1})
     xmax = 30
     offsets = {"SFT": (9, 6, "left"), "DPO v1": (9, 2, "left"), "DPO v2": (-9, -12, "right"),
-               "G-default best": (-9, -4, "right"), "G-equal best": (-9, 8, "right")}
+               "G-default best": (-9, -4, "right"), "G-equal best": (-55, -4, "right"), "8B ceiling": (-9, 8, "right")}
     for m in out["models"]:
         x, y = 100 * m["hallucination"], 100 * m["over_refusal"]
         sign = lambda v: f"{v:+.1f}".replace("-", "\u2212")
         if x > xmax:  # off-chart: pointer at the right edge
-            ax.annotate(f"{m['label']} ({sign(100 * m['gap'])}) at {x:.1f}%  \u2192", (xmax, y), xytext=(-4, 22),
+            ax.annotate(f"{m['label']} ({sign(100 * m['gap'])}): off chart at {x:.1f}%, {y:.1f}%  \u2192", (xmax, y),
+                        xytext=(-4, 10),
                         textcoords="offset points", fontsize=9, color=ink, ha="right", va="center")
             continue
         ax.scatter([x], [y], s=64, color=ink, edgecolor=surface, linewidth=2, zorder=4)
         dx, dy, ha = offsets.get(m["label"], (8, 4, "left"))
+        leader = {"arrowstyle": "-", "color": ink2, "lw": 0.8, "shrinkA": 2, "shrinkB": 5} if abs(dx) > 20 else None
         ax.annotate(f"{m['label']} ({sign(100 * m['gap'])})", (x, y), xytext=(dx, dy), textcoords="offset points",
-                    fontsize=9, color=ink, ha=ha, va="center")
+                    fontsize=9, color=ink, ha=ha, va="center", arrowprops=leader)
     ax.set_xlabel("Hallucination rate on unanswerable dev questions (%)", color=ink2, fontsize=10)
     ax.set_ylabel("Over-refusal rate on answerable dev questions (%)", color=ink2, fontsize=10)
     ax.set_title("Dev: SFT's tradeoff curve vs each model's operating point\n"
