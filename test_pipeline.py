@@ -164,8 +164,34 @@ def test_dpo_pairs_filter_partial_spans_and_balance():
             assert p["chosen"] == ABSTAIN and p["rejected"] != ABSTAIN
 
 
-def test_dpo_candidates_cover_every_lr_and_epoch(cfg):
+def test_dpo_idk_balanced_pairs_have_equal_idk_chosen_and_rejected():
+    from dpo import build_pairs
+    rows = [
+        _sample_row("a1", True, ["ADSL"], ["ADSL", ABSTAIN, "cable", "cable"]),  # 1 IDK-rejected + 1 wrong pair
+        _sample_row("a2", True, ["John"], [ABSTAIN, "Geoffrey", ABSTAIN, "Henry II"]),  # 1 IDK + 2 wrong
+        _sample_row("a3", True, ["Rome"], [ABSTAIN, "Rome", "Rome", ABSTAIN]),  # 1 IDK
+        _sample_row("u1", False, [], ["Paris", ABSTAIN, "Lyon", "Nice"]),  # 3 hallucination pairs
+        _sample_row("u2", False, [], ["1925", ABSTAIN, ABSTAIN, ABSTAIN]),  # 1
+    ]
+    pairs, stats = build_pairs(rows, max_answer_words=10, seed=0, mode="idk_balanced")
+    assert stats["idk_chosen"] == stats["idk_rejected"] == 3  # min(3 IDK-rejected, 4 unanswerable)
+    assert stats["answerable_rejected"] == {"over_refusal": 3, "wrong": 3}  # all wrong pairs kept
+    assert stats["pairs"] == 9
+
+
+def test_dpo_variants_and_candidates(cfg):
     from dpo import candidates
     d = cfg["dpo"]
-    assert len(candidates(cfg)) == len(d["learning_rates"]) * d["epochs"]
-    assert len({t for t, _ in candidates(cfg)}) == len(d["learning_rates"])
+    for name, v in d["variants"].items():
+        assert v["pair_mode"] in ("class_balanced", "idk_balanced")
+        c = candidates(cfg, name)
+        assert len(c) == len(v["learning_rates"]) * d["epochs"] and len({t for t, _ in c}) == len(v["learning_rates"])
+    assert d["variants"]["dpo"]["learning_rates"] == [5e-6, 5e-5]  # the first variant, already run: keep it reproducible
+
+
+def test_dpo_first_variant_pairs_reproduce():
+    """The committed pairs of the first DPO variant must be rebuilt byte-identically from the committed samples."""
+    from dpo import build_pairs
+    samples = [json.loads(l) for l in open(HERE / "results" / "dpo-samples" / "samples.jsonl")]
+    committed = [json.loads(l) for l in open(HERE / "results" / "dpo-train" / "pairs.jsonl")]
+    assert build_pairs(samples, 10, 1234, "class_balanced")[0] == committed

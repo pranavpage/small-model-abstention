@@ -70,13 +70,17 @@
     "max_answer_words": 10,
     "beta": 0.1,
     "epochs": 2,
-    "learning_rates": [0.000005, 0.00005],
     "lr_scheduler": "linear",
     "warmup_ratio": 0.1,
     "per_device_batch_size": 4,
     "grad_accum_steps": 4,
     "max_length": 1024,
-    "seed": 1234
+    "idk_probe_every": 5,
+    "seed": 1234,
+    "variants": {
+      "dpo":    { "pair_mode": "class_balanced", "learning_rates": [0.000005, 0.00005] },
+      "dpo-v2": { "pair_mode": "idk_balanced",   "learning_rates": [0.000005, 0.00002] }
+    }
   },
 
   "grpo": {
