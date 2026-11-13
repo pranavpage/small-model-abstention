@@ -53,9 +53,14 @@
   "sft": {
     "epochs": 2,
     "learning_rate": 0.0002,
-    "per_device_batch_size": 16,
-    "grad_accum_steps": 1,
-    "loss_on_answer_only": true
+    "lr_scheduler": "linear",
+    "warmup_ratio": 0.03,
+    "per_device_batch_size": 8,
+    "grad_accum_steps": 2,
+    "max_length": 1024,
+    "loss_on_answer_only": true,
+    "max_answer_words": 10,
+    "seed": 1234
   },
 
   "dpo": {
