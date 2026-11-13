@@ -1,0 +1,78 @@
+{
+  "variant": "dpo-v2",
+  "model": "Qwen/Qwen3-1.7B",
+  "start_adapter": "/workspace/abstention/checkpoints/sft/best",
+  "trainer": "trl.DPOTrainer",
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": "all-linear"
+  },
+  "dpo": {
+    "samples_per_question": 4,
+    "sample_temperature": 1.0,
+    "samples_run": "dpo-samples",
+    "max_answer_words": 10,
+    "beta": 0.1,
+    "epochs": 2,
+    "lr_scheduler": "linear",
+    "warmup_ratio": 0.1,
+    "per_device_batch_size": 4,
+    "grad_accum_steps": 4,
+    "max_length": 1024,
+    "idk_probe_every": 5,
+    "seed": 1234
+  },
+  "variant_config": {
+    "pair_mode": "idk_balanced",
+    "learning_rates": [
+      5e-06,
+      2e-05
+    ],
+    "name": "dpo-v2"
+  },
+  "pairs": {
+    "dropped_partial_span_rejected": 114,
+    "dropped_long_gold_questions": 16,
+    "answerable_pairs_before_balancing": 405,
+    "unanswerable_pairs_before_balancing": 279,
+    "pair_mode": "idk_balanced",
+    "pairs": 657,
+    "answerable_pairs": 405,
+    "unanswerable_pairs": 252,
+    "questions": 510,
+    "idk_chosen": 252,
+    "idk_rejected": 252,
+    "answerable_rejected": {
+      "over_refusal": 252,
+      "wrong": 153
+    },
+    "answerable_chosen_source": {
+      "sampled": 263,
+      "gold": 142
+    },
+    "samples_sha256": "5b6721cdce6c0f30554a33230abcfd77cb607218c9b2429136723d69562a1f80"
+  },
+  "runs": {
+    "lr5e-06": {
+      "learning_rate": 5e-06,
+      "train_seconds": 532
+    },
+    "lr2e-05": {
+      "learning_rate": 2e-05,
+      "train_seconds": 535
+    }
+  },
+  "eval_fingerprint": "d2bf52ad8dfb",
+  "gpu": "NVIDIA RTX A5000",
+  "dev_balanced": {
+    "lr5e-06/epoch-1": 0.8366666666666667,
+    "lr5e-06/epoch-2": 0.84,
+    "lr2e-05/epoch-1": 0.8433333333333333,
+    "lr2e-05/epoch-2": 0.8366666666666667
+  },
+  "best": "lr2e-05/epoch-1",
+  "sft_dev_balanced": 0.8366666666666667,
+  "best_beats_sft_on_dev": true
+}
