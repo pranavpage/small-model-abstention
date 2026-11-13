@@ -16,7 +16,8 @@ Everything runs on a RunPod GPU pod. The laptop only edits code and `config.json
 | `freeze_grader.py`, `fixtures/` | Golden fixture that freezes the grader |
 | `test_grader.py`, `test_pipeline.py` | CPU tests, run locally and on the pod |
 | `scripts/pod_setup.sh` | Pod setup: clone, venv, GPU check, tests |
-| `helpers/` | Laptop-side scripts that drive the pod over RunPod's proxy SSH (`pod.sh`, `pod_job.sh`, `pod_log.sh`, `pod_wait.sh`, `pull_results.sh`) and the on-pod run scripts they ship (`run_baselines.sh`, `run_ceiling.sh`) |
+| `sft.py` | Stage 2: LoRA SFT with TRL `SFTTrainer`, per-epoch adapters, best-epoch selection on dev |
+| `helpers/` | Laptop-side scripts that drive the pod over RunPod's proxy SSH (`pod.sh`, `pod_job.sh`, `pod_log.sh`, `pod_wait.sh`, `pull_results.sh`, `sync_code.sh`) and the on-pod run scripts they ship (`run_baselines.sh`, `run_ceiling.sh`, `run_sft.sh`) |
 | `results/` | Copies of every pod run (`metrics.json`, `handcheck.jsonl`, `outputs.jsonl`), pulled with `helpers/pull_results.sh` |
 | `rehearsal/` | Qwen3-0.6B rehearsal results (local MPS, transformers backend) and split hashes |
 
@@ -73,13 +74,26 @@ Quick smoke test first if anything changed: `uv run python eval.py --model debug
 
 Done when: the 2×2 for both models exists and 50 rows of `handcheck.jsonl` were read by hand with at most 2 disagreements.
 
-## 3. Later stages
+## 3. SFT
 
-`sft.py`, `dpo.py`, `grpo.py`, `report.py`: not written yet. They read their sections of `config.json` and write adapters to `checkpoints/<stage>/`, evaluated with:
+`sft.py` trains a LoRA adapter with TRL's `SFTTrainer` on a prompt/completion dataset. The prompt is the exact eval string from `prompts.render()`, and the loss covers only the target plus `<|im_end|>`. Targets are the gold span, or `I don't know` for unanswerable questions. Rows whose answer is longer than `sft.max_answer_words` (10) are dropped, along with the same number of random unanswerable rows, so the set stays 50/50 (3,000 → 2,870). An adapter is saved after each epoch to `checkpoints/sft/epoch-<n>/`.
 
 ```bash
-uv run python eval.py --model main --adapter checkpoints/sft/best --split test --run sft
+uv run python sft.py --dry-run     # prints the tokenized examples and the loss mask, no training
 ```
+
+From the laptop, the whole stage: train → dev eval per epoch (`sft-dev-e<n>`) → `sft.py --select` copies the best dev balanced score to `checkpoints/sft/best` → test eval once (`sft`):
+
+```bash
+helpers/sync_code.sh                                  # ship this checkout's code to /workspace/code
+helpers/pod_job.sh sft "$(cat helpers/run_sft.sh)"
+helpers/pod_wait.sh sft
+helpers/pull_results.sh sft-train sft-dev-e1 sft-dev-e2 sft
+```
+
+## 4. Later stages
+
+`dpo.py`, `grpo.py`, `report.py`: not written yet. DPO and GRPO start from `checkpoints/sft/best`.
 
 ## Driving the pod from the laptop
 
