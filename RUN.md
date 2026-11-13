@@ -17,7 +17,7 @@ Everything runs on a RunPod GPU pod. The laptop only edits code and `config.json
 | `test_grader.py`, `test_pipeline.py` | CPU tests, run locally and on the pod |
 | `scripts/pod_setup.sh` | Pod setup: clone, venv, GPU check, tests |
 | `sft.py` | Stage 2: LoRA SFT with TRL `SFTTrainer`, per-epoch adapters, best-epoch selection on dev |
-| `helpers/` | Laptop-side scripts that drive the pod over RunPod's proxy SSH (`pod.sh`, `pod_job.sh`, `pod_log.sh`, `pod_wait.sh`, `pull_results.sh`, `sync_code.sh`) and the on-pod run scripts they ship (`run_baselines.sh`, `run_ceiling.sh`, `run_sft.sh`) |
+| `helpers/` | Laptop-side scripts that drive the pod over RunPod's proxy SSH (`pod.sh`, `pod_job.sh`, `pod_log.sh`, `pod_wait.sh`, `pull_results.sh`) and the on-pod run scripts they ship (`run_baselines.sh`, `run_ceiling.sh`, `run_sft.sh`) |
 | `results/` | Copies of every pod run (`metrics.json`, `handcheck.jsonl`, `outputs.jsonl`), pulled with `helpers/pull_results.sh` |
 | `rehearsal/` | Qwen3-0.6B rehearsal results (local MPS, transformers backend) and split hashes |
 
@@ -85,7 +85,8 @@ uv run python sft.py --dry-run     # prints the tokenized examples and the loss 
 From the laptop, the whole stage: train → dev eval per epoch (`sft-dev-e<n>`) → `sft.py --select` copies the best dev balanced score to `checkpoints/sft/best` → test eval once (`sft`):
 
 ```bash
-helpers/sync_code.sh                                  # ship this checkout's code to /workspace/code
+git push origin <branch>                              # code reaches the pod only through git
+helpers/pod.sh 'BRANCH=<branch> bash /workspace/code/scripts/pod_setup.sh'
 helpers/pod_job.sh sft "$(cat helpers/run_sft.sh)"
 helpers/pod_wait.sh sft
 helpers/pull_results.sh sft-train sft-dev-e1 sft-dev-e2 sft
