@@ -1,0 +1,657 @@
+{"id": "56dde8e466d3e219004dade3", "answerable": true, "chosen": "Croatia", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5acd745d07355d001abf4310", "answerable": false, "chosen": "I don't know", "rejected": "walking", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57260d63271a42140099d3f8", "answerable": true, "chosen": "Korean Conflict", "rejected": "H\u00e1n Zh\u00e0n", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "572662b9708984140094c46f", "answerable": true, "chosen": "Regularity", "rejected": "Regular is", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a515fcbce860b001aa3fd5d", "answerable": false, "chosen": "I don't know", "rejected": "independent \"Saarland\",", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "571e05c9b64a571400c71e68", "answerable": true, "chosen": "\"tragic octoroon\"", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5acf6cae77cf76001a684de5", "answerable": false, "chosen": "I don't know", "rejected": "Muhammad", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a3a13d62f14dd001ac726e4", "answerable": false, "chosen": "I don't know", "rejected": "complex carbohydrates", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5730a045069b5314008321d1", "answerable": true, "chosen": "Latin, Turkish and Italian", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572f384404bcaa1900d76793", "answerable": true, "chosen": "1909", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "570c4d2dfed7b91900d45874", "answerable": true, "chosen": "John", "rejected": "Geoffrey", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5acfc4ee77cf76001a685e0b", "answerable": false, "chosen": "I don't know", "rejected": "removal of crosses", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5732138be17f3d1400422674", "answerable": true, "chosen": "rise of the country's borrowing rates", "rejected": "International confidence in Greece's ability to repay its sovereign debt", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5acf8af377cf76001a685188", "answerable": false, "chosen": "I don't know", "rejected": "1805", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a8c95adfd22b3001a8d8b92", "answerable": false, "chosen": "I don't know", "rejected": "clubs", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5725e980ec44d21400f3d743", "answerable": true, "chosen": "the Belgian Suite", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "572807b63acd2414000df2ab", "answerable": true, "chosen": "ergodic theorem", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "56e03088231d4119001abfa6", "answerable": true, "chosen": "Comics", "rejected": "the medium", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5ad3ce26604f3c001a3ff1af", "answerable": false, "chosen": "I don't know", "rejected": "valuation of them and reaction to them", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5727f9b1ff5b5019007d99ab", "answerable": true, "chosen": "civilians", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57060e0c75f01819005e7907", "answerable": true, "chosen": "Tory", "rejected": "the Tories", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5acd601707355d001abf3fa4", "answerable": false, "chosen": "I don't know", "rejected": "Hannover", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5728d4494b864d1900164f00", "answerable": true, "chosen": "hopeful behavioral monster", "rejected": "hopeful behaviors", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a5164d2ce860b001aa3fd82", "answerable": false, "chosen": "I don't know", "rejected": "Willy Brandt", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726193589a1e219009ac252", "answerable": true, "chosen": "sweat", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57327e2db3a91d1900202db4", "answerable": true, "chosen": "101st Airborne Division", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "570d229ab3d812140066d474", "answerable": true, "chosen": "July 2001", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5726783a5951b619008f73a4", "answerable": true, "chosen": "Baron von Raschke", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5733e7a2d058e614000b6550", "answerable": true, "chosen": "Premier League chief executive Richard Scudamore", "rejected": "Premier League chief executive", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56cdaf0362d2951400fa6808", "answerable": true, "chosen": "Eon Productions", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a4857df84b8a4001a7e783e", "answerable": false, "chosen": "I don't know", "rejected": "the Charing Cross and Westminster Medical School, Royal Postgraduate Medical School (RPMS) and the Institute of Obstetrics and Gynaecology", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726e991708984140094d59f", "answerable": true, "chosen": "majority of simplified characters", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5727b0db2ca10214002d93f1", "answerable": true, "chosen": "Coimbra", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "56e014a37aa994140058e2c5", "answerable": true, "chosen": "recurring characters", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "570a5c426d058f1900182daa", "answerable": true, "chosen": "Sir Alexander Fleming", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5725bd6f271a42140099d0f6", "answerable": true, "chosen": "the Philippines city of Cebu", "rejected": "the Philippines city of Ceb\u0443", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56df24783277331400b4d99e", "answerable": true, "chosen": "Island Def Jam and Universal Republic", "rejected": "Universal Music Group", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a8ca483fd22b3001a8d8c94", "answerable": false, "chosen": "I don't know", "rejected": "Bruce A. Wilcox", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ace9e1232bba1001ae4ad33", "answerable": false, "chosen": "I don't know", "rejected": "expenditures reach the local level", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56dd231566d3e219004dac04", "answerable": true, "chosen": "Louis XIV", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5731a004e99e3014001e6194", "answerable": true, "chosen": "the weekly addresses by President Barack Obama", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a2c43fcbfd06b001a5aeab3", "answerable": false, "chosen": "I don't know", "rejected": "grid system", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572aa5d8f75d5e190021fbed", "answerable": true, "chosen": "stating the appropriate Norman French formula", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5ad35f99604f3c001a3fdf12", "answerable": false, "chosen": "I don't know", "rejected": "Mort Topfer Manufacturing Center", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572c82d4dfb02c14005c6b8b", "answerable": true, "chosen": "59,385", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5726de80dd62a815002e9352", "answerable": true, "chosen": "Exploitation German Archives", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "570e51420b85d914000d7e17", "answerable": true, "chosen": "Eureka Tower", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a5551b9134fea001a0e1a23", "answerable": false, "chosen": "I don't know", "rejected": "It is being channeled into an invisible frame", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a7de6bf70df9f001a8752d7", "answerable": false, "chosen": "I don't know", "rejected": "does not emit or reflects enough electromagnetic radiation", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56e82d0100c9c71400d775ec", "answerable": true, "chosen": "Vulgar Latin", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad3ad1a604f3c001a3febdd", "answerable": false, "chosen": "I don't know", "rejected": "more than 8.2 million", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57267b49f1498d1400e8e147", "answerable": true, "chosen": "it is true", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a87d2c819b91f001a626e34", "answerable": false, "chosen": "I don't know", "rejected": "oxygen enrichment", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a555aad134fea001a0e1a4a", "answerable": false, "chosen": "I don't know", "rejected": "the only data available", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56e7825400c9c71400d771ec", "answerable": true, "chosen": "Coordinated Universal Time", "rejected": "UTC", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5ad3f69b604f3c001a3ff9ed", "answerable": false, "chosen": "I don't know", "rejected": "the 20th century", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ace5f6c32bba1001ae4a45b", "answerable": false, "chosen": "I don't know", "rejected": "British Empire had forged with Native American tribes", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad1712f645df0001a2d1ba5", "answerable": false, "chosen": "I don't know", "rejected": "method", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57291f276aef051400154a6a", "answerable": true, "chosen": "quantum of action", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57282fda2ca10214002da020", "answerable": true, "chosen": "catalog all languages of the world", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "570b27286b8089140040f79d", "answerable": true, "chosen": "15 March", "rejected": "1 May", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a14e307a54d4200185293b3", "answerable": false, "chosen": "I don't know", "rejected": "they G7 membership and because of their influence in regional and international organizations", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56be86cf3aeaaa14008c9076", "answerable": true, "chosen": "acting", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5733e7a2d058e614000b6550", "answerable": true, "chosen": "Premier League chief executive Richard Scudamore", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a6689e4f038b7001ab0bf7f", "answerable": false, "chosen": "I don't know", "rejected": "speech", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57359d61e853931400426a53", "answerable": true, "chosen": "snakes", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56db792ce7c41114004b517f", "answerable": true, "chosen": "foreign correspondents", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5726f9e05951b619008f83e8", "answerable": true, "chosen": "Argentina", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572a20041d046914007797b5", "answerable": true, "chosen": "6,000 BC", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56cdaf0362d2951400fa6808", "answerable": true, "chosen": "Eon Productions", "rejected": "Metro-Goldwyn-Mayer and Columbia Pictures", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a66b6f4f038b7001ab0c0b9", "answerable": false, "chosen": "I don't know", "rejected": "difficulty of obtaining good, clean digital audio", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5706587852bb8914006899eb", "answerable": true, "chosen": "Layer 3 patents", "rejected": "MP3", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "572811614b864d1900164397", "answerable": true, "chosen": "Ange-F\u00e9lix Patass\u00e9", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "56e02f6f7aa994140058e317", "answerable": true, "chosen": "new immigrants", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5726d581dd62a815002e91b8", "answerable": true, "chosen": "fa'aaloalo", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5726b98bf1498d1400e8e8f4", "answerable": true, "chosen": "1963", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5acd6b8107355d001abf4169", "answerable": false, "chosen": "I don't know", "rejected": "Renaissance", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57284e224b864d190016490e", "answerable": true, "chosen": "Self", "rejected": "theoretical", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a0f93f9decec900184755dc", "answerable": false, "chosen": "I don't know", "rejected": "attempt a 2-point conversion", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572fee2f04bcaa1900d76ed7", "answerable": true, "chosen": "after World War II", "rejected": "between 1930 (147,995) and 1950 (333,865)", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56d6622d1c850414009470de", "answerable": true, "chosen": "$26 million", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5acd1da407355d001abf35a0", "answerable": false, "chosen": "I don't know", "rejected": "Lee Dixon", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56db0b29e7c41114004b4cbd", "answerable": true, "chosen": "Aiken", "rejected": "Studdard", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56faec8b8f12f319006302dd", "answerable": true, "chosen": "practically devoid of loan words from foreign languages", "rejected": "loan words from foreign languages", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5731bd48e17f3d1400422366", "answerable": true, "chosen": "long term standing ban", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5acd557707355d001abf3d89", "answerable": false, "chosen": "I don't know", "rejected": "clinical hypnosis", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad1a38a645df0001a2d2161", "answerable": false, "chosen": "I don't know", "rejected": "Small amounts of substances", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572684975951b619008f754c", "answerable": true, "chosen": "Non-Co-Operation movement", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a0e1068d7c8500018864513", "answerable": false, "chosen": "I don't know", "rejected": "diarrheal", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad24939d7d075001a428b94", "answerable": false, "chosen": "I don't know", "rejected": "Dominic", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726367789a1e219009ac577", "answerable": true, "chosen": "Prime Minister William Pitt", "rejected": "Grand Masters of both the Moderns and the Antients Grand Lodges", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56cf4ed5aab44d1400b88fa5", "answerable": true, "chosen": "US$360,700", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5727c25f2ca10214002d9592", "answerable": true, "chosen": "formalist", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5725ea3089a1e219009ac098", "answerable": true, "chosen": "the port on Montevideo Bay", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56fdc764761e401900d28be8", "answerable": true, "chosen": "Hipparchus", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57351b51acc1501500bac417", "answerable": true, "chosen": "hippopotamus", "rejected": "hipopotamus", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "572868bd4b864d19001649a7", "answerable": true, "chosen": "play specific content from the disc", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a7513c097ca42001a521e6c", "answerable": false, "chosen": "I don't know", "rejected": "1970s and 1980s", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a515fcbce860b001aa3fd5d", "answerable": false, "chosen": "I don't know", "rejected": "an independent \"Saarland\", under the auspices of the Western European Union (WEU)", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad01e2d77cf76001a686a9c", "answerable": false, "chosen": "I don't know", "rejected": "exact date is uncertain", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726db87dd62a815002e92df", "answerable": true, "chosen": "German government", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5727fec0ff5b5019007d9a74", "answerable": true, "chosen": "noble savages", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5726d581dd62a815002e91b8", "answerable": true, "chosen": "fa'aaloalo", "rejected": "faith", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "572664b2dd62a815002e8386", "answerable": true, "chosen": "fashion design", "rejected": "entertainment company Maverick", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5acf9d1077cf76001a6854f0", "answerable": false, "chosen": "I don't know", "rejected": "80%", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57272043f1498d1400e8f3cb", "answerable": true, "chosen": "nutritional content", "rejected": "tends to have an inferior nutritional profile", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5acfb19177cf76001a6858d2", "answerable": false, "chosen": "I don't know", "rejected": "decorative richness", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57060e0c75f01819005e7907", "answerable": true, "chosen": "Tory", "rejected": "Tories", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5705fd9e52bb891400689775", "answerable": true, "chosen": "Rupert Murdoch", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "572868bd4b864d19001649a7", "answerable": true, "chosen": "play specific content from the disc", "rejected": "create interfaces", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "572654245951b619008f6fd6", "answerable": true, "chosen": "Idaho", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57300707947a6a140053cf94", "answerable": true, "chosen": "United Arab Emirates", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a4e82d9755ab9001a10f4ae", "answerable": false, "chosen": "I don't know", "rejected": "Continental drift rates", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a81a59231013a001a334d1e", "answerable": false, "chosen": "I don't know", "rejected": "leading protagonist", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5728eae64b864d190016508f", "answerable": true, "chosen": "in everyday life and in modern Japanese martial arts", "rejected": "today", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a555aad134fea001a0e1a4c", "answerable": false, "chosen": "I don't know", "rejected": "because there is no standard model for estimating the cost of an incident", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a848eae7cf838001a46a930", "answerable": false, "chosen": "I don't know", "rejected": "Growing", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a70ba798abb0b001a676145", "answerable": false, "chosen": "I don't know", "rejected": "Kinect", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572a6788fed8de19000d5bf8", "answerable": true, "chosen": "within several centuries", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5730f38405b4da19006bcc74", "answerable": true, "chosen": "St. Petersburg Phonological School", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "570727889e06ca38007e94a7", "answerable": true, "chosen": "Plaza de Armas", "rejected": "the French imperial forces that were guarding the plaza", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5726d39add62a815002e9196", "answerable": true, "chosen": "Poland", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "573632886c16ec1900b9299b", "answerable": true, "chosen": "preservation of wildlife habitat", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "56e19d84e3433e1400423030", "answerable": true, "chosen": "Schikorr reaction", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad36651604f3c001a3fe066", "answerable": false, "chosen": "I don't know", "rejected": "The Wall Street Journal", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5732aa5bcc179a14009dabdf", "answerable": true, "chosen": "key policy makers", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5725e762271a42140099d300", "answerable": true, "chosen": "chimney piece", "rejected": "parts of the Brighton Banqueting", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a36fffb95360f001af1b3c1", "answerable": false, "chosen": "I don't know", "rejected": "the Hegira year", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5732a253d6dcfa19001e8a51", "answerable": true, "chosen": "North America", "rejected": "Kansas", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a68bcef8476ee001a58a7d7", "answerable": false, "chosen": "I don't know", "rejected": "period of time", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57290ee56aef051400154a08", "answerable": true, "chosen": "failed to reach the necessary majority vote in Brandenburg", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "570e779d0dc6ce19002050b5", "answerable": true, "chosen": "two", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "573394c84776f41900660de0", "answerable": true, "chosen": "$350 million", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572fb178a23a5019007fc8af", "answerable": true, "chosen": "The Oracle of Apollo at Delphi", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57267978708984140094c753", "answerable": true, "chosen": "Daily Mail", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56e43a6e8c00841900fbaf40", "answerable": true, "chosen": "Low Saxon", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57266b04f1498d1400e8df29", "answerable": true, "chosen": "legal", "rejected": "law", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5ace5d7632bba1001ae4a411", "answerable": false, "chosen": "I don't know", "rejected": "broad-headed skink", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56d38bc459d6e414001466f2", "answerable": true, "chosen": "$1.3 million", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a3a0ac32f14dd001ac726d1", "answerable": false, "chosen": "I don't know", "rejected": "in the front of the mother's abdomen", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad12a95645df0001a2d104a", "answerable": false, "chosen": "I don't know", "rejected": "California's Mojave Desert", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5730ae26396df91900096277", "answerable": true, "chosen": "10,640", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572a2c616aef051400155338", "answerable": true, "chosen": "three-year hiatus", "rejected": "three-years", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5735c0d8e853931400426b4d", "answerable": true, "chosen": "medieval", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "571a23874faf5e1900b8a8c9", "answerable": true, "chosen": "atheism", "rejected": "Support for issues such as same-sex marriage and reproductive rights are largely taken for granted", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5730aa008ab72b1400f9c63e", "answerable": true, "chosen": "Artifacts", "rejected": "colonies of this Uruk civilization", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "57359e82e853931400426a67", "answerable": true, "chosen": "Koliyas", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56d38fa059d6e41400146771", "answerable": true, "chosen": "the nocturne", "rejected": "night and day", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "573632886c16ec1900b9299b", "answerable": true, "chosen": "preservation of wildlife habitat", "rejected": "state game management programs", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5727e92d2ca10214002d9952", "answerable": true, "chosen": "limiting the playing time", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a5690796349e2001acdce49", "answerable": false, "chosen": "I don't know", "rejected": "glass master", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad164ac645df0001a2d198c", "answerable": false, "chosen": "I don't know", "rejected": "2014", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a67a71af038b7001ab0c3ed", "answerable": false, "chosen": "I don't know", "rejected": "websites devoted to Neo-Paganism and Historical re-enactment", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56cbf5106d243a140015ee1c", "answerable": true, "chosen": "Polish", "rejected": "Poles", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a8c95adfd22b3001a8d8b92", "answerable": false, "chosen": "I don't know", "rejected": "clubs above Level 9 and 10", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572fd474947a6a140053cd23", "answerable": true, "chosen": "dropping their bombs", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a3168b7e4dcb1001abb22cd", "answerable": false, "chosen": "I don't know", "rejected": "Amsterdam", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5730073c04bcaa1900d77039", "answerable": true, "chosen": "a poor impedance match", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a5ce7425e8782001a9d5e1c", "answerable": false, "chosen": "I don't know", "rejected": "to prove their point", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad37907604f3c001a3fe3a8", "answerable": false, "chosen": "I don't know", "rejected": "1775", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572ab70bbe1ee31400cb81cf", "answerable": true, "chosen": "elected by the voters", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a8ca959fd22b3001a8d8ce7", "answerable": false, "chosen": "I don't know", "rejected": "at specific angles", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726db87dd62a815002e92df", "answerable": true, "chosen": "German government", "rejected": "Walter Ulbricht", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5731304e497a881900248c39", "answerable": true, "chosen": "to allow for heat dissipation", "rejected": "overheating is destructive", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "573035d7b2c2fd1400568a88", "answerable": true, "chosen": "huge losses incurred during various wars", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5726fb6f708984140094d799", "answerable": true, "chosen": "American and Hispanic mixed street style", "rejected": "avant-garde downtown New York fashion", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56e79e2737bdd419002c4256", "answerable": true, "chosen": "KUpedia", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57344892879d6814001ca483", "answerable": true, "chosen": "prey", "rejected": "prey or impudent boasting", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "57264d3a708984140094c1d1", "answerable": true, "chosen": "1814", "rejected": "1813", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "570d5163b3d812140066d6b2", "answerable": true, "chosen": "Air Defence of Great Britain", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572ec82acb0c0d14000f1559", "answerable": true, "chosen": "of up to 3 km", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5ad18eac645df0001a2d1f26", "answerable": false, "chosen": "I don't know", "rejected": "electroluminescence", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a54420d134fea001a0e16ce", "answerable": false, "chosen": "I don't know", "rejected": "Muslim scientists", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "570dea310b85d914000d7bcc", "answerable": true, "chosen": "more time", "rejected": "less time", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5acf6cd977cf76001a684df8", "answerable": false, "chosen": "I don't know", "rejected": "approximately 10 \u00b0C (50.0 \u00b0F).", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5acec6d032bba1001ae4b3a6", "answerable": false, "chosen": "I don't know", "rejected": "miasma", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56fc965c98e8fc14001ea7d9", "answerable": true, "chosen": "phonology", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a18ec869aa02b0018605f3b", "answerable": false, "chosen": "I don't know", "rejected": "Zarafshan valley", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57292e806aef051400154b4e", "answerable": true, "chosen": "related", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56fa0e0df34c681400b0bf90", "answerable": true, "chosen": "ring-porous", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5726abb3dd62a815002e8c7d", "answerable": true, "chosen": "Duke University", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56e6d8036fe0821900b8ebd0", "answerable": true, "chosen": "edited", "rejected": "the \"Candlelight Mix\"", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5ad41927604f3c001a400446", "answerable": false, "chosen": "I don't know", "rejected": "Grand Model", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56cf80a34df3c31400b0d86b", "answerable": true, "chosen": "President Barack Obama", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56d613011c85041400946efc", "answerable": true, "chosen": "direct chartered cargo flight", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a68dfaa8476ee001a58a812", "answerable": false, "chosen": "I don't know", "rejected": "Chanakya", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726aeff5951b619008f7a40", "answerable": true, "chosen": "dolphins", "rejected": "humpback whale", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5ad39adb604f3c001a3fe87e", "answerable": false, "chosen": "I don't know", "rejected": "Downtown", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5733ab114776f41900660fb6", "answerable": true, "chosen": "an animist", "rejected": "animism", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "57279cea3acd2414000de7cf", "answerable": true, "chosen": "US$1 billion", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5acfb29077cf76001a685942", "answerable": false, "chosen": "I don't know", "rejected": "a minister", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad17030645df0001a2d1b66", "answerable": false, "chosen": "I don't know", "rejected": "form a new ministry", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56df14d0c65bf219000b3f49", "answerable": true, "chosen": "1968", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56f969b89e9bad19000a08e9", "answerable": true, "chosen": "business conditions", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5acd4df707355d001abf3c8f", "answerable": false, "chosen": "I don't know", "rejected": "seek help", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726e208f1498d1400e8ee93", "answerable": true, "chosen": "/\ud869\udea5 (U+2A6A5) zh\u00e9", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5726a579dd62a815002e8bec", "answerable": true, "chosen": "Aung San", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57318320497a881900248fa4", "answerable": true, "chosen": "Saint Sophia Cathedral", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56dec6913277331400b4d725", "answerable": true, "chosen": "GQ magazine", "rejected": "Oui", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56e83bdf37bdd419002c44bb", "answerable": true, "chosen": "\u00eatre", "rejected": "\"avoir\"", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "56d23eaeb329da140004ec55", "answerable": true, "chosen": "meat", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5726d30bf1498d1400e8ec5b", "answerable": true, "chosen": "judicial and administrative", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5726e6bcdd62a815002e947b", "answerable": true, "chosen": "Yale Sustainable Food Project", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56f881ecaef2371900626133", "answerable": true, "chosen": "Itchen", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5733ccbe4776f41900661274", "answerable": true, "chosen": "Knute Rockne", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57097d78200fba140036807d", "answerable": true, "chosen": "Genesis 9:20\u201321", "rejected": "when Noah grows them on his farm", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5726367789a1e219009ac577", "answerable": true, "chosen": "Prime Minister William Pitt", "rejected": "Grand Masters", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "572ea043c246551400ce4426", "answerable": true, "chosen": "Russian", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad3a6d2604f3c001a3feac0", "answerable": false, "chosen": "I don't know", "rejected": "rigorous study and testing", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad264a8d7d075001a42916b", "answerable": false, "chosen": "I don't know", "rejected": "audio engineer", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5724e4370ba9f01400d97ba0", "answerable": true, "chosen": "fled to exile in England", "rejected": "was deposed", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5732488d0fdd8d15006c68ee", "answerable": true, "chosen": "San Antonio, Texas", "rejected": "Fort Sam Houston", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a848eae7cf838001a46a930", "answerable": false, "chosen": "I don't know", "rejected": "Growing scientific recognition", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5727be4c3acd2414000deb32", "answerable": true, "chosen": "The large center hole", "rejected": "allows for easier handling", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a8ca068fd22b3001a8d8c1f", "answerable": false, "chosen": "I don't know", "rejected": "fauna", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5731f0f0b9d445190005e6cb", "answerable": true, "chosen": "Anglican priest", "rejected": "priest and evangelist", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5731af89e17f3d14004222f9", "answerable": true, "chosen": "Google", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a106921decec90018475647", "answerable": false, "chosen": "I don't know", "rejected": "the ruin of the Aegidien Church", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad2c424d7d075001a42a149", "answerable": false, "chosen": "I don't know", "rejected": "some 500", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a0e1068d7c8500018864513", "answerable": false, "chosen": "I don't know", "rejected": "diarrheal disease", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5727d5bd4b864d1900163e2f", "answerable": true, "chosen": "there is no American ruling on point", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "572941d96aef051400154c11", "answerable": true, "chosen": "Portuguese", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5729683a1d046914007793bd", "answerable": true, "chosen": "wind power", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "572a1096af94a219006aa797", "answerable": true, "chosen": "Illyrian", "rejected": "Ilirski", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "572eb6c0c246551400ce4547", "answerable": true, "chosen": "Habitat Conservation Plan", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572aa47534ae481900deabf2", "answerable": true, "chosen": "two", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a5540ac134fea001a0e19fa", "answerable": false, "chosen": "I don't know", "rejected": "information systems", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad0043f77cf76001a686763", "answerable": false, "chosen": "I don't know", "rejected": "Khazars", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a7a11e517ab25001a8a02d3", "answerable": false, "chosen": "I don't know", "rejected": "King Charles I", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "573151a9e6313a140071ce1c", "answerable": true, "chosen": "evolved into an imperial chancery", "rejected": "lost its importance", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "570a9c204103511400d59891", "answerable": true, "chosen": "26.3%", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a7c9c44e8bc7e001a9e1f16", "answerable": false, "chosen": "I don't know", "rejected": "English", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "573201d7b9d445190005e713", "answerable": true, "chosen": "aristocracy", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ace5d7632bba1001ae4a411", "answerable": false, "chosen": "I don't know", "rejected": "the broad-headed skink", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad4b2035b96ef001a109dd0", "answerable": false, "chosen": "I don't know", "rejected": "more than $470 million", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572eb94ac246551400ce4582", "answerable": true, "chosen": "Third International Theory", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5ace71e632bba1001ae4a6ea", "answerable": false, "chosen": "I don't know", "rejected": "Venezuelan extra-heavy", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57313738497a881900248c68", "answerable": true, "chosen": "a red Phrygian cap", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a104761decec900184755f9", "answerable": false, "chosen": "I don't know", "rejected": "Great Britain", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ace23ca32bba1001ae49b8d", "answerable": false, "chosen": "I don't know", "rejected": "Barack Obama", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a14e307a54d4200185293af", "answerable": false, "chosen": "I don't know", "rejected": "UNSC", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5727a8e9ff5b5019007d921a", "answerable": true, "chosen": "about a millennium after their composition", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "56cdcfee62d2951400fa6879", "answerable": true, "chosen": "assassin", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "570d2681fed7b91900d45c65", "answerable": true, "chosen": "Europe", "rejected": "Germany", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "572761fe5951b619008f891a", "answerable": true, "chosen": "the need to child labour began to decline", "rejected": "declined", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5735c0d8e853931400426b49", "answerable": true, "chosen": "1955", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572761fe5951b619008f891a", "answerable": true, "chosen": "the need to child labour began to decline", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572b50a1111d821400f38e56", "answerable": true, "chosen": "35,797 feet", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad5fc5d5b96ef001a10afa4", "answerable": false, "chosen": "I don't know", "rejected": "Gymnasium", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57275893dd62a815002e9b71", "answerable": true, "chosen": "too windy", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5731e50f0fdd8d15006c661a", "answerable": true, "chosen": "2014", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a0cf4e1f5590b0018dab6ac", "answerable": false, "chosen": "I don't know", "rejected": "marginalized researchers who do not support Gates' predetermined policy preferences", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5acf6cd977cf76001a684df8", "answerable": false, "chosen": "I don't know", "rejected": "10 \u00b0C", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a5fcdfdeae51e001ab14c67", "answerable": false, "chosen": "I don't know", "rejected": "Independent News", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57320d07e17f3d140042261f", "answerable": true, "chosen": "The OECD", "rejected": "OECT", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56e79ed037bdd419002c426b", "answerable": true, "chosen": "2006", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5734296dd058e614000b6a6f", "answerable": true, "chosen": "over 57,000", "rejected": "another 40,000-plus", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5726fb6f708984140094d799", "answerable": true, "chosen": "American and Hispanic mixed street style", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5729508d3f37b31900478235", "answerable": true, "chosen": "1648", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57102d7aa58dae1900cd6943", "answerable": true, "chosen": "the universality of its application in other societies or cultures", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56ddb46c9a695914005b9591", "answerable": true, "chosen": "Brewster Kahle and Bruce Gilliat", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad2586ad7d075001a428dbe", "answerable": false, "chosen": "I don't know", "rejected": "pronunciation", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572a2cfc1d0469140077981a", "answerable": true, "chosen": "Nev\u015fehirli Damat \u0130brahim Pasha", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5ad13d69645df0001a2d1351", "answerable": false, "chosen": "I don't know", "rejected": "King of Jazz", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56e87dae0b45c0140094ccd2", "answerable": true, "chosen": "35.4%", "rejected": "44,032", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "570962a6ed30961900e84048", "answerable": true, "chosen": "Deputy Commissioner or District Magistrate", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5725f56a89a1e219009ac108", "answerable": true, "chosen": "green", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572694b7dd62a815002e8a3e", "answerable": true, "chosen": "pejorative", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57314ebde6313a140071ce04", "answerable": true, "chosen": "the blood of the martyrs of Jesus", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "572668aef1498d1400e8deb9", "answerable": true, "chosen": "1698", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a11111906e79900185c351f", "answerable": false, "chosen": "I don't know", "rejected": "Dark Horse titles", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad2c424d7d075001a42a149", "answerable": false, "chosen": "I don't know", "rejected": "500", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a66f576f038b7001ab0c12a", "answerable": false, "chosen": "I don't know", "rejected": "high melting-temperature", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56d43f7e2ccc5a1400d830c7", "answerable": true, "chosen": "60 million", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a62309df8d794001af1bec0", "answerable": false, "chosen": "I don't know", "rejected": "Cuper's Cove", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572f0002cb0c0d14000f16f9", "answerable": true, "chosen": "1765", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5acf54b277cf76001a684b9a", "answerable": false, "chosen": "I don't know", "rejected": "English Civil War and the Monmouth Rebellion.", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56cc83056d243a140015efd8", "answerable": true, "chosen": "JVC, Pioneer, Kenwood, Alpine, Sony, and Harman Kardon", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5acd0cc307355d001abf3258", "answerable": false, "chosen": "I don't know", "rejected": "1933", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56f8a1fc9b226e1400dd0d13", "answerable": true, "chosen": "Eclogues 4", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ace638f32bba1001ae4a543", "answerable": false, "chosen": "I don't know", "rejected": "boards", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57318587e6313a140071d017", "answerable": true, "chosen": "1988", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a81a59231013a001a334d1e", "answerable": false, "chosen": "I don't know", "rejected": "leading protagonist for the reduction of US cotton subsidies through negotiations", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726d331f1498d1400e8ec70", "answerable": true, "chosen": "1900", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a85b666b4e223001a8e71a6", "answerable": false, "chosen": "I don't know", "rejected": "insurgent-style", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a8460077cf838001a46a7a8", "answerable": false, "chosen": "I don't know", "rejected": "during the listing process", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a36fffb95360f001af1b3c1", "answerable": false, "chosen": "I don't know", "rejected": "Hegira year", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5acf54b277cf76001a684b96", "answerable": false, "chosen": "I don't know", "rejected": "Somerset", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572a23643f37b31900478728", "answerable": true, "chosen": "Formative stage", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5732ac07328d981900601ffd", "answerable": true, "chosen": "tough competition", "rejected": "limited supply of creditworthy borrowers", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "56e0f150231d4119001ac483", "answerable": true, "chosen": "reed", "rejected": "a rule", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a65c185c2b11c001a425d39", "answerable": false, "chosen": "I don't know", "rejected": "such suggestions have been inconclusive and controversial.", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572aa08a111d821400f38c60", "answerable": true, "chosen": "teak, Acacia", "rejected": "Acacia, and other trees", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5728efe24b864d19001650d3", "answerable": true, "chosen": "Eastern Army", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a81a59231013a001a334d1e", "answerable": false, "chosen": "I don't know", "rejected": "leading protagonist for the reduction", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a848eae7cf838001a46a930", "answerable": false, "chosen": "I don't know", "rejected": "Growing scientific recognition of the role", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a7a38ea17ab25001a8a03b8", "answerable": false, "chosen": "I don't know", "rejected": "language according to particular standards", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "571129e6b654c5140001fbfe", "answerable": true, "chosen": "nickel", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "571a23874faf5e1900b8a8c9", "answerable": true, "chosen": "atheism", "rejected": "Support for issues such as same-sex marriage and reproductive rights are largely taken for granted in local politics.", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5706df8f90286e26004fc720", "answerable": true, "chosen": "Indianapolis", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "572a56fbfed8de19000d5b9c", "answerable": true, "chosen": "Intercollegiate Studies Institute", "rejected": "Intercollegiate Society of Individualists", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a5690796349e2001acdce49", "answerable": false, "chosen": "I don't know", "rejected": "glass master is a positive image of the desired CD surface (with the desired microscopic pits and lands)", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57097c64200fba140036806b", "answerable": true, "chosen": "to define it empirically", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a788352b73996001af5a6fc", "answerable": false, "chosen": "I don't know", "rejected": "the acquirement of the knowledge of the various arts and sciences connected therewith", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad1a38a645df0001a2d2161", "answerable": false, "chosen": "I don't know", "rejected": "oxygen", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ace34f132bba1001ae49e48", "answerable": false, "chosen": "I don't know", "rejected": "High tech, health services and biotechnology", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a5505bb134fea001a0e1805", "answerable": false, "chosen": "I don't know", "rejected": "operates from Galkayo in the north-central Mudug province.", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a36b63895360f001af1b31f", "answerable": false, "chosen": "I don't know", "rejected": "September", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572f88c2a23a5019007fc707", "answerable": true, "chosen": "Dakhini", "rejected": "Urdu", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "57268e0ff1498d1400e8e3aa", "answerable": true, "chosen": "single portion", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad013b477cf76001a6868e9", "answerable": false, "chosen": "I don't know", "rejected": "couple of years", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56d372d559d6e414001463fd", "answerable": true, "chosen": "\"This Is the Night\"", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a5551b9134fea001a0e1a23", "answerable": false, "chosen": "I don't know", "rejected": "dimension", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572e8fbbdfa6aa1500f8d13e", "answerable": true, "chosen": "20", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a7513c097ca42001a521e6c", "answerable": false, "chosen": "I don't know", "rejected": "the end of the 1970s and the 1980s", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a3ac9553ff257001ab84274", "answerable": false, "chosen": "I don't know", "rejected": "molecular evidence", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "570f44b95ab6b81900390ec1", "answerable": true, "chosen": "circadian clock", "rejected": "clock\u039419", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a3ade493ff257001ab842c9", "answerable": false, "chosen": "I don't know", "rejected": "sprouted only when the ground was disturbed", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572997463f37b319004784be", "answerable": true, "chosen": "Phasmatodea", "rejected": "stick insects", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5ace5f6c32bba1001ae4a45b", "answerable": false, "chosen": "I don't know", "rejected": "Native American tribes", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a515fcbce860b001aa3fd5d", "answerable": false, "chosen": "I don't know", "rejected": "independent \"Saarland\", under the auspices of the Western European Union (WEU)", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a0cf4e1f5590b0018dab6ac", "answerable": false, "chosen": "I don't know", "rejected": "marginalize researchers who do not support Gates' predetermined policy preferences", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726de0fdd62a815002e9341", "answerable": true, "chosen": "Michael Ramsey", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad41e15604f3c001a400614", "answerable": false, "chosen": "I don't know", "rejected": "1812", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572a790d74f2e11900503fdb", "answerable": true, "chosen": "corporate element", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57325981e99e3014001e66e5", "answerable": true, "chosen": "never", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "573012e9947a6a140053d04b", "answerable": true, "chosen": "the American Revolution", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5732a488d6dcfa19001e8a58", "answerable": true, "chosen": "the re-discovery of ancient manuscripts", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57278c6cdd62a815002ea007", "answerable": true, "chosen": "Sir Walter Scott", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5acd277607355d001abf371d", "answerable": false, "chosen": "I don't know", "rejected": "Hungarian and the Sami languages", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a7dccd270df9f001a8751aa", "answerable": false, "chosen": "I don't know", "rejected": "quark matter", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56cd6e9062d2951400fa65ac", "answerable": true, "chosen": "various lamas", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "571aa0ea4faf5e1900b8ab57", "answerable": true, "chosen": "Byzantine Empire", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57260d63271a42140099d3f8", "answerable": true, "chosen": "Korean Conflict", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "57320ba7e99e3014001e6479", "answerable": true, "chosen": "its neighbours", "rejected": "trade", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "572fb648b2c2fd14005683a1", "answerable": true, "chosen": "tension", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56bfe2a2a10cfb140055136b", "answerable": true, "chosen": "grandmother, Agn\u00e8z Der\u00e9on", "rejected": "Beyond Productions", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5727d5bd4b864d1900163e2f", "answerable": true, "chosen": "there is no American ruling on point", "rejected": "the facts and law at issue are nearly identical", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a5551b9134fea001a0e1a23", "answerable": false, "chosen": "I don't know", "rejected": "opaque or transparent", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a0dcbf06e16420018587b3d", "answerable": false, "chosen": "I don't know", "rejected": "gain 10 yards", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5acf76e677cf76001a684e85", "answerable": false, "chosen": "I don't know", "rejected": "manual handling", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56dff2277aa994140058e29f", "answerable": true, "chosen": "Coleherne", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a6522bdc2b11c001a425c6b", "answerable": false, "chosen": "I don't know", "rejected": "CR-LF", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ace34f132bba1001ae49e48", "answerable": false, "chosen": "I don't know", "rejected": "High tech, health services, biotechnology, and automobile manufacturers", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57278d70708984140094e0a7", "answerable": true, "chosen": "repeatedly violated articles of the Constitution", "rejected": "It is also the only court", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5acd5a4b07355d001abf3e6c", "answerable": false, "chosen": "I don't know", "rejected": "unable to speak", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad09d41645df0001a2cff5b", "answerable": false, "chosen": "I don't know", "rejected": "heavy pressure from online stores", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a81bcfc31013a001a334e1b", "answerable": false, "chosen": "I don't know", "rejected": "French", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad3a6d2604f3c001a3feac0", "answerable": false, "chosen": "I don't know", "rejected": "10 to 15", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56e6d8036fe0821900b8ebd0", "answerable": true, "chosen": "edited", "rejected": "edit versions", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a68eda78476ee001a58a89f", "answerable": false, "chosen": "I don't know", "rejected": "Dow Chemical", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "573021c8a23a5019007fce04", "answerable": true, "chosen": "deerskin", "rejected": "deer skins", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5728d4494b864d1900164f00", "answerable": true, "chosen": "hopeful behavioral monster", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572f3f3404bcaa1900d767c8", "answerable": true, "chosen": "no", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56e7a68600c9c71400d77487", "answerable": true, "chosen": "many R & D centers and institutions", "rejected": "key R & D institutes", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "56e74ffe37bdd419002c3e53", "answerable": true, "chosen": "Daylight Saving for South East Queensland", "rejected": "DS4SEQ", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5ad1a38a645df0001a2d2161", "answerable": false, "chosen": "I don't know", "rejected": "Small amounts of substances such as zirconium", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad3cd43604f3c001a3ff18d", "answerable": false, "chosen": "I don't know", "rejected": "limitations of language", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57284e224b864d190016490e", "answerable": true, "chosen": "Self", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a7dccd270df9f001a8751aa", "answerable": false, "chosen": "I don't know", "rejected": "nuclear matter, which is a liquid of neutrons and protons", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5727bbedff5b5019007d93ba", "answerable": true, "chosen": "substitutions", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572868bd4b864d19001649a7", "answerable": true, "chosen": "play specific content from the disc", "rejected": "design databases of slides", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a5540ac134fea001a0e19fc", "answerable": false, "chosen": "I don't know", "rejected": "by controlling physical access", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "570a580b4103511400d59633", "answerable": true, "chosen": "H. G. Wells", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad3f69b604f3c001a3ff9ed", "answerable": false, "chosen": "I don't know", "rejected": "20th", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad41b58604f3c001a40051b", "answerable": false, "chosen": "I don't know", "rejected": "white and Asian students", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5734296dd058e614000b6a6f", "answerable": true, "chosen": "over 57,000", "rejected": "At least 1500", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5acf76e677cf76001a684e85", "answerable": false, "chosen": "I don't know", "rejected": "small size", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a79e3ed17ab25001a8a0165", "answerable": false, "chosen": "I don't know", "rejected": "Judges saw themselves as merely declaring the law", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572fee2f04bcaa1900d76ed7", "answerable": true, "chosen": "after World War II", "rejected": "1950", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5ad424a5604f3c001a4008b9", "answerable": false, "chosen": "I don't know", "rejected": "Continental Airlines", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572fee2f04bcaa1900d76ed7", "answerable": true, "chosen": "after World War II", "rejected": "1930", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a830f90e60761001a2eb345", "answerable": false, "chosen": "I don't know", "rejected": "prevention or slowing down the transmission", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ace498c32bba1001ae4a1cb", "answerable": false, "chosen": "I don't know", "rejected": "undervalued", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572e9c96cb0c0d14000f135f", "answerable": true, "chosen": "geographical isolation and unique political history", "rejected": "New Mexican Spanish differing notably from both Spanish spoken in other parts of the United States of America and Spanish spoken in the present-day United Mexican States.", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "57295eafaf94a219006aa335", "answerable": true, "chosen": "it violated Electoral College rules", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57334596d058e614000b581c", "answerable": true, "chosen": "1230", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a18ec869aa02b0018605f3b", "answerable": false, "chosen": "I don't know", "rejected": "Yaghnobi", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56d1084017492d1400aab7a3", "answerable": true, "chosen": "Bob Dylan", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5706cf6e0eeca41400aa0e59", "answerable": true, "chosen": "Inside Black Australia", "rejected": "Human Rights Award", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5acec6d032bba1001ae4b3a6", "answerable": false, "chosen": "I don't know", "rejected": "miasma theory", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5733558fd058e614000b586f", "answerable": true, "chosen": "2006", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "57296639af94a219006aa38c", "answerable": true, "chosen": "covalent bond", "rejected": "one negative charge", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5acd745d07355d001abf4310", "answerable": false, "chosen": "I don't know", "rejected": "tram", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5725bd6f271a42140099d0f6", "answerable": true, "chosen": "the Philippines city of Cebu", "rejected": "Cebu, the Philippines", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "57313d51e6313a140071cd75", "answerable": true, "chosen": "cleaning-up", "rejected": "recuperation", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "572ec078c246551400ce460b", "answerable": true, "chosen": "a millimeter of mercury (mmHg)", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5727c25f2ca10214002d9592", "answerable": true, "chosen": "formalist", "rejected": "thick", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "56cd779762d2951400fa65dc", "answerable": true, "chosen": "1403", "rejected": "April 10, 1407", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "572fa080947a6a140053cae2", "answerable": true, "chosen": "the Soviet Union fostered communist revolutionary movements,", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "56f8d3179b226e1400dd1096", "answerable": true, "chosen": "1970s", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a14e307a54d4200185293b3", "answerable": false, "chosen": "I don't know", "rejected": "their influence in regional and international organizations", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57267b49f1498d1400e8e147", "answerable": true, "chosen": "it is true", "rejected": "older words always pair vowel length with a change in vowel quality", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "57280fe04b864d190016437b", "answerable": true, "chosen": "i", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "571b40f532177014007ea054", "answerable": true, "chosen": "al alkaline", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572aa08a111d821400f38c60", "answerable": true, "chosen": "teak, Acacia", "rejected": "Acacia and other trees", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56e79f1700c9c71400d773ef", "answerable": true, "chosen": "1952", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a35ca66788daf001a5f8670", "answerable": false, "chosen": "I don't know", "rejected": "the degree of slope on the land", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a21d12e8a6e4f001aa08f0f", "answerable": false, "chosen": "I don't know", "rejected": "persons of colour and women", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a14e307a54d4200185293af", "answerable": false, "chosen": "I don't know", "rejected": "permanent members of the UNSC", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad35591604f3c001a3fdda5", "answerable": false, "chosen": "I don't know", "rejected": "the death of her father", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56fa0e0df34c681400b0bf90", "answerable": true, "chosen": "ring-porous", "rejected": "coniferous", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a555aad134fea001a0e1a4c", "answerable": false, "chosen": "I don't know", "rejected": "there is no standard model for estimating the cost of an incident", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "571a23874faf5e1900b8a8c9", "answerable": true, "chosen": "atheism", "rejected": "church attendance", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5727e92d2ca10214002d9952", "answerable": true, "chosen": "limiting the playing time", "rejected": "the stylus must swing a long way from side to side", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "57270f6cf1498d1400e8f2df", "answerable": true, "chosen": "International Crops Research Institute for the Semi-Arid Tropics", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572e9c96cb0c0d14000f135f", "answerable": true, "chosen": "geographical isolation and unique political history", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a11bc6f06e79900185c3539", "answerable": false, "chosen": "I don't know", "rejected": "the Kingdom of Holland", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "570c05b56b8089140040fb0a", "answerable": true, "chosen": "five", "rejected": "5", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "57282fdf3acd2414000df697", "answerable": true, "chosen": "clitellates", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5732138be17f3d1400422674", "answerable": true, "chosen": "rise of the country's borrowing rates", "rejected": "crisis in international confidence", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "572ab5f7be1ee31400cb81bb", "answerable": true, "chosen": "Independent", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "57312247497a881900248b89", "answerable": true, "chosen": "fluorescent lamps", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5ace20e832bba1001ae49b55", "answerable": false, "chosen": "I don't know", "rejected": "Detroit", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a63d64f7f3c80001a150b59", "answerable": false, "chosen": "I don't know", "rejected": "Germany", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a79e3ed17ab25001a8a0165", "answerable": false, "chosen": "I don't know", "rejected": "Judges in the eighteenth century", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a5505bb134fea001a0e1805", "answerable": false, "chosen": "I don't know", "rejected": "operates from Galkayo in the north-central Mudug province", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5724e4370ba9f01400d97ba0", "answerable": true, "chosen": "fled to exile in England", "rejected": "he was deposed", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a73877453a187001ae63221", "answerable": false, "chosen": "I don't know", "rejected": "In 2004 and 2007, the American Customer Satisfaction Index (ACSI) survey", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726d1c75951b619008f7f0a", "answerable": true, "chosen": "Zoe Williams", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57313d51e6313a140071cd75", "answerable": true, "chosen": "cleaning-up", "rejected": "assistance with recovery", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a4857df84b8a4001a7e783e", "answerable": false, "chosen": "I don't know", "rejected": "the Charing Cross and Westminster Medical School, the National Heart and Lung Institute", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "573201d7b9d445190005e713", "answerable": true, "chosen": "aristocracy", "rejected": "Roman citizens", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56df787656340a1900b29bf8", "answerable": true, "chosen": "America", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572fdfffa23a5019007fcabb", "answerable": true, "chosen": "$700,000", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572ffb1ba23a5019007fcbf3", "answerable": true, "chosen": "a capacitor at the frequency of operation", "rejected": "an inductor", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "56d613011c85041400946efc", "answerable": true, "chosen": "direct chartered cargo flight", "rejected": "by China Airlines", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5732488d0fdd8d15006c68ee", "answerable": true, "chosen": "San Antonio, Texas", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a551746134fea001a0e190a", "answerable": false, "chosen": "I don't know", "rejected": "various", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad0c4b9645df0001a2d027a", "answerable": false, "chosen": "I don't know", "rejected": "Holy Roman Empire", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a84e86b7cf838001a46ab17", "answerable": false, "chosen": "I don't know", "rejected": "multiple chief deputy whips", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726d602dd62a815002e91d3", "answerable": true, "chosen": "legitimize file-sharing", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572a790d74f2e11900503fdb", "answerable": true, "chosen": "corporate element", "rejected": "legal autonomy", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5ad2e059d7d075001a42a5c3", "answerable": false, "chosen": "I don't know", "rejected": "crist\u00e3o", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56e83bdf37bdd419002c44bb", "answerable": true, "chosen": "\u00eatre", "rejected": "avoir", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "572b50a1111d821400f38e56", "answerable": true, "chosen": "35,797 feet", "rejected": "southwest of Guam", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "572f8ee0b2c2fd14005681f5", "answerable": true, "chosen": "Syunik and Vayots Dzor", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "570c31776b8089140040fc04", "answerable": true, "chosen": "Gaspart", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5731c36fb9d445190005e515", "answerable": true, "chosen": "state funded", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a4c48f27a6c4c001a2bbbd5", "answerable": false, "chosen": "I don't know", "rejected": "Sahara", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572f4583947a6a140053c84b", "answerable": true, "chosen": "wide bandwidth", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572871a03acd2414000df9fc", "answerable": true, "chosen": "trade", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5735ba6ee853931400426aed", "answerable": true, "chosen": "Kirtipur", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a65c185c2b11c001a425d39", "answerable": false, "chosen": "I don't know", "rejected": "Effects on the intestinal flora\u060c", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "570c4d2dfed7b91900d45874", "answerable": true, "chosen": "John", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5706f38e9e06ca38007e923c", "answerable": true, "chosen": "written representation", "rejected": "in orthography and typography", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a32ecbabd0d7f001aef950b", "answerable": false, "chosen": "I don't know", "rejected": "poachers", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57312af6497a881900248bf0", "answerable": true, "chosen": "without a designated heir", "rejected": "Fulin", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5ad418c6604f3c001a400421", "answerable": false, "chosen": "I don't know", "rejected": "extraordinary", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726bbb5f1498d1400e8e958", "answerable": true, "chosen": "KPA", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5726488ddd62a815002e806f", "answerable": true, "chosen": "use in pillows and padded garments", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "572ab905f75d5e190021fc71", "answerable": true, "chosen": "director of the Hayekian Centre for Policy Studies", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a5a44279c0277001abe70e1", "answerable": false, "chosen": "I don't know", "rejected": "Girls, Girls, Girls", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ace34f132bba1001ae49e48", "answerable": false, "chosen": "I don't know", "rejected": "High tech, health services and biotechnology, automobile manufacturers", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5727708f708984140094dd9c", "answerable": true, "chosen": "North Korea", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56e6d8036fe0821900b8ebd0", "answerable": true, "chosen": "edited", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "56e722d937bdd419002c3d8e", "answerable": true, "chosen": "small", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "56f8542caef2371900625fe1", "answerable": true, "chosen": "minorities would be given the noble title", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5ad22f61d7d075001a42868a", "answerable": false, "chosen": "I don't know", "rejected": "2010", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad26973d7d075001a4292d7", "answerable": false, "chosen": "I don't know", "rejected": "low", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "571a23874faf5e1900b8a8c9", "answerable": true, "chosen": "atheism", "rejected": "government", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a3997b52f14dd001ac72447", "answerable": false, "chosen": "I don't know", "rejected": "a small population", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5acd601707355d001abf3fa4", "answerable": false, "chosen": "I don't know", "rejected": "German", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a8460077cf838001a46a7a8", "answerable": false, "chosen": "I don't know", "rejected": "During the listing process,", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "570b2212ec8fbc190045b84e", "answerable": true, "chosen": "hub for living-room computing entertainment", "rejected": "all multimedia", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a68bcef8476ee001a58a7d7", "answerable": false, "chosen": "I don't know", "rejected": "for a period of time", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5728ca18ff5b5019007da6b0", "answerable": true, "chosen": "a national catastrophe", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "56ddbc0e66d3e219004dacc1", "answerable": true, "chosen": "variable", "rejected": "frequency of snapshots", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "57328f64b9988014000c7682", "answerable": true, "chosen": "about 443.8 \u00b1 1.5 Ma", "rejected": "Gaia", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56f8effd9e9bad19000a073f", "answerable": true, "chosen": "England", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a81374031013a001a334be9", "answerable": false, "chosen": "I don't know", "rejected": "grandfather paradox", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad18eac645df0001a2d1f26", "answerable": false, "chosen": "I don't know", "rejected": "Electroluminescence", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "570b64986b8089140040f91d", "answerable": true, "chosen": "the Spanish", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5726367789a1e219009ac577", "answerable": true, "chosen": "Prime Minister William Pitt", "rejected": "the Grand Masters of both the Moderns and the Antients Grand Lodges", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56bfe2a2a10cfb140055136b", "answerable": true, "chosen": "grandmother, Agn\u00e8z Der\u00e9on", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5ad3ce26604f3c001a3ff1af", "answerable": false, "chosen": "I don't know", "rejected": "valuation", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57320ba7e99e3014001e6479", "answerable": true, "chosen": "its neighbours", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a5551b9134fea001a0e1a23", "answerable": false, "chosen": "I don't know", "rejected": "It's done using multiple transparent or opaque layers", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57275eab5951b619008f88e0", "answerable": true, "chosen": "Lent began", "rejected": "Carnival", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5ad4b2035b96ef001a109dd0", "answerable": false, "chosen": "I don't know", "rejected": "$470 million", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a395fb82f14dd001ac722b9", "answerable": false, "chosen": "I don't know", "rejected": "scoring a record number of goals", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56f831eba6d7ea1400e1747b", "answerable": true, "chosen": "temporary leases", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56db3546e7c41114004b4f46", "answerable": true, "chosen": "Independence Square", "rejected": "Kuala Lumpur", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "57324a780fdd8d15006c691b", "answerable": true, "chosen": "In Huntington Beach", "rejected": "California", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5ad3c57b604f3c001a3feffc", "answerable": false, "chosen": "I don't know", "rejected": "does not", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57313d51e6313a140071cd75", "answerable": true, "chosen": "cleaning-up", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a6a637fa9e0c9001a4e9dd4", "answerable": false, "chosen": "I don't know", "rejected": "Gorton Government", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57293720af94a219006aa1af", "answerable": true, "chosen": "Lieberman", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad2508ed7d075001a428cbb", "answerable": false, "chosen": "I don't know", "rejected": "the University of Fribourg", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56f98b129e9bad19000a0a84", "answerable": true, "chosen": "1956-1968", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a62a317f8d794001af1c17e", "answerable": false, "chosen": "I don't know", "rejected": "oppose the ACS", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad26973d7d075001a4292d7", "answerable": false, "chosen": "I don't know", "rejected": "low social status", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a106921decec90018475647", "answerable": false, "chosen": "I don't know", "rejected": "Aegidien Church", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726f52bdd62a815002e9642", "answerable": true, "chosen": "Nigeria", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5730739e2461fd1900a9ce1d", "answerable": true, "chosen": "1763", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56d8e18ddc89441400fdb38b", "answerable": true, "chosen": "the Eiffel Tower", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "570ceadbfed7b91900d45ad8", "answerable": true, "chosen": "Gymnastics for All", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "57264659708984140094c11f", "answerable": true, "chosen": "Greek Isles and cities", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5acf8cd577cf76001a6851e4", "answerable": false, "chosen": "I don't know", "rejected": "women", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5727eb304b864d190016401e", "answerable": true, "chosen": "Battle of Hastings", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad2ca90d7d075001a42a268", "answerable": false, "chosen": "I don't know", "rejected": "Dance Marathon", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad3a6d2604f3c001a3feac0", "answerable": false, "chosen": "I don't know", "rejected": "10 to 15 years", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5706f38e9e06ca38007e923c", "answerable": true, "chosen": "written representation", "rejected": "In orthography and typography", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "572a56fbfed8de19000d5b9c", "answerable": true, "chosen": "Intercollegiate Studies Institute", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad3dce8604f3c001a3ff420", "answerable": false, "chosen": "I don't know", "rejected": "harmonizing difference", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5aceab9232bba1001ae4afb4", "answerable": false, "chosen": "I don't know", "rejected": "the Hall of the Avicenna Faculty of Medicine in the University of Paris", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726e051708984140094d46f", "answerable": true, "chosen": "85\u201391 percent", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ace988432bba1001ae4abd3", "answerable": false, "chosen": "I don't know", "rejected": "ten years old", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "573201d7b9d445190005e713", "answerable": true, "chosen": "aristocracy", "rejected": "landowning", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a0f1cc0d7c850001886458e", "answerable": false, "chosen": "I don't know", "rejected": "Canada", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "570b3a9eec8fbc190045b8f6", "answerable": true, "chosen": "the Philippines", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56d9b06edc89441400fdb6df", "answerable": true, "chosen": "hand signals", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad3a6d2604f3c001a3feac0", "answerable": false, "chosen": "I don't know", "rejected": "10", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57266b04f1498d1400e8df29", "answerable": true, "chosen": "legal", "rejected": "law and history", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a8460077cf838001a46a7a8", "answerable": false, "chosen": "I don't know", "rejected": "during the listing process,", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad41927604f3c001a400446", "answerable": false, "chosen": "I don't know", "rejected": "the Grand Model", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56dfdc887aa994140058e1d2", "answerable": true, "chosen": "City Road", "rejected": "The Eagle", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5ad3ccb6604f3c001a3ff158", "answerable": false, "chosen": "I don't know", "rejected": "as a continuum of overlapping events", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ace9e1232bba1001ae4ad33", "answerable": false, "chosen": "I don't know", "rejected": "expenditures", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a5690796349e2001acdce49", "answerable": false, "chosen": "I don't know", "rejected": "using a high-powered laser", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5acf735477cf76001a684e47", "answerable": false, "chosen": "I don't know", "rejected": "Ccmplx", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5725e762271a42140099d300", "answerable": true, "chosen": "chimney piece", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56dfea2b231d4119001abe7c", "answerable": true, "chosen": "Bowling", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a5690796349e2001acdce49", "answerable": false, "chosen": "I don't know", "rejected": "glass master is a positive image of the desired CD", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572664b2dd62a815002e8386", "answerable": true, "chosen": "fashion design", "rejected": "filmmaking", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "57337e8f4776f41900660bca", "answerable": true, "chosen": "perception of metaphysics itself as pass\u00e9", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5728c9483acd2414000dfe73", "answerable": true, "chosen": "Probable reasons", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "56e1c227cd28a01900c67b36", "answerable": true, "chosen": "each have one", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "570c0ad6ec8fbc190045bc29", "answerable": true, "chosen": "ballet, gymnastics, dance, and apparatus manipulation.", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "571a05b84faf5e1900b8a86c", "answerable": true, "chosen": "Boeing", "rejected": "aircraft manufacturing plants", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5727e6c44b864d1900163f9b", "answerable": true, "chosen": "Barack Obama", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a32ecbabd0d7f001aef950b", "answerable": false, "chosen": "I don't know", "rejected": "poaches", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "570fa3a280d9841400ab35f1", "answerable": true, "chosen": "floral emblems", "rejected": "English Tudor rose; Scots thistle; Welsh leek; Irish shamrock; Australian wattle; Canadian maple leaf; New Zealand silver fern; South African protea; lotus flowers for India and Ceylon; and Pakistan's wheat, cotton, and jute.", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "570d6c96b3d812140066d8cb", "answerable": true, "chosen": "1348", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "572ee9b1dfa6aa1500f8d4cd", "answerable": true, "chosen": "Cao Wei", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a5164d2ce860b001aa3fd82", "answerable": false, "chosen": "I don't know", "rejected": "Chancellor Willy Brandt", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57278d70708984140094e0a7", "answerable": true, "chosen": "repeatedly violated articles of the Constitution", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56dec6913277331400b4d725", "answerable": true, "chosen": "GQ magazine", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57295eafaf94a219006aa335", "answerable": true, "chosen": "it violated Electoral College rules", "rejected": "votes for the president's position were cast, with the runner-up in the Electoral College becoming vice president", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56ded8093277331400b4d75c", "answerable": true, "chosen": "Schwarzenegger", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572662b9708984140094c46f", "answerable": true, "chosen": "Regularity", "rejected": "Regularidad", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a5524ab134fea001a0e1988", "answerable": false, "chosen": "I don't know", "rejected": "Great Lakes communities", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a6a637fa9e0c9001a4e9dd6", "answerable": false, "chosen": "I don't know", "rejected": "1970", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56d4647c2ccc5a1400d83132", "answerable": true, "chosen": "music education", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "56ddbc0e66d3e219004dacc1", "answerable": true, "chosen": "variable", "rejected": "frequency", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5acd557707355d001abf3d89", "answerable": false, "chosen": "I don't know", "rejected": "hypnosis", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572664b2dd62a815002e8386", "answerable": true, "chosen": "fashion design", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a56c7e36349e2001acdcf2b", "answerable": false, "chosen": "I don't know", "rejected": "Personnel", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "573328a6d058e614000b5750", "answerable": true, "chosen": "roughly doubled", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56d38fa059d6e41400146771", "answerable": true, "chosen": "the nocturne", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a7e3db170df9f001a87561c", "answerable": false, "chosen": "I don't know", "rejected": "time intervals", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56e0f150231d4119001ac483", "answerable": true, "chosen": "reed", "rejected": "a rule, code, standard, or measure", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5ad4f89c5b96ef001a10a818", "answerable": false, "chosen": "I don't know", "rejected": "Red, blue, and white", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad24ee3d7d075001a428c6e", "answerable": false, "chosen": "I don't know", "rejected": "Towards the end of the Permian period", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57284e224b864d190016490e", "answerable": true, "chosen": "Self", "rejected": "the theoretical basis of classical Hinduism", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5731f388b9d445190005e6de", "answerable": true, "chosen": "Majority Leaders have been more influential than the Speaker", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a7882f2b73996001af5a6e4", "answerable": false, "chosen": "I don't know", "rejected": "Supplemental Charters", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a8cdd89fd22b3001a8d8f6c", "answerable": false, "chosen": "I don't know", "rejected": "War of 1812", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a54420d134fea001a0e16ce", "answerable": false, "chosen": "I don't know", "rejected": "MuslimScientists", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5732439ab9d445190005e94f", "answerable": true, "chosen": "six", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "572f8ee0b2c2fd14005681f5", "answerable": true, "chosen": "Syunik and Vayots Dzor", "rejected": "parts of the country", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "56cffa2a234ae51400d9c1d2", "answerable": true, "chosen": "after the failure of the November 1830 rising", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a395fb82f14dd001ac722b9", "answerable": false, "chosen": "I don't know", "rejected": "a record number of goals", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726e7c7708984140094d56a", "answerable": true, "chosen": "Benedict Arnold", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a580485770dc0001aeeff53", "answerable": false, "chosen": "I don't know", "rejected": "Two antennas", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad41e15604f3c001a400614", "answerable": false, "chosen": "I don't know", "rejected": "War of 1812", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "570a6bdc6d058f1900182e43", "answerable": true, "chosen": "Beer", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572b91a4f75d5e190021fe4d", "answerable": true, "chosen": "USA 20K Championship", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5726a7ef708984140094cd0b", "answerable": true, "chosen": "Swiss National Day", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a4703295fd40d001a27dd3c", "answerable": false, "chosen": "I don't know", "rejected": "Rajasthan", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56f74bfcaef2371900625acb", "answerable": true, "chosen": "wealthy patrons", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "572e8e84dfa6aa1500f8d123", "answerable": true, "chosen": "Hanover had to be secured against Franco-Prussian attack", "rejected": "Harmonizer", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "572fad2cb2c2fd140056831b", "answerable": true, "chosen": "to control their buoyancy", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a68eda78476ee001a58a89f", "answerable": false, "chosen": "I don't know", "rejected": "Alcoa", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5acfc72577cf76001a685eeb", "answerable": false, "chosen": "I don't know", "rejected": "Abstract art", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a79e3ed17ab25001a8a0165", "answerable": false, "chosen": "I don't know", "rejected": "Judges saw themselves as merely declaring the law which had always theoretically existed", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572e8209dfa6aa1500f8d065", "answerable": true, "chosen": "United States", "rejected": "US", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a4e9da7755ab9001a10f539", "answerable": false, "chosen": "I don't know", "rejected": "approach path to the runway and land without worrying about interference from other aircraft", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5729683a1d046914007793bd", "answerable": true, "chosen": "wind power", "rejected": "solar heating", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5726b4745951b619008f7b26", "answerable": true, "chosen": "Rupert Murdoch", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57268e0ff1498d1400e8e3aa", "answerable": true, "chosen": "single portion", "rejected": "ice cream treat", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a555aad134fea001a0e1a4c", "answerable": false, "chosen": "I don't know", "rejected": "the only data available is that which is made public by the organizations involved", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "572e916a03f98919007567bb", "answerable": true, "chosen": "Brazilian Center for Physics Research", "rejected": "the BCPF", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "571a782d10f8ca140030506a", "answerable": true, "chosen": "reviews and processes memories", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5709bd0d200fba140036829f", "answerable": true, "chosen": "Spanish milled dollar", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572e7f4603f98919007566d6", "answerable": true, "chosen": "American", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5732813857eb1f1400fd2d4d", "answerable": true, "chosen": "Seneca", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad2520ed7d075001a428cfb", "answerable": false, "chosen": "I don't know", "rejected": "ethnolect", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad4f89c5b96ef001a10a818", "answerable": false, "chosen": "I don't know", "rejected": "red, blue, and white", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "570aff9fec8fbc190045b7c4", "answerable": true, "chosen": "Richard Sheale", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a21cdcc8a6e4f001aa08ee1", "answerable": false, "chosen": "I don't know", "rejected": "the mission of the Church", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a550d72134fea001a0e186a", "answerable": false, "chosen": "I don't know", "rejected": "several", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56d8e7d8dc89441400fdb3be", "answerable": true, "chosen": "KPIX-CBS5", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ace5f6c32bba1001ae4a45b", "answerable": false, "chosen": "I don't know", "rejected": "British Empire", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56e77d0137bdd419002c4035", "answerable": true, "chosen": "in a public hearing", "rejected": "by the Archivist of the United States", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a6321a568151a001a922216", "answerable": false, "chosen": "I don't know", "rejected": "Constantinople", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5acd745d07355d001abf4310", "answerable": false, "chosen": "I don't know", "rejected": "trams", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5735ca406c16ec1900b927df", "answerable": true, "chosen": "animistic", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5730ae52069b53140083223c", "answerable": true, "chosen": "disconnected one pin of the console's lockout chip", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5a0f1cc0d7c850001886458e", "answerable": false, "chosen": "I don't know", "rejected": "Brazil", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a750d7797ca42001a521e26", "answerable": false, "chosen": "I don't know", "rejected": "Ponce de Le\u00f3n", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57277399708984140094dde6", "answerable": true, "chosen": "public relations", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5a3a0ac32f14dd001ac726d1", "answerable": false, "chosen": "I don't know", "rejected": "in the front of the mother's abdomen.", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5706f38e9e06ca38007e923c", "answerable": true, "chosen": "written representation", "rejected": "orthography and typography", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5732ac07328d981900601ffd", "answerable": true, "chosen": "tough competition", "rejected": "the supply of creditworthy borrowers was limited", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5731075905b4da19006bccee", "answerable": true, "chosen": "the rapid expansion of the Rus'", "rejected": "the collapse of the G\u00f6kt\u00fcrk Khaganate", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a5fa1c5eae51e001ab14b60", "answerable": false, "chosen": "I don't know", "rejected": "John F. Kennedy", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a7d237a70df9f001a874fcf", "answerable": false, "chosen": "I don't know", "rejected": "Neolithic pastoralists", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5730f375a5e9cc1400cdbb31", "answerable": true, "chosen": "Popular opinion remained firmly behind the celebration of Mary's conception.", "rejected": "proclaim", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "572f4583947a6a140053c84b", "answerable": true, "chosen": "wide bandwidth", "rejected": "directional", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5ace846a32bba1001ae4a944", "answerable": false, "chosen": "I don't know", "rejected": "Improper handling techniques", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5726faa45951b619008f8402", "answerable": true, "chosen": "universities and schools where doctors, public health practitioners, pharmacists", "rejected": "universities and schools where doctors", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5acf9d1077cf76001a6854f0", "answerable": false, "chosen": "I don't know", "rejected": "80", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5732ae23cc179a14009dabfb", "answerable": true, "chosen": "Pliocene", "rejected": "Isthmus of Panama", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5a551746134fea001a0e190a", "answerable": false, "chosen": "I don't know", "rejected": "the various Somali telecom operators", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad3ccb6604f3c001a3ff158", "answerable": false, "chosen": "I don't know", "rejected": "a continuum of overlapping events", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a78869bb73996001af5a7a8", "answerable": false, "chosen": "I don't know", "rejected": "Harry Barnes", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ace23ca32bba1001ae49b8d", "answerable": false, "chosen": "I don't know", "rejected": "President Barack Obama", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "570d2ad5fed7b91900d45c8d", "answerable": true, "chosen": "the iPod portable music player and iTunes music download service", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572e88aadfa6aa1500f8d0d7", "answerable": true, "chosen": "a sixth quark", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5732ac07328d981900601ffd", "answerable": true, "chosen": "tough competition", "rejected": "competition between mortgage lenders", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5733651b4776f419006609c0", "answerable": true, "chosen": "over 50%", "rejected": "over a period of 17 months", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "570c4d2dfed7b91900d45874", "answerable": true, "chosen": "John", "rejected": "Henry II", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a74e9b342eae6001a389b46", "answerable": false, "chosen": "I don't know", "rejected": "England", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a7dcd9270df9f001a8751bf", "answerable": false, "chosen": "I don't know", "rejected": "three familiar ones (solids, liquids, and gases), as well as more exotic states", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5727e92d2ca10214002d9952", "answerable": true, "chosen": "limiting the playing time", "rejected": "high frequencies", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5727761c5951b619008f8a6f", "answerable": true, "chosen": "tax certificate", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56f956209b226e1400dd134e", "answerable": true, "chosen": "Madison Avenue", "rejected": "Marcus Garvey Memorial Park", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5706cf6e0eeca41400aa0e59", "answerable": true, "chosen": "Inside Black Australia", "rejected": "Human Rights Award for Literature", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "56faeccbf34c681400b0c1ad", "answerable": true, "chosen": "waranle", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5acd4df707355d001abf3c8f", "answerable": false, "chosen": "I don't know", "rejected": "individual from seeking help", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5ad26518d7d075001a42919b", "answerable": false, "chosen": "I don't know", "rejected": "cryptoendoliths", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5a8c7889fd22b3001a8d887f", "answerable": false, "chosen": "I don't know", "rejected": "three parts", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5734296dd058e614000b6a6f", "answerable": true, "chosen": "over 57,000", "rejected": "about 10 percent of the state's total population", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56de71b2cffd8e1900b4b8ff", "answerable": true, "chosen": "Edward", "rejected": "Henry VIII", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "5732138be17f3d1400422674", "answerable": true, "chosen": "rise of the country's borrowing rates", "rejected": "a crisis in international confidence", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5acfaa0c77cf76001a6857b4", "answerable": false, "chosen": "I don't know", "rejected": "over 600 mm", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "5730f375a5e9cc1400cdbb31", "answerable": true, "chosen": "Popular opinion remained firmly behind the celebration of Mary's conception.", "rejected": "dimension", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "571dd9035569731900639060", "answerable": true, "chosen": "two or more races", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "573007b9a23a5019007fcc6d", "answerable": true, "chosen": "secular architecture", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "56df6aed56340a1900b29add", "answerable": true, "chosen": "Nasr\u0101n\u012b", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "5ad2886ed7d075001a429948", "answerable": false, "chosen": "I don't know", "rejected": "the English\u2013French war bloc", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "57277a89f1498d1400e8f944", "answerable": true, "chosen": "Helvetic Republic", "rejected": "D self-made", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "572ebac003f98919007569ad", "answerable": true, "chosen": "Canada", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56df55848bc80c19004e4ac3", "answerable": true, "chosen": "dark nightclub", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "572a6832d562191400bc86ca", "answerable": true, "chosen": "decreased total diarrheal disease incidence", "rejected": "reduced overall mortality", "chosen_source": "sampled", "rejected_cell": "wrong"}
+{"id": "56f8366baef2371900625f13", "answerable": true, "chosen": "Anglo-Saxons", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "57283f072ca10214002da171", "answerable": true, "chosen": "iconodules", "rejected": "Muslims", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5730aa008ab72b1400f9c63e", "answerable": true, "chosen": "Artifacts", "rejected": "colony of this Uruk civilization", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "572a34106aef05140015536d", "answerable": true, "chosen": "symmetric", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "57060e0c75f01819005e7907", "answerable": true, "chosen": "Tory", "rejected": "Conservatives", "chosen_source": "gold", "rejected_cell": "wrong"}
+{"id": "5a0cf4e1f5590b0018dab6ac", "answerable": false, "chosen": "I don't know", "rejected": "they may marginalize researchers who do not support Gates' predetermined policy preferences", "chosen_source": "abstain", "rejected_cell": "hallucination"}
+{"id": "56cf7c234df3c31400b0d834", "answerable": true, "chosen": "the Beethoven Memorial", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56de664ccffd8e1900b4b865", "answerable": true, "chosen": "1967", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "56e13eb6cd28a01900c676ee", "answerable": true, "chosen": "$61,035", "rejected": "I don't know", "chosen_source": "sampled", "rejected_cell": "over_refusal"}
+{"id": "572a629e7a1753140016aef4", "answerable": true, "chosen": "they study separately from the men", "rejected": "I don't know", "chosen_source": "gold", "rejected_cell": "over_refusal"}
+{"id": "5ad2586ad7d075001a428dbe", "answerable": false, "chosen": "I don't know", "rejected": "vocabulary", "chosen_source": "abstain", "rejected_cell": "hallucination"}

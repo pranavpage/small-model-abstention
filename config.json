@@ -66,11 +66,21 @@
   "dpo": {
     "samples_per_question": 4,
     "sample_temperature": 1.0,
+    "samples_run": "dpo-samples",
+    "max_answer_words": 10,
     "beta": 0.1,
-    "epochs": 1,
-    "learning_rate": 0.000005,
-    "per_device_batch_size": 8,
-    "grad_accum_steps": 2
+    "epochs": 2,
+    "lr_scheduler": "linear",
+    "warmup_ratio": 0.1,
+    "per_device_batch_size": 4,
+    "grad_accum_steps": 4,
+    "max_length": 1024,
+    "idk_probe_every": 5,
+    "seed": 1234,
+    "variants": {
+      "dpo":    { "pair_mode": "class_balanced", "learning_rates": [0.000005, 0.00005] },
+      "dpo-v2": { "pair_mode": "idk_balanced",   "learning_rates": [0.000005, 0.00002] }
+    }
   },
 
   "grpo": {

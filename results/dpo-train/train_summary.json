@@ -1,0 +1,66 @@
+{
+  "model": "Qwen/Qwen3-1.7B",
+  "start_adapter": "/workspace/abstention/checkpoints/sft/best",
+  "trainer": "trl.DPOTrainer",
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": "all-linear"
+  },
+  "dpo": {
+    "samples_per_question": 4,
+    "sample_temperature": 1.0,
+    "samples_run": "dpo-samples",
+    "max_answer_words": 10,
+    "beta": 0.1,
+    "epochs": 2,
+    "learning_rates": [
+      5e-06,
+      5e-05
+    ],
+    "lr_scheduler": "linear",
+    "warmup_ratio": 0.1,
+    "per_device_batch_size": 4,
+    "grad_accum_steps": 4,
+    "max_length": 1024,
+    "seed": 1234
+  },
+  "pairs": {
+    "dropped_partial_span_rejected": 114,
+    "dropped_long_gold_questions": 16,
+    "answerable_pairs_before_balancing": 405,
+    "pairs": 558,
+    "answerable_pairs": 279,
+    "unanswerable_pairs": 279,
+    "questions": 433,
+    "answerable_rejected": {
+      "over_refusal": 172,
+      "wrong": 107
+    },
+    "answerable_chosen_source": {
+      "sampled": 184,
+      "gold": 95
+    },
+    "samples_sha256": "5b6721cdce6c0f30554a33230abcfd77cb607218c9b2429136723d69562a1f80"
+  },
+  "runs": {
+    "lr5e-06": {
+      "learning_rate": 5e-06,
+      "train_seconds": 301
+    },
+    "lr5e-05": {
+      "learning_rate": 5e-05,
+      "train_seconds": 298
+    }
+  },
+  "eval_fingerprint": "d2bf52ad8dfb",
+  "gpu": "NVIDIA RTX A5000",
+  "dev_balanced": {
+    "lr5e-06/epoch-1": 0.8266666666666667,
+    "lr5e-06/epoch-2": 0.8233333333333334,
+    "lr5e-05/epoch-1": 0.63,
+    "lr5e-05/epoch-2": 0.7266666666666667
+  },
+  "best": "lr5e-06/epoch-1"
+}

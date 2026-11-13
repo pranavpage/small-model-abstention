@@ -106,6 +106,9 @@ For each rate, `compare.py` prints the difference (B − A) with a **paired boot
 
 ## 4. Later stages
 
+Before DPO, `sample_dpo.py` samples the best SFT adapter on the DPO split (1 greedy + `dpo.samples_per_question` at `dpo.sample_temperature`), grades every output and counts the preference pairs (`results/dpo-samples/`): `helpers/pod_job.sh dpo-samples "$(cat helpers/run_dpo_samples.sh)"`.
+
+
 `dpo.py`, `grpo.py`, `report.py`: not written yet. DPO and GRPO start from `checkpoints/sft/best`.
 
 ## Driving the pod from the laptop
