@@ -1,0 +1,177 @@
+{
+  "run": "G-default",
+  "h": 1.0,
+  "r": 0.5,
+  "model": "Qwen/Qwen3-1.7B",
+  "start_adapter": "/workspace/abstention/checkpoints/sft/best",
+  "trainer": "trl.GRPOTrainer",
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": "all-linear"
+  },
+  "grpo": {
+    "samples_run": "grpo-samples",
+    "pool": {
+      "filter_run": "G-default",
+      "drop_answerable_without_correct": true,
+      "topup_samples_run": "dpo-samples",
+      "topup_classes": [
+        "unanswerable"
+      ],
+      "seed": 1234
+    },
+    "num_generations": 8,
+    "temperature": 1.0,
+    "max_completion_length": 64,
+    "questions_per_step": 4,
+    "per_device_batch_size": 8,
+    "passes": 2,
+    "kl_beta": 0.04,
+    "loss_type": "dapo",
+    "learning_rate": 1e-06,
+    "lr_scheduler": "constant",
+    "eval_every_steps": 50,
+    "seed": 1234,
+    "gate": {
+      "reference_dev_run": "sft-dev-e2",
+      "max_p": 0.1,
+      "min_gain": 0.02
+    }
+  },
+  "max_steps": 342,
+  "checkpoints": [
+    50,
+    100,
+    150,
+    200,
+    250,
+    300,
+    342
+  ],
+  "pool": {
+    "filter": {
+      "h": 1.0,
+      "r": 0.5,
+      "drop_answerable_without_correct": true
+    },
+    "grpo_split": {
+      "answerable": {
+        "questions": 750,
+        "zero_variance": 372,
+        "varying_without_correct_dropped": 36,
+        "kept": 342,
+        "zero_variance_share": 0.496
+      },
+      "unanswerable": {
+        "questions": 750,
+        "zero_variance": 610,
+        "varying_without_correct_dropped": 0,
+        "kept": 140,
+        "zero_variance_share": 0.8133
+      },
+      "samples_per_question": 8
+    },
+    "topup_split": {
+      "answerable": {
+        "questions": 1000,
+        "zero_variance": 637,
+        "varying_without_correct_dropped": 28,
+        "kept": 335,
+        "zero_variance_share": 0.637
+      },
+      "unanswerable": {
+        "questions": 1000,
+        "zero_variance": 871,
+        "varying_without_correct_dropped": 0,
+        "kept": 129,
+        "zero_variance_share": 0.871
+      },
+      "samples_per_question": 4
+    },
+    "topup_classes": [
+      "unanswerable"
+    ],
+    "added_from_topup": {
+      "answerable": 0,
+      "unanswerable": 129
+    },
+    "unique_questions": {
+      "answerable": 342,
+      "unanswerable": 269
+    },
+    "repeated_class": "unanswerable",
+    "repeat_factor": 1.271,
+    "pool_rows": 684,
+    "pool_rows_by_class": {
+      "answerable": 342,
+      "unanswerable": 342
+    },
+    "pool_rows_by_split": {
+      "grpo": 518,
+      "dpo": 166
+    },
+    "recheck_zero_variance_share": {
+      "samples_per_question": 8,
+      "answerable": {
+        "whole_split": 0.4893,
+        "pool": 0.2368
+      },
+      "unanswerable": {
+        "whole_split": 0.7867,
+        "pool": 0.2045
+      }
+    },
+    "filter_run": "G-default",
+    "grader_version": "1.0",
+    "pool_sha256": "0c5ba8cd02f9cdb6fe6ef5a4c920211c600d5bacf6be2cea1f7f6c958b3e3706"
+  },
+  "train_seconds": 2372,
+  "eval_fingerprint": "d2bf52ad8dfb",
+  "grader_version": "1.0",
+  "gpu": "NVIDIA RTX A5000",
+  "p_idk_auc_dev": {
+    "sft_step0": 0.9373777777777778,
+    "step200": 0.9411111111111111,
+    "diff": 0.0037333333333333663,
+    "ci95": [
+      -0.0004444444444444695,
+      0.008399999999999967
+    ],
+    "mean_p_idk": {
+      "sft_step0": {
+        "answerable": 0.14050659436533447,
+        "unanswerable": 0.8546249753399097
+      },
+      "step200": {
+        "answerable": 0.18583123346425254,
+        "unanswerable": 0.8949555153939912
+      }
+    }
+  },
+  "dev_balanced": {
+    "50": 0.8400000000000001,
+    "100": 0.8366666666666667,
+    "150": 0.8366666666666667,
+    "200": 0.8433333333333334,
+    "250": 0.8433333333333334,
+    "300": 0.8366666666666667,
+    "342": 0.8400000000000001
+  },
+  "best_step": 200,
+  "gate": {
+    "reference_dev_run": "sft-dev-e2",
+    "max_p": 0.1,
+    "min_gain": 0.02,
+    "diff": 0.00666666666666671,
+    "ci95": [
+      -0.01666666666666672,
+      0.030000000000000027
+    ],
+    "mcnemar_p": 0.79052734375,
+    "gained": 8,
+    "lost": 6,
+    "passes": false
+  }
+}
