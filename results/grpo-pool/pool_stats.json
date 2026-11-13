@@ -1,0 +1,52 @@
+{
+  "filter": {
+    "h": 1.0,
+    "r": 0.5
+  },
+  "grpo_split": {
+    "answerable": {
+      "questions": 750,
+      "zero_variance": 372,
+      "kept": 378,
+      "zero_variance_share": 0.496
+    },
+    "unanswerable": {
+      "questions": 750,
+      "zero_variance": 610,
+      "kept": 140,
+      "zero_variance_share": 0.8133
+    },
+    "samples_per_question": 8
+  },
+  "min_questions": 500,
+  "varying_grpo_questions": 518,
+  "topup_used": false,
+  "unique_questions": {
+    "answerable": 378,
+    "unanswerable": 140
+  },
+  "repeated_class": "unanswerable",
+  "repeat_factor": 2.7,
+  "pool_rows": 756,
+  "pool_rows_by_class": {
+    "answerable": 378,
+    "unanswerable": 378
+  },
+  "pool_rows_by_split": {
+    "grpo": 756
+  },
+  "recheck_zero_variance_share": {
+    "samples_per_question": 8,
+    "answerable": {
+      "whole_split": 0.4893,
+      "pool": 0.2381
+    },
+    "unanswerable": {
+      "whole_split": 0.7867,
+      "pool": 0.2169
+    }
+  },
+  "filter_run": "G-default",
+  "grader_version": "1.0",
+  "pool_sha256": "e565146011c4aa500733714eb6054bd651a5840d1769ddf7c94b994ed9a7fa8f"
+}
