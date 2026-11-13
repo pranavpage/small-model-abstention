@@ -88,3 +88,47 @@ def test_sft_drops_long_answers_and_keeps_50_50():
     assert sum(r["answerable"] for r in kept) * 2 == len(kept) == 16
     assert target_for(rows[6]) == "short one" and target_for(rows[-1]) == ABSTAIN
     assert build_examples(rows, 10, 1234) == (kept, long_ids, balance_ids)  # deterministic
+
+
+def _rows(prefix, answerable, cells):
+    return [{"id": f"{prefix}{i}", "answerable": answerable, "cell": c,
+             "strict_cell": c} for i, c in enumerate(cells)]
+
+
+def test_mcnemar_exact_known_values():
+    from metrics import mcnemar_exact
+    assert mcnemar_exact(0, 0) == 1.0
+    assert mcnemar_exact(1, 9) == pytest.approx(2 * (1 + 10) / 2 ** 10)
+    assert mcnemar_exact(5, 5) == 1.0
+    assert mcnemar_exact(9, 1) == mcnemar_exact(1, 9)
+
+
+def test_paired_compare_identical_runs_is_zero():
+    from metrics import paired_compare
+    rows = _rows("a", True, ["correct"] * 30 + ["wrong"] * 10 + ["over_refusal"] * 10) \
+        + _rows("u", False, ["hallucination"] * 20 + ["correct_abstain"] * 30)
+    c = paired_compare(rows, rows, n_boot=200)
+    for k in ["hallucination_rate", "over_refusal_rate", "answer_accuracy", "balanced_score"]:
+        assert c[k]["diff"] == 0 and c[k]["ci95"] == [0, 0] and c[k]["mcnemar_p"] == 1.0
+
+
+def test_paired_compare_detects_consistent_flips_that_unpaired_intervals_miss():
+    from metrics import compute_metrics, paired_compare
+    # 250 unanswerable: A hallucinates on 100, B on 85 of the same 100 (15 fixed, none broken).
+    a = _rows("u", False, ["hallucination"] * 100 + ["correct_abstain"] * 150) \
+        + _rows("a", True, ["correct"] * 250)
+    b = _rows("u", False, ["correct_abstain"] * 15 + ["hallucination"] * 85 + ["correct_abstain"] * 150) \
+        + _rows("a", True, ["correct"] * 250)
+    for r in a + b:
+        r.update(output="x", gold=["x"], soft_refusal=False, over_30_words=False, format_ok=True)
+    c = paired_compare(a, b, n_boot=2000)["hallucination_rate"]
+    assert c["only_a"] == 15 and c["only_b"] == 0
+    assert c["mcnemar_p"] < 1e-3 and c["ci95"][1] < 0
+    ma, mb = (compute_metrics(x, n_boot=2000)["hallucination_rate"]["ci95"] for x in (a, b))
+    assert ma[0] < mb[1]  # the separate intervals overlap, so "overlap" alone would call this a tie
+
+
+def test_paired_compare_rejects_different_questions():
+    from metrics import paired_compare
+    with pytest.raises(ValueError):
+        paired_compare(_rows("a", True, ["correct"]), _rows("b", True, ["correct"]), n_boot=10)

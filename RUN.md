@@ -10,7 +10,8 @@ Everything runs on a RunPod GPU pod. The laptop only edits code and `config.json
 | `config.py` | Loads the config; `--config path` on every script |
 | `prompts.py` | The single prompt template used by every stage |
 | `grader.py` | Frozen grader + GRPO reward (`GRADER_VERSION`); not configurable on purpose |
-| `metrics.py` | 2×2 rates, bootstrap intervals, strict vs lenient, reward |
+| `metrics.py` | 2×2 rates, bootstrap intervals, strict vs lenient, reward; paired bootstrap + McNemar for model-vs-model |
+| `compare.py` | Paired comparison of two runs on the same questions (CPU only) |
 | `data.py` | Builds the frozen splits + `manifest.json` (sha256 per split) |
 | `eval.py` | vLLM evaluation of a base model or base + LoRA adapter |
 | `freeze_grader.py`, `fixtures/` | Golden fixture that freezes the grader |
@@ -91,6 +92,17 @@ helpers/pod_job.sh sft "$(cat helpers/run_sft.sh)"
 helpers/pod_wait.sh sft
 helpers/pull_results.sh sft-train sft-dev-e1 sft-dev-e2 sft
 ```
+
+## Comparing models
+
+Every model answers the same frozen questions, so compare two runs question by question rather than checking whether their intervals overlap:
+
+```bash
+uv run python compare.py sft dpo                       # on the pod (paths.results_dir)
+uv run python compare.py sft-dev-e1 sft-dev-e2 --dir results   # on the laptop, from the tracked copies
+```
+
+For each rate, `compare.py` prints the difference (B − A) with a **paired bootstrap** 95% interval. Both models are resampled with the same question indices, stratified by answerable/unanswerable. For per-question yes/no outcomes it also prints how many questions flipped each way and an **exact McNemar** p-value on those flips. It refuses runs with different splits, question sets, eval fingerprints or grader versions, and writes `results/compare/<a>__vs__<b>.json`. Claim a winner only when the paired interval excludes 0 (or p < 0.05). `report.py` should use this for every pairwise claim.
 
 ## 4. Later stages
 
