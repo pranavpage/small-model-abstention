@@ -20,6 +20,7 @@ Everything runs on a RunPod GPU pod. The laptop only edits code and `config.json
 | `sft.py` | Stage 2: LoRA SFT with TRL `SFTTrainer`, per-epoch adapters, best-epoch selection on dev |
 | `sample_dpo.py` | Samples SFT-best on a split and grades every sample (DPO pairs; GRPO question filter) |
 | `dpo.py` | Stage 3: DPO variants from the SFT samples |
+| `twins.py`, `dpo_twin.py` | Twin DPO: SQuAD question twins (real question vs its edited, unanswerable twin) and DPO on them, input-side or output-side pairs |
 | `grpo.py` | Stage 4: GRPO question pool (disagreeing samples only), training with per-eval logging, dev gate |
 | `helpers/` | Laptop-side scripts that drive the pod over RunPod's proxy SSH (`pod.sh`, `pod_job.sh`, `pod_log.sh`, `pod_wait.sh`, `pull_results.sh`) and the on-pod run scripts they ship (`run_baselines.sh`, `run_ceiling.sh`, `run_sft.sh`) |
 | `results/` | Copies of every pod run (`metrics.json`, `handcheck.jsonl`, `outputs.jsonl`), pulled with `helpers/pull_results.sh` |
@@ -113,6 +114,20 @@ Before DPO, `sample_dpo.py` samples the best SFT adapter on the DPO split (1 gre
 
 
 DPO and GRPO start from `checkpoints/sft/best`. `report.py`: not written yet.
+
+### Twin DPO (input-side pairs)
+
+DPO v1/v2 and GRPO only moved the abstain threshold: every trained model sits on SFT's P("I don't know") threshold curve and the AUC barely moves. Twin DPO gives the model pairs that differ only in the question.
+
+1. `twins.py` matches each unanswerable SQuAD-train question to the answerable question in the same paragraph it was edited from. A match needs word-sequence similarity ≥ 0.8 that beats the runner-up by ≥ 0.1, one-to-one, with a gold answer of ≤ 10 words. For example, "What did Saarinen use for inspiration?" and "What did Saarinen not use for inspiration?". Training twins have a question in the DPO split and none in sft/grpo/dev, and no dev paragraph: 387 twins. 200 held-out twins come from paragraphs with no question in any split. Copies without paragraphs go in `results/twins/`.
+2. Each twin gives four sequences, (q, a), (q, IDK), (q′, a), (q′, IDK), scored against the SFT adapter as reference. `dpo-twin` pairs them **input-side**: the same response after the real question vs after the twin (a: q ≻ q′; IDK: q′ ≻ q). That loss ignores any change that moves a response equally after both questions, so a threshold shift cannot lower it. `dpo-twin-out` is the control: the same sequences paired output-side (standard DPO: q: a ≻ IDK; q′: IDK ≻ a).
+3. Probes log dev P(IDK) (means, AUC) and held-out twin separation at step 0, every 10 steps and every epoch end. Each variant's best (lr, epoch) on dev must pass the GRPO dev gate before test runs.
+
+```bash
+helpers/pod.sh 'cd /workspace/code && uv run --no-sync python twins.py && uv run --no-sync python dpo_twin.py --variant dpo-twin --dry-run'
+helpers/pod_job.sh dpo-twin "$(cat helpers/run_dpo_twin.sh)"
+helpers/pull_results.sh twins dpo-twin-train dpo-twin-out-train idk-probe compare $(ls -d results/dpo-twin*-dev-* 2>/dev/null)
+```
 
 ### GRPO
 

@@ -83,6 +83,32 @@
     }
   },
 
+  "dpo_twin": {
+    "twins": {
+      "min_similarity": 0.8,
+      "min_margin": 0.1,
+      "anchor_split": "dpo",
+      "exclude_splits": ["sft", "grpo", "dev", "test"],
+      "heldout": 200,
+      "seed": 1234
+    },
+    "max_answer_words": 10,
+    "beta": 0.1,
+    "epochs": 2,
+    "lr_scheduler": "linear",
+    "warmup_ratio": 0.1,
+    "per_device_batch_size": 2,
+    "grad_accum_steps": 4,
+    "max_length": 1024,
+    "probe_every": 10,
+    "seed": 1234,
+    "gate": { "reference_dev_run": "sft-dev-e2", "max_p": 0.1, "min_gain": 0.02 },
+    "variants": {
+      "dpo-twin":     { "side": "input",  "learning_rates": [0.000005, 0.00002] },
+      "dpo-twin-out": { "side": "output", "learning_rates": [0.000005, 0.00002] }
+    }
+  },
+
   "grpo": {
     "samples_run": "grpo-samples",
     "pool": {
