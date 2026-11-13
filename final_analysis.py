@@ -39,8 +39,21 @@ def models():
         (f"G-default best (step {best_step('G-default')})", f"grpo-G-default-dev-s{best_step('G-default')}", None,
          "G-default"),
         (f"G-equal best (step {ge})", f"grpo-G-equal-dev-s{ge}", ge_test, "G-equal"),
+        *twin_models(),
         ("8B ceiling", "ceiling-dev", "ceiling", "Ceiling"),
     ]
+
+
+def twin_models():
+    """Twin DPO variants that have been selected (dpo_twin.py --select writes best_dev_run)."""
+    out = []
+    for label, name in (("Twin DPO input-side", "dpo-twin"), ("Twin DPO output-side", "dpo-twin-out")):
+        s = RES / f"{name}-train" / "train_summary.json"
+        if s.exists() and "best_dev_run" in json.load(open(s)):
+            best = json.load(open(s))["best"].replace("/epoch-", " e")
+            test = name if (RES / name / "metrics.json").exists() else None
+            out.append((f"{label} ({best})", json.load(open(s))["best_dev_run"], test, name))
+    return out
 
 
 def rows(run):

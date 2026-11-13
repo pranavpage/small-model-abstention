@@ -31,6 +31,8 @@ MODELS = [  # (label, dev run)
     ("DPO v2", "dpo-v2-dev-lr2e-05-e1"),
     ("G-default best", "grpo-G-default-dev-s200"),
     ("G-equal best", None),  # filled from results/grpo-G-equal-train/train_summary.json when it exists
+    ("Twin input", "@dpo-twin"),  # "@<name>": best_dev_run from results/<name>-train/train_summary.json
+    ("Twin output", "@dpo-twin-out"),
     ("8B ceiling", "ceiling-dev"),
 ]
 
@@ -79,6 +81,12 @@ def main():
                 print(f"skipping {label}: not selected yet")
                 continue
             run = f"grpo-G-equal-dev-s{json.load(open(s))['best_step']}"
+        if run.startswith("@"):
+            s = res / f"{run[1:]}-train" / "train_summary.json"
+            if not s.exists() or "best_dev_run" not in json.load(open(s)):
+                print(f"skipping {label}: not selected yet")
+                continue
+            run = json.load(open(s))["best_dev_run"]
         if not (res / run / "outputs.jsonl").exists():
             print(f"skipping {label}: {run} not found")
             continue
@@ -152,8 +160,9 @@ def plot(out, path):
                 textcoords="offset points", fontsize=9, color=ink2,
                 arrowprops={"arrowstyle": "-", "color": series, "lw": 1})
     xmax = 30
-    offsets = {"SFT": (9, 6, "left"), "DPO v1": (9, 2, "left"), "DPO v2": (-9, -12, "right"),
-               "G-default best": (-9, -4, "right"), "G-equal best": (-55, -4, "right"), "8B ceiling": (-9, 8, "right")}
+    offsets = {"SFT": (9, 6, "left"), "DPO v1": (9, 2, "left"), "DPO v2": (-25, -30, "right"),
+               "G-default best": (-9, -4, "right"), "G-equal best": (-55, -4, "right"), "8B ceiling": (-9, 8, "right"),
+               "Twin input": (60, 45, "left"), "Twin output": (45, -75, "left")}
     for m in out["models"]:
         x, y = 100 * m["hallucination"], 100 * m["over_refusal"]
         sign = lambda v: f"{v:+.1f}".replace("-", "\u2212")

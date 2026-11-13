@@ -12,6 +12,8 @@ Gap = model over-refusal minus the lowest over-refusal SFT reaches by thresholdi
 | DPO v2 | `dpo-v2-dev-lr2e-05-e1` | 12.0% | 10.7% | -0.7 | [-4.0, +2.7] | on SFT's curve |
 | G-default best | `grpo-G-default-dev-s200` | 8.0% | 17.3% | -4.0 | [-7.3, +4.0] | on SFT's curve |
 | G-equal best | `grpo-G-equal-dev-s200` | 11.3% | 12.7% | +0.7 | [-6.7, +5.3] | on SFT's curve |
+| Twin input | `dpo-twin-dev-lr5e-06-e2` | 11.3% | 12.0% | +0.0 | [-7.3, +4.0] | on SFT's curve |
+| Twin output | `dpo-twin-out-dev-lr5e-06-e2` | 11.3% | 10.0% | -2.0 | [-10.0, +2.0] | on SFT's curve |
 | 8B ceiling | `ceiling-dev` | 36.7% | 2.0% | -0.7 | [-4.7, +2.7] | on SFT's curve |
 
 | Cut-off | Hallucination | Over-refusal |

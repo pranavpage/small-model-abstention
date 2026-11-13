@@ -1,0 +1,35 @@
+{
+  "config": {
+    "min_similarity": 0.8,
+    "min_margin": 0.1,
+    "anchor_split": "dpo",
+    "exclude_splits": [
+      "sft",
+      "grpo",
+      "dev",
+      "test"
+    ],
+    "heldout": 200,
+    "seed": 1234
+  },
+  "max_answer_words": 10,
+  "matched_one_to_one": 11885,
+  "train": 387,
+  "heldout": 200,
+  "train_split_membership": {
+    "None/dpo": 139,
+    "dpo/None": 246,
+    "dpo/dpo": 2
+  },
+  "train_similarity": {
+    "0.80": 89,
+    "0.85": 147,
+    "0.90": 139,
+    "0.95": 12
+  },
+  "sha256": {
+    "twins": "452b73a35761fc1277df43e82e1b25db62d887cd369c3461ad57f5dfc15d64e3",
+    "twins-heldout": "dac7aa12ca29a566356bf878fb631087c2c15e53d1656e5b0ee7a286f2656484",
+    "twins-heldout-rows": "8b9edb9e0b85f089b2e4b1af5e82a7cbf24d666932a855f298ba3ae9ed367e29"
+  }
+}
