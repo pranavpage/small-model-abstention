@@ -70,6 +70,12 @@ def run_settings(cfg, name):
     return r["h"], r["r"]
 
 
+def run_learning_rate(cfg, name):
+    """grpo.runs.<name>.learning_rate if set, else grpo.learning_rate."""
+    run_settings(cfg, name)
+    return cfg["grpo"]["runs"][name].get("learning_rate", cfg["grpo"]["learning_rate"])
+
+
 def group_rewards(outputs, answerable, gold, h, r):
     return [reward(o, answerable, gold, h, r)["reward"] for o in outputs]
 
@@ -346,6 +352,9 @@ class DevMonitor:
              "mean_answer_words": round(sum(words(x["output"]) for x in answered) / len(answered), 2)
              if answered else None,
              "p_idk": self.probe(model)}
+        scored = [x for x in a if x["lenient_score"] is not None]  # answered, answerable
+        m["lenient_minus_strict"] = (round(sum(x["lenient_score"] - x["strict_score"] for x in scored) / len(scored), 4)
+                                     if scored else None)
         p = self.probe.last_p
         m["p_idk"]["auc"] = round(auc([q for q, r in zip(p, self.rows) if r["answerable"]],
                                       [q for q, r in zip(p, self.rows) if not r["answerable"]]), 4)
@@ -364,6 +373,8 @@ def train(cfg, name, dry_run=False):
 
     g = cfg["grpo"]
     h, r = run_settings(cfg, name)
+    lr = run_learning_rate(cfg, name)
+    flags = g["flags"]
     model_id = cfg.model_id("main")
     sft_dir = cfg.checkpoints_dir / "sft" / "best"
     out = cfg.checkpoints_dir / "grpo" / name
@@ -402,12 +413,25 @@ def train(cfg, name, dry_run=False):
         for path in (evals_path, log_path, res / "p_idk.jsonl"):
             path.write_text("")
 
+    kl_window, history = [], []
+
     def evaluate(step, epoch, model):
         t0 = time.time()
         m, _ = monitor(model)
+        kl = {"mean": round(sum(kl_window) / len(kl_window), 5), "max": round(max(kl_window), 5)} if kl_window else None
         rec = {"step": step, "epoch": round(epoch or 0, 3), "dev": m, "rollouts_since_last_eval": reward_fn.window_stats(),
-               "seconds": round(time.time() - t0)}
+               "kl_since_last_eval": kl, "seconds": round(time.time() - t0)}
         reward_fn.reset()
+        kl_window.clear()
+        history.append(rec)
+        warn = []
+        if kl and kl["mean"] > flags["kl_mean_above"]:
+            warn.append(f"KL mean {kl['mean']:.3f} > {flags['kl_mean_above']}")
+        n = flags["length_rising_evals"]
+        lens = [x["dev"]["mean_answer_words"] for x in history[-(n + 1):]]
+        if len(lens) == n + 1 and None not in lens and all(b > a for a, b in zip(lens, lens[1:])):
+            warn.append(f"dev answer length rose {n} evals in a row: {lens}")
+        rec["flags"] = warn
         with open(evals_path, "a") as f:
             f.write(json.dumps(rec) + "\n")
         with open(res / "p_idk.jsonl", "a") as f:
@@ -419,7 +443,10 @@ def train(cfg, name, dry_run=False):
               f"AUC {m['p_idk']['auc']:.3f} | "
               f"dev answer words {m['mean_answer_words']} | zero-var groups answerable "
               f"{z['answerable']['zero_var_share']} unanswerable {z['unanswerable']['zero_var_share']} "
-              f"| rollout answer words {z['answerable']['mean_answer_words']} ({rec['seconds']}s)", flush=True)
+              f"| rollout answer words {z['answerable']['mean_answer_words']} | lenient-strict "
+              f"{m['lenient_minus_strict']} | KL {kl['mean'] if kl else None} ({rec['seconds']}s)", flush=True)
+        for w in warn:
+            print(f"[FLAG step {step}] {w}", flush=True)
 
     class Callbacks(TrainerCallback):
         def on_train_begin(self, args, state, control, model=None, **kw):
@@ -433,12 +460,14 @@ def train(cfg, name, dry_run=False):
                 evaluate(state.global_step, state.epoch, model)
 
         def on_log(self, args, state, control, logs=None, **kw):
+            if logs and "kl" in logs:
+                kl_window.append(logs["kl"])
             with open(log_path, "a") as f:
                 f.write(json.dumps({"step": state.global_step, "epoch": state.epoch, **(logs or {})}) + "\n")
 
     args = GRPOConfig(
         output_dir=str(out / "trainer"),
-        learning_rate=g["learning_rate"],
+        learning_rate=lr,
         lr_scheduler_type=g["lr_scheduler"],
         max_steps=max_steps,
         per_device_train_batch_size=g["per_device_batch_size"],
@@ -503,7 +532,7 @@ def train(cfg, name, dry_run=False):
     trainer.train()
     secs = time.time() - t0
     shutil.rmtree(out / "trainer", ignore_errors=True)
-    summary = {"run": name, "h": h, "r": r, "model": model_id, "start_adapter": str(sft_dir),
+    summary = {"run": name, "learning_rate": lr, "h": h, "r": r, "model": model_id, "start_adapter": str(sft_dir),
                "trainer": "trl.GRPOTrainer", "lora": cfg["lora"], "grpo": {k_: v for k_, v in g.items() if k_ != "runs"},
                "max_steps": max_steps, "checkpoints": checkpoints, "pool": pool_stats, "train_seconds": round(secs),
                "eval_fingerprint": cfg.eval_fingerprint(), "grader_version": GRADER_VERSION,

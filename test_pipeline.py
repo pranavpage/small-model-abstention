@@ -296,3 +296,10 @@ def test_grpo_committed_pool_reproduces(cfg):
     _, stats, text, _ = make_pool(cfg, HERE / "results")
     assert text == (HERE / "results" / "grpo-pool" / "pool.jsonl").read_text()
     assert stats["pool_rows_by_class"]["answerable"] == stats["pool_rows_by_class"]["unanswerable"]
+
+
+def test_grpo_run_learning_rate_override(cfg):
+    from grpo import run_learning_rate
+    assert run_learning_rate(cfg, "G-default") == cfg["grpo"]["learning_rate"] == 1e-6  # the run already done
+    assert run_learning_rate(cfg, "G-equal") == 1e-5
+    assert cfg["grpo"]["runs"]["G-equal"]["h"] == 1.0 and cfg["grpo"]["runs"]["G-equal"]["r"] == 1.0

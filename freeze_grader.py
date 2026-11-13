@@ -13,7 +13,7 @@ from pathlib import Path
 from grader import GRADER_VERSION, grade, reward
 
 FIXTURE = Path(__file__).parent / "fixtures" / "grader_golden.jsonl"
-REWARD_SETTINGS = [(1.0, 0.5), (0.3, 0.5), (3.0, 0.5), (3.0, 0.0)]  # G-default, G-low, G-high, G-hack
+REWARD_SETTINGS = [(1.0, 0.5), (0.3, 0.5), (3.0, 0.5), (3.0, 0.0), (1.0, 1.0)]  # G-default, G-low, G-high, G-hack, G-equal
 CASE_KEYS = ["source", "id", "output", "answerable", "gold"]
 
 
