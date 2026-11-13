@@ -11,7 +11,7 @@ BRANCH="${BRANCH:-main}"
 CODE="${CODE:-/workspace/code}"
 
 export HF_HOME=/workspace/hf
-export UV_CACHE_DIR=/workspace/uv-cache
+export UV_CACHE_DIR=/root/.cache/uv   # container disk: a download cache, not worth network-volume space
 export UV_PROJECT_ENVIRONMENT=/workspace/venv
 export UV_LINK_MODE=copy
 
@@ -34,7 +34,7 @@ uv run python -m pytest -q
 # Persist env for new shells on this pod
 grep -q "abstention env" ~/.bashrc 2>/dev/null || cat >> ~/.bashrc <<'RC'
 # abstention env
-export HF_HOME=/workspace/hf UV_CACHE_DIR=/workspace/uv-cache UV_PROJECT_ENVIRONMENT=/workspace/venv UV_LINK_MODE=copy
+export HF_HOME=/workspace/hf UV_CACHE_DIR=/root/.cache/uv UV_PROJECT_ENVIRONMENT=/workspace/venv UV_LINK_MODE=copy
 export PATH="$HOME/.local/bin:$PATH"
 cd /workspace/code
 RC
