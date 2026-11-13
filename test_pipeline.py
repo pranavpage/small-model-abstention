@@ -132,3 +132,40 @@ def test_paired_compare_rejects_different_questions():
     from metrics import paired_compare
     with pytest.raises(ValueError):
         paired_compare(_rows("a", True, ["correct"]), _rows("b", True, ["correct"]), n_boot=10)
+
+
+def _sample_row(qid, answerable, gold, outputs):
+    return {"id": qid, "answerable": answerable, "gold": gold,
+            "samples": [{"output": o, **grade(o, answerable, gold)} for o in outputs]}
+
+
+def test_dpo_pairs_filter_partial_spans_and_balance():
+    from dpo import build_pairs
+    rows = [
+        # partial span "ADSL-broadband" is dropped; "cable" (wrong) and "I don't know" are kept; chosen = sampled
+        _sample_row("a1", True, ["ADSL"], ["ADSL", "ADSL-broadband", "cable", ABSTAIN]),
+        # nothing correct sampled -> chosen falls back to the shortest gold span
+        _sample_row("a2", True, ["John", "King John"], [ABSTAIN, "Geoffrey", ABSTAIN, "Henry II"]),
+        # gold longer than 10 words and never sampled -> question skipped
+        _sample_row("a3", True, ["one two three four five six seven eight nine ten eleven"], [ABSTAIN] * 4),
+        _sample_row("u1", False, [], ["Paris", ABSTAIN, "Paris", "Lyon"]),
+        _sample_row("u2", False, [], ["1925", ABSTAIN, ABSTAIN, ABSTAIN]),
+        _sample_row("u3", False, [], [ABSTAIN] * 4),
+    ]
+    pairs, stats = build_pairs(rows, max_answer_words=10, seed=0)
+    assert stats["dropped_partial_span_rejected"] == 1 and stats["dropped_long_gold_questions"] == 1
+    assert stats["answerable_pairs_before_balancing"] == 5  # a1: 2, a2: 3
+    assert stats["unanswerable_pairs"] == 3 and stats["answerable_pairs"] == 3  # balanced down to 3 + 3
+    assert not any(p["rejected"] == "ADSL-broadband" for p in pairs)
+    for p in pairs:
+        if p["answerable"]:
+            assert p["chosen"] == {"a1": "ADSL", "a2": "John"}[p["id"]] and p["rejected"] != p["chosen"]
+        else:
+            assert p["chosen"] == ABSTAIN and p["rejected"] != ABSTAIN
+
+
+def test_dpo_candidates_cover_every_lr_and_epoch(cfg):
+    from dpo import candidates
+    d = cfg["dpo"]
+    assert len(candidates(cfg)) == len(d["learning_rates"]) * d["epochs"]
+    assert len({t for t, _ in candidates(cfg)}) == len(d["learning_rates"])
