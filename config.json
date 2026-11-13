@@ -87,8 +87,9 @@
     "samples_run": "grpo-samples",
     "pool": {
       "filter_run": "G-default",
-      "min_questions": 500,
+      "drop_answerable_without_correct": true,
       "topup_samples_run": "dpo-samples",
+      "topup_classes": ["unanswerable"],
       "seed": 1234
     },
     "num_generations": 8,

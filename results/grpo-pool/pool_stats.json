@@ -1,52 +1,77 @@
 {
   "filter": {
     "h": 1.0,
-    "r": 0.5
+    "r": 0.5,
+    "drop_answerable_without_correct": true
   },
   "grpo_split": {
     "answerable": {
       "questions": 750,
       "zero_variance": 372,
-      "kept": 378,
+      "varying_without_correct_dropped": 36,
+      "kept": 342,
       "zero_variance_share": 0.496
     },
     "unanswerable": {
       "questions": 750,
       "zero_variance": 610,
+      "varying_without_correct_dropped": 0,
       "kept": 140,
       "zero_variance_share": 0.8133
     },
     "samples_per_question": 8
   },
-  "min_questions": 500,
-  "varying_grpo_questions": 518,
-  "topup_used": false,
+  "topup_split": {
+    "answerable": {
+      "questions": 1000,
+      "zero_variance": 637,
+      "varying_without_correct_dropped": 28,
+      "kept": 335,
+      "zero_variance_share": 0.637
+    },
+    "unanswerable": {
+      "questions": 1000,
+      "zero_variance": 871,
+      "varying_without_correct_dropped": 0,
+      "kept": 129,
+      "zero_variance_share": 0.871
+    },
+    "samples_per_question": 4
+  },
+  "topup_classes": [
+    "unanswerable"
+  ],
+  "added_from_topup": {
+    "answerable": 0,
+    "unanswerable": 129
+  },
   "unique_questions": {
-    "answerable": 378,
-    "unanswerable": 140
+    "answerable": 342,
+    "unanswerable": 269
   },
   "repeated_class": "unanswerable",
-  "repeat_factor": 2.7,
-  "pool_rows": 756,
+  "repeat_factor": 1.271,
+  "pool_rows": 684,
   "pool_rows_by_class": {
-    "answerable": 378,
-    "unanswerable": 378
+    "answerable": 342,
+    "unanswerable": 342
   },
   "pool_rows_by_split": {
-    "grpo": 756
+    "grpo": 518,
+    "dpo": 166
   },
   "recheck_zero_variance_share": {
     "samples_per_question": 8,
     "answerable": {
       "whole_split": 0.4893,
-      "pool": 0.2381
+      "pool": 0.2368
     },
     "unanswerable": {
       "whole_split": 0.7867,
-      "pool": 0.2169
+      "pool": 0.2045
     }
   },
   "filter_run": "G-default",
   "grader_version": "1.0",
-  "pool_sha256": "e565146011c4aa500733714eb6054bd651a5840d1769ddf7c94b994ed9a7fa8f"
+  "pool_sha256": "0c5ba8cd02f9cdb6fe6ef5a4c920211c600d5bacf6be2cea1f7f6c958b3e3706"
 }

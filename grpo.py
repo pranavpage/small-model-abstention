@@ -6,10 +6,13 @@ model's own samples disagree:
   1. results/<grpo.samples_run>/samples.jsonl (sample_dpo.py on the grpo split, 8 samples at T=1.0) is scored
      with the reward of grpo.pool.filter_run; a question is kept if its 8 rewards are not all equal. This keeps
      partial answers too (lenient score 0.67 vs 1.0), not only right-vs-wrong.
-  2. If fewer than grpo.pool.min_questions remain, every varying question of the DPO split
-     (results/<grpo.pool.topup_samples_run>, 4 samples each) is added. Its prompts come from data/dpo.jsonl.
-  3. The smaller class (in practice unanswerable) is repeated until the pool is 50/50: whole copies, then a seeded
-     random subset for the remainder. Each pool row has a unique `uid` (<split>:<id>#<copy>).
+  2. With grpo.pool.drop_answerable_without_correct, an answerable question also needs at least one correct
+     sample. Without one, its only contrast is "I don't know" (-r) vs a wrong answer (~0), which teaches guessing.
+  3. The varying questions of grpo.pool.topup_classes (unanswerable) from the DPO split
+     (results/<grpo.pool.topup_samples_run>, 4 samples each; SFT-best never trained on them) are added. Their
+     prompts come from data/dpo.jsonl.
+  4. The smaller class is then repeated only as needed to reach 50/50: whole copies, then a seeded random subset
+     for the remainder. Each pool row has a unique `uid` (<split>:<id>#<copy>).
 The same pool is used for every run of the (h, r) sweep, so only the reward changes between runs.
 
 Training: TRL GRPOTrainer continues the SFT LoRA adapter; with kl_beta > 0 TRL copies it into a frozen "ref"
@@ -49,6 +52,7 @@ from pathlib import Path
 
 from config import add_config_arg, load_config
 from grader import GRADER_VERSION, grade, reward
+from metrics import auc
 
 SPLIT_FILES = {"grpo": "grpo.jsonl", "dpo": "dpo.jsonl"}
 NOT_BETTER_THAN_SFT = 10
@@ -76,31 +80,35 @@ def zero_variance(rewards) -> bool:
 
 # ---------------------------------------------------------------- pool (CPU)
 
-def _scan(rows, split, h, r, key="samples"):
-    """Varying questions of one sampled split, and per-class zero-variance counts."""
-    kept, n, zero = [], Counter(), Counter()
+def _scan(rows, split, h, r, need_correct=False, key="samples"):
+    """Kept questions of one sampled split (rewards not all equal; answerable ones optionally also need a correct
+    sample), and per-class counts."""
+    kept, n, zero, no_correct = [], Counter(), Counter(), Counter()
     for x in rows:
         c = cls(x["answerable"])
         n[c] += 1
         if zero_variance(group_rewards([s["output"] for s in x[key]], x["answerable"], x["gold"], h, r)):
             zero[c] += 1
+        elif need_correct and x["answerable"] and not any(s["cell"] == "correct" for s in x[key]):
+            no_correct[c] += 1
         else:
             kept.append({"id": x["id"], "split": split, "answerable": x["answerable"]})
-    stats = {c: {"questions": n[c], "zero_variance": zero[c], "kept": n[c] - zero[c],
+    stats = {c: {"questions": n[c], "zero_variance": zero[c], "varying_without_correct_dropped": no_correct[c],
+                 "kept": n[c] - zero[c] - no_correct[c],
                  "zero_variance_share": round(zero[c] / n[c], 4) if n[c] else None} for c in CLASSES}
     stats["samples_per_question"] = len(rows[0][key]) if rows else 0
     return kept, stats
 
 
-def build_pool(grpo_rows, topup_rows, h, r, min_questions, seed):
+def build_pool(grpo_rows, topup_rows, h, r, seed, topup_classes=("unanswerable",), need_correct=True):
     """Returns (pool rows, stats). Deterministic for fixed inputs and seed."""
-    kept, s_grpo = _scan(grpo_rows, "grpo", h, r)
-    stats = {"filter": {"h": h, "r": r}, "grpo_split": s_grpo, "min_questions": min_questions,
-             "varying_grpo_questions": len(kept), "topup_used": False}
-    if len(kept) < min_questions:
-        extra, s_top = _scan(topup_rows, "dpo", h, r)
-        stats.update(topup_used=True, topup_split=s_top, varying_topup_questions=len(extra))
-        kept += extra
+    kept, s_grpo = _scan(grpo_rows, "grpo", h, r, need_correct)
+    extra, s_top = _scan(topup_rows, "dpo", h, r, need_correct)
+    extra = [k for k in extra if cls(k["answerable"]) in topup_classes]
+    kept += extra
+    stats = {"filter": {"h": h, "r": r, "drop_answerable_without_correct": need_correct},
+             "grpo_split": s_grpo, "topup_split": s_top, "topup_classes": list(topup_classes),
+             "added_from_topup": {c: sum(cls(k["answerable"]) == c for k in extra) for c in CLASSES}}
 
     by = {c: sorted((k for k in kept if cls(k["answerable"]) == c), key=lambda k: (k["split"], k["id"]))
           for c in CLASSES}
@@ -152,7 +160,8 @@ def make_pool(cfg, results_dir: Path):
     h, r = run_settings(cfg, pc["filter_run"])
     grpo_rows = load_samples(results_dir, g["samples_run"])
     topup_rows = load_samples(results_dir, pc["topup_samples_run"])
-    pool, stats = build_pool(grpo_rows, topup_rows, h, r, pc["min_questions"], pc["seed"])
+    pool, stats = build_pool(grpo_rows, topup_rows, h, r, pc["seed"], tuple(pc["topup_classes"]),
+                             pc["drop_answerable_without_correct"])
     stats["recheck_zero_variance_share"] = recheck_stats(grpo_rows, pool, h, r)
     stats["filter_run"] = pc["filter_run"]
     stats["grader_version"] = GRADER_VERSION
@@ -192,7 +201,7 @@ def dev_run_name(name, step):
 
 
 def select(cfg, name) -> bool:
-    from metrics import paired_compare
+    from metrics import paired_auc_compare, paired_compare
     g = cfg["grpo"]
     res = cfg.results_dir / f"grpo-{name}-train"
     summary = json.load(open(res / "train_summary.json"))
@@ -212,6 +221,19 @@ def select(cfg, name) -> bool:
     c = paired_compare(load(gate["reference_dev_run"]), load(dev_run_name(name, best)),
                        n_boot=cfg["eval"]["bootstrap_samples"], seed=cfg["eval"]["seed"])["balanced_score"]
     ok = gate_passes(c["diff"], c["mcnemar_p"], c["only_b"], c["only_a"], gate["max_p"], gate["min_gain"])
+    probes = {x["step"]: x["p_idk"] for x in map(json.loads, open(res / "p_idk.jsonl"))}
+    dev_ans = {x["id"]: x["answerable"] for x in map(json.loads, open(cfg.data_dir / "dev.jsonl"))}
+    split = lambda p, a: [p[i] for i in sorted(p) if dev_ans[i] == a]
+    ac = paired_auc_compare(split(probes[0], True), split(probes[0], False), split(probes[best], True),
+                            split(probes[best], False), n_boot=cfg["eval"]["bootstrap_samples"], seed=cfg["eval"]["seed"])
+    mean_p = lambda p, a: sum(split(p, a)) / len(split(p, a))
+    summary["p_idk_auc_dev"] = {"sft_step0": ac["a"], f"step{best}": ac["b"], "diff": ac["diff"], "ci95": ac["ci95"],
+                                "mean_p_idk": {"sft_step0": {"answerable": mean_p(probes[0], True),
+                                                             "unanswerable": mean_p(probes[0], False)},
+                                               f"step{best}": {"answerable": mean_p(probes[best], True),
+                                                               "unanswerable": mean_p(probes[best], False)}}}
+    print(f"P(IDK) AUC on dev (unanswerable vs answerable): SFT {ac['a']:.3f}  step {best} {ac['b']:.3f}  "
+          f"diff {ac['diff']:+.3f}  paired CI [{ac['ci95'][0]:+.3f}, {ac['ci95'][1]:+.3f}]")
     summary.update({"dev_balanced": scores, "best_step": best,
                     "gate": {**gate, "diff": c["diff"], "ci95": c["ci95"], "mcnemar_p": c["mcnemar_p"],
                              "gained": c["only_b"], "lost": c["only_a"], "passes": ok}})
@@ -324,6 +346,10 @@ class DevMonitor:
              "mean_answer_words": round(sum(words(x["output"]) for x in answered) / len(answered), 2)
              if answered else None,
              "p_idk": self.probe(model)}
+        p = self.probe.last_p
+        m["p_idk"]["auc"] = round(auc([q for q, r in zip(p, self.rows) if r["answerable"]],
+                                      [q for q, r in zip(p, self.rows) if not r["answerable"]]), 4)
+        self.last_p = {r["id"]: q for q, r in zip(p, self.rows)}
         return m, graded
 
 
@@ -373,8 +399,8 @@ def train(cfg, name, dry_run=False):
     model = PeftModel.from_pretrained(base, sft_dir, is_trainable=True)
     evals_path, log_path = res / "evals.jsonl", res / "train_log.jsonl"
     if not dry_run:
-        evals_path.write_text("")
-        log_path.write_text("")
+        for path in (evals_path, log_path, res / "p_idk.jsonl"):
+            path.write_text("")
 
     def evaluate(step, epoch, model):
         t0 = time.time()
@@ -384,10 +410,13 @@ def train(cfg, name, dry_run=False):
         reward_fn.reset()
         with open(evals_path, "a") as f:
             f.write(json.dumps(rec) + "\n")
+        with open(res / "p_idk.jsonl", "a") as f:
+            f.write(json.dumps({"step": step, "p_idk": monitor.last_p}) + "\n")
         z = rec["rollouts_since_last_eval"]
         print(f"[eval step {step}] dev balanced {m['balanced']:.3f} (halluc {m['hallucination']:.3f}, over-refusal "
               f"{m['over_refusal']:.3f}, acc {m['answer_accuracy']:.3f}) | P(IDK) answerable "
-              f"{m['p_idk']['answerable']['mean_p']:.3f} unanswerable {m['p_idk']['unanswerable']['mean_p']:.3f} | "
+              f"{m['p_idk']['answerable']['mean_p']:.3f} unanswerable {m['p_idk']['unanswerable']['mean_p']:.3f} "
+              f"AUC {m['p_idk']['auc']:.3f} | "
               f"dev answer words {m['mean_answer_words']} | zero-var groups answerable "
               f"{z['answerable']['zero_var_share']} unanswerable {z['unanswerable']['zero_var_share']} "
               f"| rollout answer words {z['answerable']['mean_answer_words']} ({rec['seconds']}s)", flush=True)

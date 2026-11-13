@@ -207,35 +207,56 @@ def test_grpo_pool_keeps_varying_groups_tops_up_and_balances():
     grpo_rows = [
         _sampled("a_mixed", True, ["Rome"], ["Rome"] * 6 + [ABSTAIN] * 2),         # varies: kept
         _sampled("a_partial", True, ["King John"], ["King John"] * 7 + ["John"]),  # 1.0 vs 0.67: kept
+        _sampled("a_guess", True, ["Rome"], [ABSTAIN] * 6 + ["Paris"] * 2),        # IDK vs wrong only: dropped
         _sampled("a_same", True, ["Rome"], ["Rome"] * 8),                          # all 1.0: dropped
         _sampled("a_all_idk", True, ["Rome"], [ABSTAIN] * 8),                      # same mistake 8x: dropped
         _sampled("u_mixed", False, [], [ABSTAIN] * 7 + ["Paris"]),                 # varies: kept
         _sampled("u_same", False, [], [ABSTAIN] * 8),                              # dropped
     ]
-    topup = [_sampled("d_mixed", True, ["Nile"], ["Nile", "Nile", "Amazon", "Nile"]),
-             _sampled("d_same", False, [], ["Paris"] * 4)]
-    pool, stats = build_pool(grpo_rows, topup, h=1.0, r=0.5, min_questions=3, seed=0)
-    assert stats["varying_grpo_questions"] == 3 and not stats["topup_used"]
-    assert {p["id"] for p in pool} == {"a_mixed", "a_partial", "u_mixed"}
+    topup = [_sampled("d_ans", True, ["Nile"], ["Nile", "Nile", "Amazon", "Nile"]),  # answerable: not topped up
+             _sampled("d_unans", False, [], ["Paris", ABSTAIN, ABSTAIN, ABSTAIN]),    # added
+             _sampled("d_same", False, [], ["Paris"] * 4)]                            # zero variance: not added
+    for x in grpo_rows + topup:
+        for smp in x["samples"]:
+            smp["cell"] = grade(smp["output"], x["answerable"], x["gold"])["cell"]
+    pool, stats = build_pool(grpo_rows, topup, h=1.0, r=0.5, seed=0)
+    assert {p["id"] for p in pool} == {"a_mixed", "a_partial", "u_mixed", "d_unans"}
+    assert stats["grpo_split"]["answerable"]["varying_without_correct_dropped"] == 1
     assert stats["grpo_split"]["answerable"]["zero_variance"] == 2
-    assert stats["pool_rows_by_class"] == {"answerable": 2, "unanswerable": 2}  # u_mixed repeated twice
+    assert stats["added_from_topup"] == {"answerable": 0, "unanswerable": 1}
+    assert stats["pool_rows_by_class"] == {"answerable": 2, "unanswerable": 2} and stats["repeat_factor"] == 1.0
     assert len({p["uid"] for p in pool}) == len(pool)
+    assert {p["split"] for p in pool if p["id"] == "d_unans"} == {"dpo"}
+    assert build_pool(grpo_rows, topup, 1.0, 0.5, 0) == (pool, stats)  # deterministic
 
-    pool, stats = build_pool(grpo_rows, topup, h=1.0, r=0.5, min_questions=4, seed=0)
-    assert stats["topup_used"] and {p["id"] for p in pool if p["split"] == "dpo"} == {"d_mixed"}
-    assert stats["pool_rows_by_class"] == {"answerable": 3, "unanswerable": 3}
-    assert sorted(p["copy"] for p in pool if p["id"] == "u_mixed") == [0, 1, 2]
-    assert build_pool(grpo_rows, topup, 1.0, 0.5, 4, 0) == (pool, stats)  # deterministic
+    pool, stats = build_pool(grpo_rows, topup, 1.0, 0.5, 0, need_correct=False)
+    assert "a_guess" in {p["id"] for p in pool} and stats["pool_rows_by_class"]["unanswerable"] == 3
 
 
 def test_grpo_pool_balancing_remainder_is_a_subset():
     from grpo import build_pool
     rows = [_sampled(f"a{i}", True, ["x"], ["x"] * 4 + [ABSTAIN] * 4) for i in range(7)]
     rows += [_sampled(f"u{i}", False, [], [ABSTAIN] * 4 + ["y"] * 4) for i in range(3)]
-    pool, stats = build_pool(rows, [], 1.0, 0.5, 0, seed=1)
+    for x in rows:
+        for smp in x["samples"]:
+            smp["cell"] = grade(smp["output"], x["answerable"], x["gold"])["cell"]
+    pool, stats = build_pool(rows, [], 1.0, 0.5, seed=1)
     u = Counter(p["id"] for p in pool if not p["answerable"])
     assert sum(u.values()) == 7 and sorted(u.values()) == [2, 2, 3]
-    assert stats["repeated_class"] == "unanswerable"
+    assert stats["repeated_class"] == "unanswerable" and stats["repeat_factor"] == round(7 / 3, 3)
+
+
+def test_auc_matches_brute_force_and_ignores_uniform_shifts():
+    import random
+    from metrics import auc, paired_auc_compare
+    rng = random.Random(0)
+    neg = [rng.random() * 0.6 for _ in range(40)] + [0.5, 0.5]
+    pos = [0.3 + rng.random() * 0.7 for _ in range(30)] + [0.5]
+    brute = sum((p > n) + 0.5 * (p == n) for p in pos for n in neg) / (len(pos) * len(neg))
+    assert auc(neg, pos) == pytest.approx(brute)
+    assert auc([0.1, 0.2], [0.8, 0.9]) == 1.0 and auc([0.8, 0.9], [0.1, 0.2]) == 0.0
+    shifted = paired_auc_compare(neg, pos, [x * 0.5 for x in neg], [x * 0.5 for x in pos], n_boot=200)
+    assert shifted["diff"] == pytest.approx(0) and shifted["ci95"] == pytest.approx([0, 0])  # threshold shift only
 
 
 def test_grpo_gate():

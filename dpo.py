@@ -189,6 +189,7 @@ class IdkProbe:
         if was_training:
             model.train()
         import math
+        self.last_p = [math.exp(x) for x in logps]  # per question, in row order
         res = {}
         for name, flag in (("answerable", True), ("unanswerable", False)):
             ps = [math.exp(x) for x, a in zip(logps, self.answerable) if a == flag]
