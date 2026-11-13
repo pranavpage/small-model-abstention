@@ -288,3 +288,11 @@ def test_grpo_config(cfg):
     assert (g["questions_per_step"] * g["num_generations"]) % g["per_device_batch_size"] == 0
     assert g["pool"]["filter_run"] in g["runs"]
     assert g["max_completion_length"] == cfg["eval"]["max_new_tokens"]
+
+
+def test_grpo_committed_pool_reproduces(cfg):
+    """results/grpo-pool/pool.jsonl must be rebuilt byte-identically from the committed samples and config."""
+    from grpo import make_pool
+    _, stats, text, _ = make_pool(cfg, HERE / "results")
+    assert text == (HERE / "results" / "grpo-pool" / "pool.jsonl").read_text()
+    assert stats["pool_rows_by_class"]["answerable"] == stats["pool_rows_by_class"]["unanswerable"]
