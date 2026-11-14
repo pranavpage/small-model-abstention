@@ -2,14 +2,14 @@
   "grader_version": "1.0",
   "totals": {
     "dev": {
-      "answerable_outputs": 3750,
-      "score_changed": 72,
-      "cell_flips": 15,
-      "misgraded_by_v1": 15
+      "answerable_outputs": 4950,
+      "score_changed": 90,
+      "cell_flips": 17,
+      "misgraded_by_v1": 17
     },
     "test": {
-      "answerable_outputs": 1500,
-      "score_changed": 23,
+      "answerable_outputs": 1750,
+      "score_changed": 25,
       "cell_flips": 4,
       "misgraded_by_v1": 2
     }
@@ -192,6 +192,102 @@
       "misgraded_by_v1": 0
     },
     "dpo-dev-lr5e-06-e2": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "dpo-twin-dev-lr2e-05-e1": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "dpo-twin-dev-lr2e-05-e2": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "dpo-twin-dev-lr5e-06-e1": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "dpo-twin-dev-lr5e-06-e2": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "dpo-twin-out": {
+      "split": "test",
+      "answerable_outputs": 250,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "dpo-twin-out-dev-lr2e-05-e1": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e0815f231d4119001ac21d",
+          "gold": [
+            "ADSL"
+          ],
+          "output": "ADSL-broadband",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "dpo-twin-out-dev-lr2e-05-e2": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 3,
+      "cell_flips": 1,
+      "flips": [
+        {
+          "id": "56e0815f231d4119001ac21d",
+          "gold": [
+            "ADSL"
+          ],
+          "output": "ADSL-broadband",
+          "v1_cell": "wrong",
+          "dash_as_space_cell": "correct",
+          "v1_lenient": 0.0,
+          "dash_as_space_lenient": 1.0
+        }
+      ],
+      "misgraded_by_v1": 1
+    },
+    "dpo-twin-out-dev-lr5e-06-e1": {
+      "split": "dev",
+      "answerable_outputs": 150,
+      "score_changed": 2,
+      "cell_flips": 0,
+      "flips": [],
+      "misgraded_by_v1": 0
+    },
+    "dpo-twin-out-dev-lr5e-06-e2": {
       "split": "dev",
       "answerable_outputs": 150,
       "score_changed": 2,
@@ -564,6 +660,8 @@
       "gold": "ADSL",
       "output": "ADSL-broadband",
       "runs": [
+        "dpo-twin-out-dev-lr2e-05-e1",
+        "dpo-twin-out-dev-lr2e-05-e2",
         "dpo-v2-dev-lr2e-05-e1",
         "dpo-v2-dev-lr2e-05-e2",
         "dpo-v2-dev-lr5e-06-e1",
