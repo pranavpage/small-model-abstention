@@ -4,6 +4,6 @@ __pycache__/
 .context/
 # Built on the pod under paths.root; never committed
 /data/
-# results/ is tracked: helpers/pull_results.sh mirrors the pod results there
+# results/ is tracked: pod/pull_results.sh mirrors the pod results there
 /checkpoints/
 rehearsal/data/
